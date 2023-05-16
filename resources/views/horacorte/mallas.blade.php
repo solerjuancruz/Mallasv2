@@ -1,4 +1,4 @@
-@extends('layouts.main', ['activePage' => 'supervisor', 'titlePage' => 'Supervisor Personal'])
+@extends('layouts.main', ['activePage' => 'supervisor', 'titlePage' => 'Supervisor Personal-Gestión de Mallas'])
 @section('content')
 <div class="content">
     <div class="container-fluid">
@@ -8,18 +8,18 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header card-header-info">
-                                <h3 style="font-size:2.5em;" class="card-title"><b>Gestion de Mallas</b></h3>
-                                <h4 class="card-category">Creación de mallas</h4>
+                                <h3 style="font-size:2em;" class="card-title"><b>Gestion de Mallas</b></h3>
+                                <h6 class="card-category">Creación de mallas</h6>
                             </div>
-                            <div class="card-body d-flex">
-                                <div class="col-12 text-right">
-                                    <h3 class="float-left">Tabla de datos </h3>
-                                    <a href="{{ route('mallas.create') }} " class="btn btn-md btn-info ">
+                            <div class="card-body d-flex ">
+                                <div class="col-12 text-right ">
+                                    <h4 class="float-left mt-3">Tabla de datos </h4>
+                                    <a href="{{ route('mallas.create') }}" class="btn btn-sm btn-info mt-2 ">
                                         <i class="material-icons mr-1">add</i>Crear</a>
                                 </div>
                             </div>
 
-                            <div class="table-responsive table-hover p-2">
+                            <div class="table-responsive-sm table-hover pr-4 pl-4">
                                 <table class="table ">
                                     <thead class="text-primary thead-dark text-center">
                                         <th>ID</th>
@@ -34,8 +34,8 @@
                                         <th class="text-center">Acciones</th>
                                     </thead>
                                     <tbody class="text-center">
-                                       @foreach ($datos as $item)
-                                    <tr>
+                                        @foreach ($datos as $item)
+                                        <tr>
                                             <td>{{$item -> users_id}}</td>
                                             <td>{{$item -> user -> name}}</td>
                                             <td>{{$item -> user -> cedula}}</td>
@@ -60,7 +60,7 @@
                                                     onsubmit="return confirm('Deseas eliminar esta(s) Malla(s) ?')">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button href="" class="btn btn-danger" rel="tooltip">
+                                                    <button class="btn btn-sm btn-danger" rel="tooltip">
                                                         <i class="material-icons">close</i></button>
                                                 </form>
                                             </td>
@@ -70,14 +70,10 @@
 
                                 </table>
                             </div>
+                            <form action="#">
+                                <button type="submit" class="btn btn-sm btn-success float-left m-lg-4 "><i class="material-icons">file_download</i>Descargar</button>
+                            </form>
                         </div>
-
-                        <form action="#">
-                            <button type="submit" class="btn btn-success"
-                                style="border-radius: 10px; margin-left:20px"><i
-                                    class="material-icons">file_download</i>Descargar</button>
-                        </form>
-
                     </div>
                 </div>
             </div>
