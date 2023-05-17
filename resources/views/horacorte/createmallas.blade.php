@@ -113,6 +113,7 @@
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal; font-size:11px;"
                                                                 type="time" name="lunesinicio" id="horainicio"
+                                                                onchange="calcular('horainicio','horafin','alminicio','almfin','htrab')"
                                                                 onclick="calcular('horainicio','horafin','alminicio','almfin','htrab')"
                                                                 value="08:00:00"></td>
                                                         <td><input
@@ -125,10 +126,8 @@
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal; font-size:11px;"
-                                                                onchange="calcular('horainicio','horafin','alminicio','almfin','htrab')"
-                                                                onclick="calcular('horainicio','horafin','alminicio','almfin','htrab')"
-                                                                type="time" name="lunes_alm_inicio" id="alminicio"
-                                                                value="13:00:00">
+                                                                onclick="totalalm('alminicio','almfin')" type="time"
+                                                                name="lunes_alm_inicio" id="alminicio" value="13:00:00">
                                                         </td>
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
@@ -171,8 +170,7 @@
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal;font-size:11px;"
-                                                                onchange="calcular('horainiciomar','horafinmar','alminiciomar','almfinmar','htrabmar')"
-                                                                onclick="calcular('horainiciomar','horafinmar','alminiciomar','almfinmar','htrabmar')"
+                                                                onclick="totalalm('alminiciomar','almfinmar')"
                                                                 type="time" name="martes_alm_inicio" id="alminiciomar"
                                                                 value="13:00:00" required>
                                                         </td>
@@ -217,8 +215,7 @@
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal; font-size:11px;"
-                                                                onchange="calcular('horainiciomie','horafinmie','alminiciomie','almfinmie','htrabmie')"
-                                                                onclick="calcular('horainiciomie','horafinmie','alminiciomie','almfinmie','htrabmie')"
+                                                                onclick="totalalm('alminiciomie','almfinmie')"
                                                                 type="time" name="miercoles_alm_inicio"
                                                                 id="alminiciomie" value="13:00:00" required>
                                                         </td>
@@ -263,8 +260,7 @@
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal; font-size:11px;"
-                                                                onchange="calcular('horainiciojue','horafinjue','alminiciojue','almfinjue','htrabjue')"
-                                                                onclick="calcular('horainiciojue','horafinjue','alminiciojue','almfinjue','htrabjue')"
+                                                                onclick="totalalm('alminiciojue','almfinjue')"
                                                                 type="time" name="jueves_alm_inicio" id="alminiciojue"
                                                                 value="13:00:00" required>
                                                         </td>
@@ -308,8 +304,7 @@
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal;font-size:11px;"
-                                                                onchange="calcular('horainiciovie','horafinvie','alminiciovie','almfinvie','htrabvie')"
-                                                                onclick="calcular('horainiciovie','horafinvie','alminiciovie','almfinvie','htrabvie')"
+                                                                onclick="totalalm('alminiciovie','almfinvie')"
                                                                 type="time" name="viernes_alm_inicio" id="alminiciovie"
                                                                 value="13:00:00" required>
                                                         </td>
@@ -353,8 +348,7 @@
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal;font-size:11px;"
-                                                                onchange="calcular('horainiciosab','horafinsab','alminiciosab','almfinsab','htrabsab')"
-                                                                onclick="calcular('horainiciosab','horafinsab','alminiciosab','almfinsab','htrabsab')"
+                                                                onclick="totalalm('alminiciosab','almfinsab')"
                                                                 type="time" name="sabado_alm_inicio" id="alminiciosab"
                                                                 value="13:00:00" required>
                                                         </td>
@@ -397,8 +391,7 @@
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal;font-size:11px;"
-                                                                onchange="calcular('horainiciodom','horafindom','alminiciodom','almfindom','htrabdom')"
-                                                                onclick="calcular('horainiciodom','horafindom','alminiciodom','almfindom','htrabdom')"
+                                                                onclick="totalalm('alminiciodom','almfindom')"
                                                                 type="time" name="domingo_alm_inicio" id="alminiciodom">
                                                         </td>
                                                         <td><input
@@ -419,6 +412,7 @@
                                                     </tr>
                                                 </tbody>
                                                 <script>
+                                                        /*funcion calcular hora de trabajo total  */
                                                 function calcular(id1, id2, id3, id4, id5) {
 
 
@@ -429,35 +423,33 @@
                                                     let total = document.getElementById(id5).value = (b - a) - (
                                                         d - c) + "-horas";
                                                 }
-                                                const hora1Input = document.getElementById('alminicio');
-                                                const hora2Input = document.getElementById('almfin');
+                                              /*  funcion automatización hora almuerzo*/
+                                                function totalalm($id1, $id2) {
+                                                    let hora1Input = document.getElementById($id1);
+                                                    let hora2Input = document.getElementById($id2);
 
-                                                hora1Input.addEventListener('change', () => {
-                                                    // Obtener el valor de la hora 1
-                                                    const hora1Value = hora1Input.value;
-
-                                                    // Crear un objeto de fecha con la fecha actual
-                                                    const fechaActual = new Date();
-
-                                                    // Obtener las horas y minutos de la hora 1
-                                                    const [hora, minuto] = hora1Value.split(':');
-
-                                                    // Configurar la fecha actual con las horas y minutos de la hora 1
-                                                    fechaActual.setHours(hora);
-                                                    fechaActual.setMinutes(minuto);
-
-                                                    // Sumar una hora a la fecha actual
-                                                    fechaActual.setHours(fechaActual.getHours() + 1);
-
-                                                    // Obtener la hora y los minutos de la fecha actualizada
-                                                    const hora2 = fechaActual.getHours().toString().padStart(2,
-                                                        '0');
-                                                    const minuto2 = fechaActual.getMinutes().toString()
-                                                        .padStart(2, '0');
-
-                                                    // Actualizar el valor del input de hora 2
-                                                    hora2Input.value = `${hora2}:${minuto2}`;
-                                                });
+                                                    hora1Input.addEventListener('change', () => {
+                                                        // Obtener el valor de la hora 1
+                                                        let hora1Value = hora1Input.value;
+                                                        // Crear un objeto de fecha con la fecha actual
+                                                        let fechaActual = new Date();
+                                                        // Obtener las horas y minutos de la hora 1
+                                                        let [hora, minuto] = hora1Value.split(':');
+                                                        // Configurar la fecha actual con las horas y minutos de la hora 1
+                                                        fechaActual.setHours(hora);
+                                                        fechaActual.setMinutes(minuto);
+                                                        // Sumar una hora a la fecha actual
+                                                        fechaActual.setHours(fechaActual.getHours() + 1);
+                                                        // Obtener la hora y los minutos de la fecha actualizada
+                                                        const hora2 = fechaActual.getHours().toString()
+                                                            .padStart(2,
+                                                                '0');
+                                                        const minuto2 = fechaActual.getMinutes().toString()
+                                                            .padStart(2, '0');
+                                                        // Actualizar el valor del input de hora 2
+                                                        hora2Input.value = `${hora2}:${minuto2}`;
+                                                    });
+                                                }
                                                 </script>
                                             </table>
                                         </div>
