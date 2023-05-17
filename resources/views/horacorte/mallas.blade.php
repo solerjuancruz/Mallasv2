@@ -8,8 +8,9 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header card-header-info">
+                            <a class="btn btn-sm btn-info float-right" href="{{ route('superpersonal.index') }}"><i class="material-icons">reply</i></a>
                                 <h3 style="font-size:2em;" class="card-title"><b>Gestion de Mallas</b></h3>
-                                <h6 class="card-category">Creación de mallas</h6>
+                                <p class="card-category"><b>Creación de mallas</b></p>
                             </div>
                             <div class="card-body d-flex ">
                                 <div class="col-12 text-right ">

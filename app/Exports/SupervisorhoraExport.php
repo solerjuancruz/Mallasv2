@@ -64,7 +64,7 @@ class SupervisorhoraExport implements FromCollection, WithHeadings
             'Ingreso',
             'Salida',
             'Tiempo',
-            'breack',
+            'break',
             'Fin break',
             'Tiempo de Break',
             'almuerzo',
