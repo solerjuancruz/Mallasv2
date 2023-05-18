@@ -41,7 +41,7 @@
                                             </div>
                                             <div class="form-group col-sm-3 ">
                                                 <label class="text-info" for="semana"><b>Dia-descanso</b></label>
-                                                <input type="date" class="form-control mt-3"
+                                                <input type="date" class="form-control mt-3" onchange="DiaDescanso()"
                                                     min="<?php echo date("Y-m-d",strtotime(date("Y-m-d")."+4 days"));?>"
                                                     max="<?php echo date("Y-m-d",strtotime(date("Y-m-d")."+11 days"));?>"
                                                     name="diadescanso" id="diadescanso" required>
@@ -58,9 +58,24 @@
                                                 <label class="text-info" for="foco"><b>Foco</b></label></label>
                                                 <select class="form-control" name="foco">
                                                     <option selected>Selecciona</option>
-                                                    <option value="1">One</option>
-                                                    <option value="2">Two</option>
-                                                    <option value="3">Three</option>
+                                                    <option value="">Inbound</option>
+                                                    <option value="">Phoenix</option>
+                                                    <option value="">Portabilidad</option>
+                                                    <option value="">Prepost</option>
+                                                    <option value="">Staff Administrativo</option>
+                                                    <option value="">Staff Calidad</option>
+                                                    <option value="">Staff Comercial</option>
+                                                    <option value="">Staff Datos Metricas Y Workforce</option>
+                                                    <option value="">Staff Desarrollo</option>
+                                                    <option value="">Staff Diseño</option>
+                                                    <option value="">Staff Financiero</option>
+                                                    <option value="">Staff Gerencial</option>
+                                                    <option value="">Staff Gestión Organizacional y Método</option>
+                                                    <option value="">Staff It</option>
+                                                    <option value="">Staff RRHH</option>
+                                                    <option value="">Staff Validacion</option>
+                                                    <option value="">Up Grade</option>
+                                                    <option value="">Whatsapp Digital</option>
                                                 </select>
                                             </div>
                                             <div class="form-group col-sm-3">
@@ -68,9 +83,8 @@
                                                 <br>
                                                 <select class="form-control" name="encargado">
                                                     <option selected>Selecciona</option>
-                                                    <option value="1">One</option>
-                                                    <option value="2">Two</option>
-                                                    <option value="3">Three</option>
+                                                    <option value=""></option>
+
                                                 </select>
                                             </div>
                                         </div>
@@ -145,13 +159,13 @@
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal;  font-size:11px;"
-                                                                 onclick="totaldes('desc1','desc2')"
-                                                                type="time" name="lunesdescanso1" id="desc1"
-                                                                value="10:00:00"></td>
+                                                                onclick="totaldes('desc1','desc2')" type="time"
+                                                                name="lunesdescanso1" id="descinilun" value="10:00:00">
+                                                        </td>
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal;  font-size:11px;"
-                                                                type="time" name="lunesdescanso2" id="desc2"
+                                                                type="time" name="lunesdescanso2" id="descfinlun"
                                                                 value="16:00:00" disabled></td>
                                                     </tr>
                                                     <tr>
@@ -191,12 +205,12 @@
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal; font-size:11px;"
-                                                                type="time" name="martesdescanso1" id="desc1"
+                                                                type="time" name="martesdescanso1" id="desinimar"
                                                                 value="10:00:00" required></td>
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal; font-size:11px;"
-                                                                type="time" name="martesdescanso2" id="desc2"
+                                                                type="time" name="martesdescanso2" id="descfinmar"
                                                                 value="16:00:00" disabled></td>
                                                     </tr>
                                                     <tr>
@@ -236,12 +250,12 @@
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal; font-size:11px;"
-                                                                type="time" name="miercolesdescanso1" id="desc1"
+                                                                type="time" name="miercolesdescanso1" id="descinimie"
                                                                 value="10:00:00" required></td>
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal; font-size:11px;"
-                                                                type="time" name="miercolesdescanso2" id="desc2"
+                                                                type="time" name="miercolesdescanso2" id="descfinmie"
                                                                 value="16:00:00" disabled></td>
                                                     </tr>
                                                     <tr>
@@ -281,12 +295,12 @@
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal; font-size:11px;"
-                                                                type="time" name="juevesdescanso1" id="desc1"
+                                                                type="time" name="juevesdescanso1" id="descinijue"
                                                                 value="10:00:00" required></td>
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal;font-size:11px;"
-                                                                type="time" name="juevesdescanso2" id="desc2"
+                                                                type="time" name="juevesdescanso2" id="descfinjue"
                                                                 value="16:00:00" disabled></td>
                                                     </tr>
                                                     <tr>
@@ -325,12 +339,12 @@
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal;font-size:11px;"
-                                                                type="time" name="viernesdescanso1" id="desc1"
+                                                                type="time" name="viernesdescanso1" id="descinivie"
                                                                 value="10:00:00" required></td>
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal;font-size:11px;"
-                                                                type="time" name="viernesdescanso2" id="desc2"
+                                                                type="time" name="viernesdescanso2" id="descfinvie"
                                                                 value="16:00:00" disabled></td>
                                                     </tr>
                                                     <tr>
@@ -369,12 +383,12 @@
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal;font-size:11px;"
-                                                                type="time" name="sabadodescanso1" id="desc1"
+                                                                type="time" name="sabadodescanso1" id="descinisab"
                                                                 value="10:00:00" required></td>
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal;font-size:11px;"
-                                                                type="time" name="sabadodescanso2" id="desc2"
+                                                                type="time" name="sabadodescanso2" id="descfinsab"
                                                                 value="16:00:00" disabled></td>
                                                     </tr>
                                                     <tr>
@@ -411,12 +425,13 @@
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal;font-size:11px;"
-                                                                type="time" name="domingodescanso1" id="desc1">
+                                                                type="time" name="domingodescanso1" id="descinidom">
                                                         </td>
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal;font-size:11px;"
-                                                                type="time" name="domingodescanso2" id="desc2" disabled>
+                                                                type="time" name="domingodescanso2" id="descfindom"
+                                                                disabled>
                                                         </td>
                                                     </tr>
                                                 </tbody>
@@ -485,11 +500,116 @@
                                                         hora2Input.value = `${hora2}:${minuto2}`;
                                                     });
                                                 }
+
+
+                                                function DiaDescanso() {
+                                                    const fechaInput = document.getElementById('diadescanso');
+
+
+                                                    let lun1Input = document.getElementById('horainicio');
+                                                    let lun2Input = document.getElementById('horafin');
+                                                    let lun3Input = document.getElementById('alminicio');
+                                                    let lun4Input = document.getElementById('descinilun');
+
+                                                    let mar1Input = document.getElementById('horainiciomar');
+                                                    let mar2Input = document.getElementById('horafinmar');
+                                                    let mar3Input = document.getElementById('alminiciomar');
+                                                    let mar4Input = document.getElementById('desinimar');
+
+                                                    let mie1Input = document.getElementById('horainiciomie');
+                                                    let mie2Input = document.getElementById('horafinmie');
+                                                    let mie3Input = document.getElementById('alminiciomie');
+                                                    let mie4Input = document.getElementById('descinimie');
+
+                                                    let jue1Input = document.getElementById('horainiciojue');
+                                                    let jue2Input = document.getElementById('horafinjue');
+                                                    let jue3Input = document.getElementById('alminiciojue');
+                                                    let jue4Input = document.getElementById('descinijue');
+
+                                                    let vie1Input = document.getElementById('horainiciovie');
+                                                    let vie2Input = document.getElementById('horafinvie');
+                                                    let vie3Input = document.getElementById('alminiciovie');
+                                                    let vie4Input = document.getElementById('descinivie');
+
+                                                    let sab1Input = document.getElementById('horainiciosab');
+                                                    let sab2Input = document.getElementById('horafinsab');
+                                                    let sab3Input = document.getElementById('alminiciosab');
+                                                    let sab4Input = document.getElementById('descinisab');
+
+                                                    let dom1Input = document.getElementById('horainiciodom');
+                                                    let dom2Input = document.getElementById('horafindom');
+                                                    let dom3Input = document.getElementById('alminiciodom');
+                                                    let dom4Input = document.getElementById('descinidom');
+                                                    //
+
+                                                    //  fechaInput.addEventListener('change',()=>{
+                                                    // Obtener el valor de la fecha seleccionada
+                                                    const fechaSeleccionada = fechaInput.value;
+
+                                                    // Verificar el día de la semana de la fecha seleccionada
+                                                    const fecha = new Date(fechaSeleccionada);
+                                                    const diaSemana = fecha.getDay();
+                                                    // Habilitar los inputs de tiempo correspondientes según el día de la semana
+
+                                                    if(diaSemana == null){
+                                                    switch (diaSemana) {
+                                                        case 6: // Domingo
+                                                            dom1Input.disabled = true;
+                                                            dom2Input.disabled = true;
+                                                            dom3Input.disabled = true;
+                                                            dom4Input.disabled = true;
+                                                            break;
+                                                        case 0: // Lunes
+                                                            lun1Input.disabled = true;
+                                                            lun2Input.disabled = true;
+                                                            lun3Input.disabled = true;
+                                                            lun4Input.disabled = true;
+                                                            break;
+                                                        case 1: // Martes
+                                                            mar1Input.disabled = true;
+                                                            mar2Input.disabled = true;
+                                                            mar3Input.disabled = true;
+                                                            mar4Input.disabled = true;
+                                                            break;
+                                                        case 2: // Miercoles
+                                                            mie1Input.disabled = true;
+                                                            mie2Input.disabled = true;
+                                                            mie3Input.disabled = true;
+                                                            mie4Input.disabled = true;
+                                                            break;
+                                                        case 3: // Jueves
+                                                            jue1Input.disabled = true;
+                                                            jue2Input.disabled = true;
+                                                            jue3Input.disabled = true;
+                                                            jue4Input.disabled = true;
+                                                            break;
+                                                        case 4: // viernes
+                                                            vie1Input.disabled = true;
+                                                            vie2Input.disabled = true;
+                                                            vie3Input.disabled = true;
+                                                            vie4Input.disabled = true;
+                                                            break;
+                                                        case 5: // sabado
+                                                            sab1Input.disabled = true;
+                                                            sab2Input.disabled = true;
+                                                            sab3Input.disabled = true;
+                                                            sab4Input.disabled = true;
+                                                            break;
+                                                    }
+                                                
+                                                    }if(diaSemana != null){
+                                                        fechaInput.disabled = true;
+                                                    }
+ 
+                                                    
+
+                                                }
                                                 </script>
                                             </table>
                                             <div class="form-floating  border col-md-12  mt-3 p-2">
-                                            <label class="text-info" for="observaciones"><b>Ingresa tu Observación</b></label>    
-                                            <textarea class="form-control" placeholder="Observaciones..."
+                                                <label class="text-info" for="observaciones"><b>Ingresa tu
+                                                        Observación</b></label>
+                                                <textarea class="form-control" placeholder="Observaciones..."
                                                     id="observaciones"></textarea>
                                             </div>
                                         </div>

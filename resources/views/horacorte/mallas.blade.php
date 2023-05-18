@@ -10,11 +10,11 @@
                             <div class="card-header card-header-info">
                             <a class="btn btn-sm btn-info float-right" href="{{ route('superpersonal.index') }}"><i class="material-icons">reply</i></a>
                                 <h3 style="font-size:2em;" class="card-title"><b>Gestion de Mallas</b></h3>
-                                <p class="card-category"><b>Creación de mallas</b></p>
+                                <p class="card-category"><b>Gestión de mallas</b></p>
                             </div>
                             <div class="card-body d-flex ">
                                 <div class="col-12 text-right ">
-                                    <h4 class="float-left mt-3">Tabla de datos </h4>
+                                    <h4 class="float-left mt-3"><b>Tabla de datos</b> </h4>
                                     <a href="{{ route('mallas.create') }}" class="btn btn-sm btn-info mt-2 ">
                                         <i class="material-icons mr-1">add</i>Crear</a>
                                 </div>
