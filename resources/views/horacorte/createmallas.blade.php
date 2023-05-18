@@ -28,8 +28,7 @@
                                             <div class="form-group col-sm-3 pt-0 mt-0 ">
                                                 <label class="text-info" for="users_id"> <b>Nombre
                                                         Asesor</b></label>
-                                                <select name="users_id" id="users_id" class="form-control"
-                                                    aria-label="Default select example" required>
+                                                <select name="users_id" id="users_id" class="form-control" required>
                                                     @foreach ($usuarios as $usuario)
                                                     <option value="{{ $usuario['id']}}">{{ $usuario['name']}}</option>
                                                     @endforeach
@@ -50,20 +49,29 @@
                                         </div>
                                         <div class="form-row d-flex justify-content-around mt-1">
 
-                                            <div class="form-group col-sm-3">
-                                                <label class="text-info" for="campaña"><b>Campaña</b></label>
-                                                <input type="text" class="form-control mt-3" id="campaña" name="campaña"
-                                                    required>
+                                            <div class="form-group col-sm-3 mt-4">
+                                                <label class="text-info " for="campaña"><b>Campaña</b></label>
+                                                <input type="text" value="MOVISTAR" class="form-control mt-3"
+                                                    id="campaña" name="campaña" disabled>
                                             </div>
                                             <div class="form-group col-sm-3">
                                                 <label class="text-info" for="foco"><b>Foco</b></label></label>
-                                                <input type="text" class="form-control mt-3" name="foco" id="foco"
-                                                    required>
+                                                <select class="form-control" name="foco">
+                                                    <option selected>Selecciona</option>
+                                                    <option value="1">One</option>
+                                                    <option value="2">Two</option>
+                                                    <option value="3">Three</option>
+                                                </select>
                                             </div>
                                             <div class="form-group col-sm-3">
                                                 <label class="text-info" for="encargado"><b>Encargado</b></label>
-                                                <input type="text" class="form-control mt-3" name="encargado"
-                                                    id="encargado" required>
+                                                <br>
+                                                <select class="form-control" name="encargado">
+                                                    <option selected>Selecciona</option>
+                                                    <option value="1">One</option>
+                                                    <option value="2">Two</option>
+                                                    <option value="3">Three</option>
+                                                </select>
                                             </div>
                                         </div>
                                         <div class=" mt-4 pt-4 ">
@@ -94,10 +102,10 @@
                                                             H-fin-alm</th>
                                                         <th class="col-1" style="font-size:1rem; font-weight: bold; "
                                                             scope="col">
-                                                            Desc ini</th>
+                                                            Break ini</th>
                                                         <th class="col-1" style="font-size:1rem; font-weight: bold; "
                                                             scope="col">
-                                                            Desc fin
+                                                            Break fin
                                                         </th>
                                                     </tr>
                                                 </thead>
@@ -137,6 +145,7 @@
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal;  font-size:11px;"
+                                                                 onclick="totaldes('desc1','desc2')"
                                                                 type="time" name="lunesdescanso1" id="desc1"
                                                                 value="10:00:00"></td>
                                                         <td><input
@@ -412,7 +421,7 @@
                                                     </tr>
                                                 </tbody>
                                                 <script>
-                                                        /*funcion calcular hora de trabajo total  */
+                                                /*funcion calcular hora de trabajo total  */
                                                 function calcular(id1, id2, id3, id4, id5) {
 
 
@@ -423,7 +432,7 @@
                                                     let total = document.getElementById(id5).value = (b - a) - (
                                                         d - c) + "-horas";
                                                 }
-                                              /*  funcion automatización hora almuerzo*/
+                                                /*  funcion automatización hora almuerzo*/
                                                 function totalalm($id1, $id2) {
                                                     let hora1Input = document.getElementById($id1);
                                                     let hora2Input = document.getElementById($id2);
@@ -450,8 +459,39 @@
                                                         hora2Input.value = `${hora2}:${minuto2}`;
                                                     });
                                                 }
+                                                /*  funcion automatización break*/
+                                                function totaldes($id1, $id2) {
+                                                    let hora1Input = document.getElementById($id1);
+                                                    let hora2Input = document.getElementById($id2);
+
+                                                    hora1Input.addEventListener('change', () => {
+                                                        // Obtener el valor de la hora 1
+                                                        let hora1Value = hora1Input.value;
+                                                        // Crear un objeto de fecha con la fecha actual
+                                                        let fechaActual = new Date();
+                                                        // Obtener las horas y minutos de la hora 1
+                                                        let [hora, minuto] = hora1Value.split(':');
+                                                        // Configurar la fecha actual con las horas y minutos de la hora 1
+                                                        fechaActual.setHours(hora);
+                                                        fechaActual.setMinutes(minuto);
+                                                        // Sumar 20 minutos a la fecha actual
+                                                        fechaActual.setMinutes(fechaActual.getMinutes() + 20);
+                                                        // Obtener la hora y los minutos de la fecha actualizada
+                                                        const hora2 = fechaActual.getHours().toString()
+                                                            .padStart(2, '0');
+                                                        const minuto2 = fechaActual.getMinutes().toString()
+                                                            .padStart(2, '0');
+                                                        // Actualizar el valor del input de hora 2
+                                                        hora2Input.value = `${hora2}:${minuto2}`;
+                                                    });
+                                                }
                                                 </script>
                                             </table>
+                                            <div class="form-floating  border col-md-12  mt-3 p-2">
+                                            <label class="text-info" for="observaciones"><b>Ingresa tu Observación</b></label>    
+                                            <textarea class="form-control" placeholder="Observaciones..."
+                                                    id="observaciones"></textarea>
+                                            </div>
                                         </div>
                                         <div class=" d-flex justify-content-end m-4">
                                             <a class="btn btn-sm btn-secundary mr-2"
