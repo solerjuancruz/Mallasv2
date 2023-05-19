@@ -41,7 +41,7 @@
                                             </div>
                                             <div class="form-group col-sm-3 ">
                                                 <label class="text-info" for="semana"><b>Dia-descanso</b></label>
-                                                <input type="date" class="form-control mt-3" onchange="DiaDescanso()"
+                                                <input type="date" class="form-control mt-3" oninput="DiaDescanso()" onclick="Reset()"
                                                     min="<?php echo date("Y-m-d",strtotime(date("Y-m-d")."+4 days"));?>"
                                                     max="<?php echo date("Y-m-d",strtotime(date("Y-m-d")."+11 days"));?>"
                                                     name="diadescanso" id="diadescanso" required>
@@ -541,18 +541,12 @@
                                                     let dom3Input = document.getElementById('alminiciodom');
                                                     let dom4Input = document.getElementById('descinidom');
                                                     //
-
-                                                    //  fechaInput.addEventListener('change',()=>{
-                                                    // Obtener el valor de la fecha seleccionada
                                                     const fechaSeleccionada = fechaInput.value;
-
-                                                    // Verificar el día de la semana de la fecha seleccionada
                                                     const fecha = new Date(fechaSeleccionada);
-                                                    const diaSemana = fecha.getDay();
-                                                    // Habilitar los inputs de tiempo correspondientes según el día de la semana
+                                                    let diaSemana = fecha.getDay();
 
-                                                    if(diaSemana == null){
                                                     switch (diaSemana) {
+
                                                         case 6: // Domingo
                                                             dom1Input.disabled = true;
                                                             dom2Input.disabled = true;
@@ -596,13 +590,21 @@
                                                             sab4Input.disabled = true;
                                                             break;
                                                     }
-                                                
-                                                    }if(diaSemana != null){
-                                                        fechaInput.disabled = true;
-                                                    }
- 
-                                                    
+                                                }
+                                                function Reset() {
+                                                    var ids = ["horainicio", "horafin", "alminicio", "descinilun",
+                                                        "horainiciomar","horafinmar", "alminiciomar", "desinimar",
+                                                         "horainiciomie","horafinmie", "alminiciomie", "descinimie",
+                                                         "horainiciojue","horafinjue", "alminiciojue", "descinijue", 
+                                                         "horainiciovie","horafinvie", "alminiciovie", "descinivie", 
+                                                         "horainiciosab","horafinsab", "alminiciosab", "descinisab", 
+                                                         "horainiciodom","horafindom", "alminiciodom", "descinidom"
+                                                    ]
+                                                    for (i = 0; i < ids.length; i++) {
 
+                                                        var input = document.getElementById(ids[i]);
+                                                        input.disabled = false;
+                                                    }
                                                 }
                                                 </script>
                                             </table>
