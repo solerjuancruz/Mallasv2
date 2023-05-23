@@ -36,6 +36,7 @@
                                             <div class="form-group col-sm-3 ">
                                                 <label class="text-info" for="semana"><b>Dia-descanso</b></label>
                                                 <input type="date" class="form-control mt-3" name="diadescanso"
+                                                    oninput="DiaDescanso()" onclick="Reset()"
                                                     min="<?php echo date("Y-m-d",strtotime(date("Y-m-d")."+4 days"));?>"
                                                     max="<?php echo date("Y-m-d",strtotime(date("Y-m-d")."+11 days"));?>"
                                                     value="{{$mallas->diadescanso}}" id="diadescanso" required>
@@ -81,11 +82,11 @@
                                                         </th>
                                                         <th class="col-1" style="font-size:1rem; font-weight: bold; "
                                                             scope="col">
-                                                            H-fin-alm
+                                                            H-ini-alm
                                                         </th>
                                                         <th class="col-1" style="font-size:1rem; font-weight: bold; "
                                                             scope="col">
-                                                            H-ini-alm</th>
+                                                            H-fin-alm</th>
                                                         <th class="col-1" style="font-size:1rem; font-weight: bold; "
                                                             scope="col">
                                                             Desc ini</th>
@@ -117,224 +118,267 @@
 
                                                         <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
-                                                                type="time" name="lunes_alm_inicio" id="alminicio"
+                                                                onclick="totalalm('alminicio','almfin')" type="time"
+                                                                name="lunes_alm_inicio" id="alminicio"
                                                                 value="{{$mallas -> lun_alm_inicio}}">
                                                         </td>
                                                         <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
                                                                 type="time" name="lunes_alm_final" id="almfin"
-                                                                value="{{$mallas -> lun_alm_final}}"
-                                                                onchange="calcular()" onclick="calcular()"></td>
+                                                                value="{{$mallas -> lun_alm_final}}" disabled></td>
                                                         <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
-                                                                type="time" name="lunesdescanso1" id="desc1"
+                                                                onclick="totaldes('descinilun','descfinlun')"
+                                                                onchange="totaldes('descinilun','descfinlun')"
+                                                                type="time" name="lunesdescanso1" id="descinilun"
                                                                 value="{{$mallas -> lunesdescanso1}}"></td>
                                                         <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
-                                                                type="time" name="lunesdescanso2" id="desc2"
-                                                                value="{{$mallas -> lunesdescanso2}}"></td>
+                                                                type="time" name="lunesdescanso2" id="descfinlun"
+                                                                value="{{$mallas -> lunesdescanso2}}" disabled></td>
                                                     </tr>
                                                     <tr>
                                                         <th class="text-info text-center" style="font-size:1rem ;">
                                                             Martes</th>
                                                         <td><input
                                                                 class="form-control text-info text-center font-weight-bold"
-                                                                style="font-size: 11px;" type="text" name="" id="htrab"
-                                                                disabled></td>
+                                                                style="font-size:medium;" type="text" name=""
+                                                                id="htrabmar" disabled></td>
                                                         <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
-                                                                type="time" name="martesinicio" id="horainicio"
-                                                                value="{{$mallas -> martesinicio}}" required>
+                                                                onchange="calcular('horainiciomar','horafinmar','alminiciomar','almfinmar','htrabmar')"
+                                                                onclick="calcular('horainiciomar','horafinmar','alminiciomar','almfinmar','htrabmar')"
+                                                                type="time" name="martesinicio" id="horainiciomar"
+                                                                value="{{$mallas -> martesinicio}}">
                                                         </td>
                                                         <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
-                                                                type="time" name="martesfinal" id="horafin"
-                                                                value="{{$mallas -> martesfinal}}" required></td>
+                                                                onchange="calcular('horainiciojue','horafinjue','alminiciojue','almfinjue','htrabjue')"
+                                                                onclick="calcular('horainiciojue','horafinjue','alminiciojue','almfinjue','htrabjue')"
+                                                                type="time" name="martesfinal" id="horafinmar"
+                                                                value="{{$mallas -> martesfinal}}"></td>
 
                                                         <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
-                                                                type="time" name="martes_alm_inicio" id="alminicio"
-                                                                value="{{$mallas -> mar_alm_inicio}}" required>
+                                                                onclick="totalalm('alminiciomar','almfinmar')"
+                                                                type="time" name="martes_alm_inicio" id="alminiciomar"
+                                                                value="{{$mallas -> mar_alm_inicio}}">
                                                         </td>
                                                         <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
-                                                                type="time" name="martes_alm_final" id="almfin"
-                                                                value="{{$mallas -> mar_alm_final}}" required></td>
+                                                                type="time" name="martes_alm_final" id="almfinmar"
+                                                                value="{{$mallas -> mar_alm_final}}" disabled></td>
                                                         <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
-                                                                type="time" name="martesdescanso1" id="desc1"
-                                                                value="{{$mallas -> martesdescanso1}}" required></td>
+                                                                type="time" name="martesdescanso1" id="desinimar"
+                                                                onclick="totaldes('desinimar','descfinmar')"
+                                                                onchange="totaldes('desinimar','descfinmar')"
+                                                                value="{{$mallas -> martesdescanso1}}"></td>
                                                         <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
-                                                                type="time" name="martesdescanso2" id="desc2"
-                                                                value="{{$mallas -> martesdescanso2}}" required></td>
+                                                                type="time" name="martesdescanso2" id="descfinmar"
+                                                                value="{{$mallas -> martesdescanso2}}" disabled></td>
                                                     </tr>
                                                     <tr>
                                                         <th class="text-info text-center" style="font-size:1rem ;">
                                                             Miercoles</th>
                                                         <td><input
                                                                 class="form-control text-info text-center font-weight-bold"
-                                                                style="font-size: 11px;" type="text" name="" id="htrab"
-                                                                disabled></td>
+                                                                style="font-size: medium;" type="text" name=""
+                                                                id="htrabmie" disabled></td>
                                                         <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
-                                                                type="time" name="miercolesinicio" id="horainicio"
-                                                                value="{{$mallas -> miercolesinicio}}" required>
+                                                                onchange="calcular('horainiciomie','horafinmie','alminiciomie','almfinmie','htrabmie')"
+                                                                onclick="calcular('horainiciomie','horafinmie','alminiciomie','almfinmie','htrabmie')"
+                                                                type="time" name="miercolesinicio" id="horainiciomie"
+                                                                value="{{$mallas -> miercolesinicio}}">
                                                         </td>
                                                         <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
-                                                                type="time" name="miercolesfinal" id="horafin"
-                                                                value="{{$mallas -> miercolesfinal}}" required></td>
+                                                                onchange="calcular('horainiciomie','horafinmie','alminiciomie','almfinmie','htrabmie')"
+                                                                onclick="calcular('horainiciomie','horafinmie','alminiciomie','almfinmie','htrabmie')"
+                                                                type="time" name="miercolesfinal" id="horafinmie"
+                                                                value="{{$mallas -> miercolesfinal}}"></td>
                                                         <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
-                                                                type="time" name="miercoles_alm_inicio" id="alminicio"
-                                                                value="{{$mallas -> mie_alm_inicio}}" required>
+                                                                onclick="totalalm('alminiciomie','almfinmie')"
+                                                                type="time" name="miercoles_alm_inicio"
+                                                                id="alminiciomie" value="{{$mallas -> mie_alm_inicio}}">
                                                         </td>
                                                         <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
-                                                                type="time" name="miercoles_alm_final" id="almfin"
-                                                                value="{{$mallas -> mie_alm_final}}" required></td>
+                                                                type="time" name="miercoles_alm_final" id="almfinmie"
+                                                                value="{{$mallas -> mie_alm_final}}" disabled></td>
                                                         <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
-                                                                type="time" name="miercolesdescanso1" id="desc1"
-                                                                value="{{$mallas -> miercolesdescanso1}}" required></td>
+                                                                onclick="totaldes('descinimie','descfinmie')"
+                                                                onchange="totaldes('descinimie','descfinmie')"
+                                                                type="time" name="miercolesdescanso1" id="descinimie"
+                                                                value="{{$mallas -> miercolesdescanso1}}"></td>
                                                         <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
-                                                                type="time" name="miercolesdescanso2" id="desc2"
-                                                                value="{{$mallas -> miercolesdescanso2}}" required></td>
+                                                                type="time" name="miercolesdescanso2" id="descfinmie"
+                                                                value="{{$mallas -> miercolesdescanso2}}" disabled></td>
                                                     </tr>
                                                     <tr>
                                                         <th class="text-info text-center" style="font-size:1rem ;">
                                                             Jueves</th>
                                                         <td><input
                                                                 class="form-control text-info text-center font-weight-bold"
-                                                                style="font-size: 11px;" type="text" name="" id="htrab"
-                                                                disabled></td>
+                                                                style="font-size: medium;" type="text" name=""
+                                                                id="htrabjue" disabled></td>
                                                         <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
-                                                                type="time" name="juevesinicio" id="horainicio"
-                                                                value="{{$mallas -> juevesinicio}}" required>
+                                                                onchange="calcular('horainiciojue','horafinjue','alminiciojue','almfinjue','htrabjue')"
+                                                                onclick="calcular('horainiciojue','horafinjue','alminiciojue','almfinjue','htrabjue')"
+                                                                type="time" name="juevesinicio" id="horainiciojue"
+                                                                value="{{$mallas -> juevesinicio}}">
                                                         </td>
                                                         <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
-                                                                type="time" name="juevesfinal" id="horafin"
-                                                                value="{{$mallas -> juevesfinal}}" required></td>
+                                                                type="time" name="juevesfinal" id="horafinjue"
+                                                                onchange="calcular('horainiciojue','horafinjue','alminiciojue','almfinjue','htrabjue')"
+                                                                onclick="calcular('horainiciojue','horafinjue','alminiciojue','almfinjue','htrabjue')"
+                                                                value="{{$mallas -> juevesfinal}}"></td>
                                                         <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
-                                                                type="time" name="jueves_alm_inicio" id="alminicio"
-                                                                value="{{$mallas -> jue_alm_inicio}}" required></td>
+                                                                onclick="totalalm('alminiciojue','almfinjue')"
+                                                                type="time" name="jueves_alm_inicio" id="alminiciojue"
+                                                                value="{{$mallas -> jue_alm_inicio}}"></td>
                                                         <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
-                                                                type="time" name="jueves_alm_final" id="almfin"
-                                                                value="{{$mallas -> jue_alm_final}}" required></td>
+                                                                type="time" name="jueves_alm_final" id="almfinjue"
+                                                                value="{{$mallas -> jue_alm_final}}" disabled></td>
                                                         <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
-                                                                type="time" name="juevesdescanso1" id="desc1"
-                                                                value="{{$mallas -> juevesdescanso1}}" required></td>
+                                                                onchange="totaldes('descinijue','descfinjue')"
+                                                                onclick="totaldes('descinijue','descfinjue')"
+                                                                type="time" name="juevesdescanso1" id="descinijue"
+                                                                value="{{$mallas -> juevesdescanso1}}"></td>
                                                         <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
-                                                                type="time" name="juevesdescanso2" id="desc2"
-                                                                value="{{$mallas -> juevesdescanso2}}" required></td>
+                                                                type="time" name="juevesdescanso2" id="descfinjue"
+                                                                value="{{$mallas -> juevesdescanso2}}" disabled></td>
                                                     </tr>
                                                     <tr>
                                                         <th class="text-info text-center" style="font-size:1rem ;">
                                                             Viernes</th>
                                                         <td><input
                                                                 class="form-control text-info text-center font-weight-bold"
-                                                                style="font-size: 11px;" type="text" name="" id="htrab"
-                                                                disabled></td>
+                                                                style="font-size: medium;" type="text" name=""
+                                                                id="htrabvie" disabled></td>
                                                         <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
-                                                                type="time" name="viernesinicio" id="horainicio"
-                                                                value="{{$mallas -> viernesinicio}}" required></td>
+                                                                onchange="calcular('horainiciovie','horafinvie','alminiciovie','almfinvie','htrabvie')"
+                                                                onclick="calcular('horainiciovie','horafinvie','alminiciovie','almfinvie','htrabvie')"
+                                                                type="time" name="viernesinicio" id="horainiciovie"
+                                                                value="{{$mallas -> viernesinicio}}"></td>
                                                         <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
-                                                                type="time" name="viernesfinal" id="horafin"
-                                                                value="{{$mallas -> viernesfinal}}" required></td>
+                                                                onchange="calcular('horainiciovie','horafinvie','alminiciovie','almfinvie','htrabvie')"
+                                                                onclick="calcular('horainiciovie','horafinvie','alminiciovie','almfinvie','htrabvie')"
+                                                                type="time" name="viernesfinal" id="horafinvie"
+                                                                value="{{$mallas -> viernesfinal}}"></td>
                                                         <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
-                                                                type="time" name="viernes_alm_inicio" id="alminicio"
-                                                                value="{{$mallas -> vie_alm_inicio}}" required>
+                                                                onclick="totalalm('alminiciovie','almfinvie')"
+                                                                type="time" name="viernes_alm_inicio" id="alminiciovie"
+                                                                value="{{$mallas -> vie_alm_inicio}}">
                                                         </td>
                                                         <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
-                                                                type="time" name="viernes_alm_final" id="almfin"
-                                                                value="{{$mallas -> vie_alm_final}}" required></td>
+                                                                type="time" name="viernes_alm_final" id="almfinvie"
+                                                                value="{{$mallas -> vie_alm_final}}" disabled></td>
                                                         <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
-                                                                type="time" name="viernesdescanso1" id="desc1"
-                                                                value="{{$mallas -> viernesdescanso1}}" required></td>
+                                                                onchange="totaldes('descinivie','descfinvie')"
+                                                                onclick="totaldes('descinivie','descfinvie')"
+                                                                type="time" name="viernesdescanso1" id="descinivie"
+                                                                value="{{$mallas -> viernesdescanso1}}"></td>
                                                         <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
-                                                                type="time" name="viernesdescanso2" id="desc2"
-                                                                value="{{$mallas -> viernesdescanso2}}" required></td>
+                                                                type="time" name="viernesdescanso2" id="descfinvie"
+                                                                value="{{$mallas -> viernesdescanso2}}" disabled></td>
                                                     </tr>
                                                     <tr>
                                                         <th class="text-info text-center" style="font-size:1rem ;">
                                                             Sabado</th>
                                                         <td><input
                                                                 class="form-control text-info text-center font-weight-bold"
-                                                                style="font-size: 11px;" type="text" name="" id="htrab"
-                                                                disabled></td>
+                                                                style="font-size: medium;" type="text" name=""
+                                                                id="htrabsab" disabled></td>
                                                         <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
-                                                                type="time" name="sabadoinicio" id="horainicio"
-                                                                value="{{$mallas -> sabadoinicio}}" required></td>
+                                                                type="time" name="sabadoinicio" id="horainiciosab"
+                                                                onchange="calcular('horainiciosab','horafinsab','alminiciosab','almfinsab','htrabsab')"
+                                                                onclick="calcular('horainiciosab','horafinsab','alminiciosab','almfinsab','htrabsab')"
+                                                                value="{{$mallas -> sabadoinicio}}"></td>
                                                         <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
-                                                                type="time" name="sabadofinal" id="horafin"
-                                                                value="{{$mallas -> sabadofinal}}" required></td>
+                                                                onchange="calcular('horainiciosab','horafinsab','alminiciosab','almfinsab','htrabsab')"
+                                                                onclick="calcular('horainiciosab','horafinsab','alminiciosab','almfinsab','htrabsab')"
+                                                                type="time" name="sabadofinal" id="horafinsab"
+                                                                value="{{$mallas -> sabadofinal}}" r></td>
                                                         <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
-                                                                type="time" name="sabado_alm_inicio" id="alminicio"
-                                                                value="{{$mallas -> sab_alm_inicio}}" required></td>
+                                                                onclick="totalalm('alminiciosab','almfinsab')"
+                                                                type="time" name="sabado_alm_inicio" id="alminiciosab"
+                                                                value="{{$mallas -> sab_alm_inicio}}"></td>
+                                                        <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
+                                                                font-weight:bold; font-size:11px; color:teal;"
+                                                                type="time" name="sabado_alm_final" id="almfinsab"
+                                                                value="{{$mallas -> sab_alm_final}}" disabled></td>
                                                         <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
-                                                                type="time" name="sabado_alm_final" id="almfin"
-                                                                value="{{$mallas -> sab_alm_final}}" required></td>
+                                                                onchange="totaldes('descinisab','descfinsab')"
+                                                                onclick="totaldes('descinisab','descfinsab')"
+                                                                type="time" name="sabadodescanso1" id="descinisab"
+                                                                value="{{$mallas -> sabadodescanso1}}"></td>
                                                         <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
-                                                                type="time" name="sabadodescanso1" id="desc1"
-                                                                value="{{$mallas -> sabadodescanso1}}" required></td>
-                                                        <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
-                                                                 font-weight:bold; font-size:11px; color:teal;"
-                                                                type="time" name="sabadodescanso2" id="desc2"
-                                                                value="{{$mallas -> sabadodescanso2}}" required></td>
+                                                                type="time" name="sabadodescanso2" id="descfinsab"
+                                                                value="{{$mallas -> sabadodescanso2}}" disabled></td>
                                                     </tr>
                                                     <tr>
                                                         <th class="text-info text-center" style="font-size:1rem ;">
                                                             Domingo</th>
                                                         <td><input
                                                                 class="form-control text-info text-center font-weight-bold"
-                                                                style="font-size: 11px;" type="text" name="" id="htrab"
-                                                                disabled></td>
+                                                                style="font-size: medium;" type="text" name=""
+                                                                id="htrabdom" disabled></td>
                                                         <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
-                                                                type="time" name="domingoinicio" id="horainicio"
+                                                                onchange="calcular('horainiciodom','horafindom','alminiciodom','almfindom','htrabdom')"
+                                                                onclick="calcular('horainiciodom','horafindom','alminiciodom','almfindom','htrabdom')"
+                                                                type="time" name="domingoinicio" id="horainiciodom"
                                                                 value="{{$mallas -> domingoinicio}}"></td>
                                                         <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
-                                                                type="time" name="domingofinal" id="horafin"
+                                                                onchange="calcular('horainiciodom','horafindom','alminiciodom','almfindom','htrabdom')"
+                                                                onclick="calcular('horainiciodom','horafindom','alminiciodom','almfindom','htrabdom')"
+                                                                type="time" name="domingofinal" id="horafindom"
                                                                 value="{{$mallas -> domingofinal}}"></td>
                                                         <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
-                                                                type="time" name="domingodescanso1" id="desc1"
+                                                                onclick="totalalm('alminiciodom','almfindom')"
+                                                                type="time" name="domingo_alm_inicio" id="alminiciodom"
+                                                                value="{{$mallas -> dom_alm_inicio}}"></td>
+                                                        <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
+                                                                 font-weight:bold; font-size:11px; color:teal;"
+                                                                type="time" name="domingo_alm_final" id="almfindom"
+                                                                value="{{$mallas -> dom_alm_final}}" disabled></td>
+                                                        <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
+                                                                 font-weight:bold; font-size:11px; color:teal;"
+                                                                onchange="totaldes('desiniciodom','desfindom')"
+                                                                type="time" name="domingodescanso1" id="desiniciodom"
                                                                 value="{{$mallas -> domingodescanso1}}"></td>
                                                         <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
-                                                                type="time" name="domingo_alm_inicio" id="alminicio"
-                                                                value="{{$mallas -> dom_alm_inicio}}">
-                                                        </td>
-                                                        <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
-                                                                 font-weight:bold; font-size:11px; color:teal;"
-                                                                type="time" name="domingo_alm_final" id="almfin"
-                                                                value="{{$mallas -> dom_alm_final}}"></td>
-                                                        <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
-                                                                 font-weight:bold; font-size:11px; color:teal;"
-                                                                type="time" name="domingodescanso2" id="desc2"
-                                                                value="{{$mallas -> domingodescanso2}}"></td>
+                                                                type="time" name="domingodescanso2" id="desfindom"
+                                                                value="{{$mallas -> domingodescanso2}}" disabled></td>
                                                     </tr>
                                                     <script>
+                                                    /*funcion calcular hora de trabajo total  */
                                                     function calcular(id1, id2, id3, id4, id5) {
 
 
@@ -344,6 +388,172 @@
                                                         let d = parseFloat(document.getElementById(id4).value) || 0;
                                                         let total = document.getElementById(id5).value = (b - a) - (
                                                             d - c) + "-horas";
+                                                    }
+                                                    /*  funcion automatización hora almuerzo*/
+                                                    function totalalm($id1, $id2) {
+                                                        let hora1Input = document.getElementById($id1);
+                                                        let hora2Input = document.getElementById($id2);
+
+                                                        hora1Input.addEventListener('change', () => {
+                                                            // Obtener el valor de la hora 1
+                                                            let hora1Value = hora1Input.value;
+                                                            // Crear un objeto de fecha con la fecha actual
+                                                            let fechaActual = new Date();
+                                                            // Obtener las horas y minutos de la hora 1
+                                                            let [hora, minuto] = hora1Value.split(':');
+                                                            // Configurar la fecha actual con las horas y minutos de la hora 1
+                                                            fechaActual.setHours(hora);
+                                                            fechaActual.setMinutes(minuto);
+                                                            // Sumar una hora a la fecha actual
+                                                            fechaActual.setHours(fechaActual.getHours() + 1);
+                                                            // Obtener la hora y los minutos de la fecha actualizada
+                                                            const hora2 = fechaActual.getHours().toString()
+                                                                .padStart(2,
+                                                                    '0');
+                                                            const minuto2 = fechaActual.getMinutes().toString()
+                                                                .padStart(2, '0');
+                                                            // Actualizar el valor del input de hora 2
+                                                            hora2Input.value = `${hora2}:${minuto2}`;
+                                                        });
+                                                    }
+                                                    /*  funcion automatización break*/
+                                                    function totaldes($id1, $id2) {
+                                                        let hora1Input = document.getElementById($id1);
+                                                        let hora2Input = document.getElementById($id2);
+
+                                                        hora1Input.addEventListener('change', () => {
+
+                                                            let hora1Value = hora1Input.value;
+                                                            let fechaActual = new Date();
+                                                            let [hora, minuto] = hora1Value.split(':');
+
+                                                            fechaActual.setHours(hora);
+                                                            fechaActual.setMinutes(minuto);
+                                                            // Sumar 20 minutos a la fecha actual
+                                                            fechaActual.setMinutes(fechaActual.getMinutes() +
+                                                                20);
+                                                            // Obtener la hora y los minutos de la fecha actualizada
+                                                            const hora2 = fechaActual.getHours().toString()
+                                                                .padStart(2, '0');
+                                                            const minuto2 = fechaActual.getMinutes().toString()
+                                                                .padStart(2, '0');
+                                                            // Actualizar el valor del input de hora 2
+                                                            hora2Input.value = `${hora2}:${minuto2}`;
+                                                        });
+                                                    }
+
+
+                                                    function DiaDescanso() {
+                                                        const fechaInput = document.getElementById('diadescanso');
+
+
+                                                        let lun1Input = document.getElementById('horainicio');
+                                                        let lun2Input = document.getElementById('horafin');
+                                                        let lun3Input = document.getElementById('alminicio');
+                                                        let lun4Input = document.getElementById('descinilun');
+
+                                                        let mar1Input = document.getElementById('horainiciomar');
+                                                        let mar2Input = document.getElementById('horafinmar');
+                                                        let mar3Input = document.getElementById('alminiciomar');
+                                                        let mar4Input = document.getElementById('desinimar');
+
+                                                        let mie1Input = document.getElementById('horainiciomie');
+                                                        let mie2Input = document.getElementById('horafinmie');
+                                                        let mie3Input = document.getElementById('alminiciomie');
+                                                        let mie4Input = document.getElementById('descinimie');
+
+                                                        let jue1Input = document.getElementById('horainiciojue');
+                                                        let jue2Input = document.getElementById('horafinjue');
+                                                        let jue3Input = document.getElementById('alminiciojue');
+                                                        let jue4Input = document.getElementById('descinijue');
+
+                                                        let vie1Input = document.getElementById('horainiciovie');
+                                                        let vie2Input = document.getElementById('horafinvie');
+                                                        let vie3Input = document.getElementById('alminiciovie');
+                                                        let vie4Input = document.getElementById('descinivie');
+
+                                                        let sab1Input = document.getElementById('horainiciosab');
+                                                        let sab2Input = document.getElementById('horafinsab');
+                                                        let sab3Input = document.getElementById('alminiciosab');
+                                                        let sab4Input = document.getElementById('descinisab');
+
+                                                        let dom1Input = document.getElementById('horainiciodom');
+                                                        let dom2Input = document.getElementById('horafindom');
+                                                        let dom3Input = document.getElementById('alminiciodom');
+                                                        let dom4Input = document.getElementById('descinidom');
+                                                        //
+                                                        const fechaSeleccionada = fechaInput.value;
+                                                        const fecha = new Date(fechaSeleccionada);
+                                                        let diaSemana = fecha.getDay();
+
+                                                        switch (diaSemana) {
+
+                                                            case 6: // Domingo
+                                                                dom1Input.disabled = true;
+                                                                dom2Input.disabled = true;
+                                                                dom3Input.disabled = true;
+                                                                dom4Input.disabled = true;
+                                                                break;
+                                                            case 0: // Lunes
+                                                                lun1Input.disabled = true;
+                                                                lun2Input.disabled = true;
+                                                                lun3Input.disabled = true;
+                                                                lun4Input.disabled = true;
+                                                                break;
+                                                            case 1: // Martes
+                                                                mar1Input.disabled = true;
+                                                                mar2Input.disabled = true;
+                                                                mar3Input.disabled = true;
+                                                                mar4Input.disabled = true;
+                                                                break;
+                                                            case 2: // Miercoles
+                                                                mie1Input.disabled = true;
+                                                                mie2Input.disabled = true;
+                                                                mie3Input.disabled = true;
+                                                                mie4Input.disabled = true;
+                                                                break;
+                                                            case 3: // Jueves
+                                                                jue1Input.disabled = true;
+                                                                jue2Input.disabled = true;
+                                                                jue3Input.disabled = true;
+                                                                jue4Input.disabled = true;
+                                                                break;
+                                                            case 4: // viernes
+                                                                vie1Input.disabled = true;
+                                                                vie2Input.disabled = true;
+                                                                vie3Input.disabled = true;
+                                                                vie4Input.disabled = true;
+                                                                break;
+                                                            case 5: // sabado
+                                                                sab1Input.disabled = true;
+                                                                sab2Input.disabled = true;
+                                                                sab3Input.disabled = true;
+                                                                sab4Input.disabled = true;
+                                                                break;
+                                                        }
+                                                    }
+
+                                                    function Reset() {
+                                                        var ids = ["horainicio", "horafin", "alminicio", "descinilun",
+                                                            "horainiciomar", "horafinmar", "alminiciomar",
+                                                            "desinimar",
+                                                            "horainiciomie", "horafinmie", "alminiciomie",
+                                                            "descinimie",
+                                                            "horainiciojue", "horafinjue", "alminiciojue",
+                                                            "descinijue",
+                                                            "horainiciovie", "horafinvie", "alminiciovie",
+                                                            "descinivie",
+                                                            "horainiciosab", "horafinsab", "alminiciosab",
+                                                            "descinisab",
+                                                            "horainiciodom", "horafindom", "alminiciodom",
+                                                            "descinidom"
+                                                        ]
+                                                        for (i = 0; i < ids.length; i++) {
+
+                                                            var input = document.getElementById(ids[i]);
+                                                            input.disabled = false;
+                                                            // input.value = "";
+                                                        }
                                                     }
                                                     </script>
                                                 </tbody>

@@ -41,7 +41,8 @@
                                             </div>
                                             <div class="form-group col-sm-3 ">
                                                 <label class="text-info" for="semana"><b>Dia-descanso</b></label>
-                                                <input type="date" class="form-control mt-3" oninput="DiaDescanso()" onclick="Reset()"
+                                                <input type="date" class="form-control mt-3" oninput="DiaDescanso()"
+                                                    onclick="Reset()"
                                                     min="<?php echo date("Y-m-d",strtotime(date("Y-m-d")."+4 days"));?>"
                                                     max="<?php echo date("Y-m-d",strtotime(date("Y-m-d")."+11 days"));?>"
                                                     name="diadescanso" id="diadescanso" required>
@@ -137,36 +138,38 @@
                                                                 type="time" name="lunesinicio" id="horainicio"
                                                                 onchange="calcular('horainicio','horafin','alminicio','almfin','htrab')"
                                                                 onclick="calcular('horainicio','horafin','alminicio','almfin','htrab')"
-                                                                value="08:00:00"></td>
+                                                                value=""></td>
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal;  font-size:11px;"
                                                                 onchange="calcular('horainicio','horafin','alminicio','almfin','htrab')"
                                                                 onclick="calcular('horainicio','horafin','alminicio','almfin','htrab')"
                                                                 type="time" name="lunesfinal" id="horafin"
-                                                                value="17:00:00" required></td>
+                                                                value=""></td>
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal; font-size:11px;"
                                                                 onclick="totalalm('alminicio','almfin')" type="time"
-                                                                name="lunes_alm_inicio" id="alminicio" value="13:00:00">
+                                                                name="lunes_alm_inicio" id="alminicio" value="">
                                                         </td>
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal;  font-size:11px;"
                                                                 type="time" name="lunes_alm_final" id="almfin"
-                                                                value="14:00:00" disabled></td>
+                                                                value="" disabled></td>
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal;  font-size:11px;"
-                                                                onclick="totaldes('desc1','desc2')" type="time"
-                                                                name="lunesdescanso1" id="descinilun" value="10:00:00">
+                                                                onclick="totaldes('descinilun','descfinlun')"
+                                                                onchange="totaldes('descinilun','descfinlun')"
+                                                                type="time" name="lunesdescanso1" id="descinilun"
+                                                                value="">
                                                         </td>
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal;  font-size:11px;"
                                                                 type="time" name="lunesdescanso2" id="descfinlun"
-                                                                value="16:00:00" disabled></td>
+                                                                value="" disabled></td>
                                                     </tr>
                                                     <tr>
                                                         <th class="text-info text-center" style="font-size:1rem ;">
@@ -181,7 +184,7 @@
                                                                 onchange="calcular('horainiciomar','horafinmar','alminiciomar','almfinmar','htrabmar')"
                                                                 onclick="calcular('horainiciomar','horafinmar','alminiciomar','almfinmar','htrabmar')"
                                                                 type="time" name="martesinicio" id="horainiciomar"
-                                                                value="08:00:00" required>
+                                                                value="">
                                                         </td>
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
@@ -189,29 +192,31 @@
                                                                 onchange="calcular('horainiciomar','horafinmar','alminiciomar','almfinmar','htrabmar')"
                                                                 onclick="calcular('horainiciomar','horafinmar','alminiciomar','almfinmar','htrabmar')"
                                                                 type="time" name="martesfinal" id="horafinmar"
-                                                                value="17:00:00" required></td>
+                                                                value="" ></td>
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal;font-size:11px;"
-                                                                onclick="totalalm('alminiciomar','almfinmar')"
+                                                                  onclick="totalalm('alminiciomar','almfinmar')"
                                                                 type="time" name="martes_alm_inicio" id="alminiciomar"
-                                                                value="13:00:00" required>
+                                                                value="">
                                                         </td>
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal; font-size:11px;"
                                                                 type="time" name="martes_alm_final" id="almfinmar"
-                                                                value="14:00:00" disabled></td>
+                                                                value="" disabled></td>
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal; font-size:11px;"
                                                                 type="time" name="martesdescanso1" id="desinimar"
-                                                                value="10:00:00" required></td>
+                                                                onclick="totaldes('desinimar','descfinmar')"
+                                                                onchange="totaldes('desinimar','descfinmar')"
+                                                                value=""></td>
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal; font-size:11px;"
                                                                 type="time" name="martesdescanso2" id="descfinmar"
-                                                                value="16:00:00" disabled></td>
+                                                                value="" disabled></td>
                                                     </tr>
                                                     <tr>
                                                         <th class="text-info text-center" style="font-size:1rem;">
@@ -226,7 +231,7 @@
                                                                 onchange="calcular('horainiciomie','horafinmie','alminiciomie','almfinmie','htrabmie')"
                                                                 onclick="calcular('horainiciomie','horafinmie','alminiciomie','almfinmie','htrabmie')"
                                                                 type="time" name="miercolesinicio" id="horainiciomie"
-                                                                value="08:00:00" required>
+                                                                value="">
                                                         </td>
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
@@ -234,29 +239,31 @@
                                                                 onchange="calcular('horainiciomie','horafinmie','alminiciomie','almfinmie','htrabmie')"
                                                                 onclick="calcular('horainiciomie','horafinmie','alminiciomie','almfinmie','htrabmie')"
                                                                 type="time" name="miercolesfinal" id="horafinmie"
-                                                                value="17:00:00" required></td>
+                                                                value=""></td>
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal; font-size:11px;"
                                                                 onclick="totalalm('alminiciomie','almfinmie')"
                                                                 type="time" name="miercoles_alm_inicio"
-                                                                id="alminiciomie" value="13:00:00" required>
+                                                                id="alminiciomie" value="">
                                                         </td>
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal; font-size:11px;"
                                                                 type="time" name="miercoles_alm_final" id="almfinmie"
-                                                                value="14:00:00" disabled></td>
+                                                                value="" disabled></td>
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal; font-size:11px;"
                                                                 type="time" name="miercolesdescanso1" id="descinimie"
-                                                                value="10:00:00" required></td>
+                                                                onclick="totaldes('descinimie','descfinmie')"
+                                                                onchange="totaldes('descinimie','descfinmie')"
+                                                                value=""></td>
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal; font-size:11px;"
                                                                 type="time" name="miercolesdescanso2" id="descfinmie"
-                                                                value="16:00:00" disabled></td>
+                                                                value="" disabled></td>
                                                     </tr>
                                                     <tr>
                                                         <th class="text-info text-center" style="font-size:1rem;">
@@ -271,7 +278,7 @@
                                                                 onchange="calcular('horainiciojue','horafinjue','alminiciojue','almfinjue','htrabjue')"
                                                                 onclick="calcular('horainiciojue','horafinjue','alminiciojue','almfinjue','htrabjue')"
                                                                 type="time" name="juevesinicio" id="horainiciojue"
-                                                                value="08:00:00" required>
+                                                                value="" >
                                                         </td>
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
@@ -279,29 +286,31 @@
                                                                 onchange="calcular('horainiciojue','horafinjue','alminiciojue','almfinjue','htrabjue')"
                                                                 onclick="calcular('horainiciojue','horafinjue','alminiciojue','almfinjue','htrabjue')"
                                                                 type="time" name="juevesfinal" id="horafinjue"
-                                                                value="17:00:00" required></td>
+                                                                value="" ></td>
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal; font-size:11px;"
                                                                 onclick="totalalm('alminiciojue','almfinjue')"
                                                                 type="time" name="jueves_alm_inicio" id="alminiciojue"
-                                                                value="13:00:00" required>
+                                                                value="" required>
                                                         </td>
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal; font-size:11px;"
                                                                 type="time" name="jueves_alm_final" id="almfinjue"
-                                                                value="14:00:00" disabled></td>
+                                                                value="" disabled></td>
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal; font-size:11px;"
                                                                 type="time" name="juevesdescanso1" id="descinijue"
-                                                                value="10:00:00" required></td>
+                                                                onchange="totaldes('descinijue','descfinjue')"
+                                                                onclick="totaldes('descinijue','descfinjue')"
+                                                                value=""></td>
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal;font-size:11px;"
                                                                 type="time" name="juevesdescanso2" id="descfinjue"
-                                                                value="16:00:00" disabled></td>
+                                                                value="" disabled></td>
                                                     </tr>
                                                     <tr>
                                                         <th class="text-info text-center" style="font-size:1rem;">
@@ -316,36 +325,38 @@
                                                                 onchange="calcular('horainiciovie','horafinvie','alminiciovie','almfinvie','htrabvie')"
                                                                 onclick="calcular('horainiciovie','horafinvie','alminiciovie','almfinvie','htrabvie')"
                                                                 type="time" name="viernesinicio" id="horainiciovie"
-                                                                value="08:00:00" required></td>
+                                                                value=""></td>
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal;font-size:11px;"
                                                                 onchange="calcular('horainiciovie','horafinvie','alminiciovie','almfinvie','htrabvie')"
                                                                 onclick="calcular('horainiciovie','horafinvie','alminiciovie','almfinvie','htrabvie')"
                                                                 type="time" name="viernesfinal" id="horafinvie"
-                                                                value="17:00:00" required></td>
+                                                                value=""></td>
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal;font-size:11px;"
                                                                 onclick="totalalm('alminiciovie','almfinvie')"
                                                                 type="time" name="viernes_alm_inicio" id="alminiciovie"
-                                                                value="13:00:00" required>
+                                                                value="">
                                                         </td>
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal;font-size:11px;"
                                                                 type="time" name="viernes_alm_final" id="almfinvie"
-                                                                value="14:00:00" disabled></td>
+                                                                value="" disabled></td>
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal;font-size:11px;"
                                                                 type="time" name="viernesdescanso1" id="descinivie"
-                                                                value="10:00:00" required></td>
+                                                                onchange="totaldes('descinivie','descfinvie')"
+                                                                onclick="totaldes('descinivie','descfinvie')"
+                                                                value=""></td>
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal;font-size:11px;"
                                                                 type="time" name="viernesdescanso2" id="descfinvie"
-                                                                value="16:00:00" disabled></td>
+                                                                value="" disabled></td>
                                                     </tr>
                                                     <tr>
                                                         <th class="text-info text-center" style="font-size:1rem;">
@@ -360,36 +371,38 @@
                                                                 onchange="calcular('horainiciosab','horafinsab','alminiciosab','almfinsab','htrabsab')"
                                                                 onclick="calcular('horainiciosab','horafinsab','alminiciosab','almfinsab','htrabsab')"
                                                                 type="time" name="sabadoinicio" id="horainiciosab"
-                                                                value="08:00:00" required></td>
+                                                                value=""></td>
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal;font-size:11px;"
                                                                 onchange="calcular('horainiciosab','horafinsab','alminiciosab','almfinsab','htrabsab')"
                                                                 onclick="calcular('horainiciosab','horafinsab','alminiciosab','almfinsab','htrabsab')"
                                                                 type="time" name="sabadofinal" id="horafinsab"
-                                                                value="17:00:00" required></td>
+                                                                value="" ></td>
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal;font-size:11px;"
                                                                 onclick="totalalm('alminiciosab','almfinsab')"
                                                                 type="time" name="sabado_alm_inicio" id="alminiciosab"
-                                                                value="13:00:00" required>
+                                                                value="">
                                                         </td>
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal;font-size:11px;"
                                                                 type="time" name="sabado_alm_final" id="almfinsab"
-                                                                value="14:00:00" disabled></td>
+                                                                value="" disabled></td>
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal;font-size:11px;"
                                                                 type="time" name="sabadodescanso1" id="descinisab"
-                                                                value="10:00:00" required></td>
+                                                                onchange="totaldes('descinisab','descfinsab')"
+                                                                onclick="totaldes('descinisab','descfinsab')"
+                                                                value="" required></td>
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal;font-size:11px;"
                                                                 type="time" name="sabadodescanso2" id="descfinsab"
-                                                                value="16:00:00" disabled></td>
+                                                                value="" disabled></td>
                                                     </tr>
                                                     <tr>
                                                         <th class="text-info text-center" style="font-size:1rem;">
@@ -425,6 +438,8 @@
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal;font-size:11px;"
+                                                                onchange="totaldes('descinidom','descfindom')"
+                                                                onclick="totaldes('descinidom','descfindom')"
                                                                 type="time" name="domingodescanso1" id="descinidom">
                                                         </td>
                                                         <td><input
@@ -480,13 +495,11 @@
                                                     let hora2Input = document.getElementById($id2);
 
                                                     hora1Input.addEventListener('change', () => {
-                                                        // Obtener el valor de la hora 1
+
                                                         let hora1Value = hora1Input.value;
-                                                        // Crear un objeto de fecha con la fecha actual
                                                         let fechaActual = new Date();
-                                                        // Obtener las horas y minutos de la hora 1
                                                         let [hora, minuto] = hora1Value.split(':');
-                                                        // Configurar la fecha actual con las horas y minutos de la hora 1
+
                                                         fechaActual.setHours(hora);
                                                         fechaActual.setMinutes(minuto);
                                                         // Sumar 20 minutos a la fecha actual
@@ -591,14 +604,15 @@
                                                             break;
                                                     }
                                                 }
+
                                                 function Reset() {
                                                     var ids = ["horainicio", "horafin", "alminicio", "descinilun",
-                                                        "horainiciomar","horafinmar", "alminiciomar", "desinimar",
-                                                         "horainiciomie","horafinmie", "alminiciomie", "descinimie",
-                                                         "horainiciojue","horafinjue", "alminiciojue", "descinijue", 
-                                                         "horainiciovie","horafinvie", "alminiciovie", "descinivie", 
-                                                         "horainiciosab","horafinsab", "alminiciosab", "descinisab", 
-                                                         "horainiciodom","horafindom", "alminiciodom", "descinidom"
+                                                        "horainiciomar", "horafinmar", "alminiciomar", "desinimar",
+                                                        "horainiciomie", "horafinmie", "alminiciomie", "descinimie",
+                                                        "horainiciojue", "horafinjue", "alminiciojue", "descinijue",
+                                                        "horainiciovie", "horafinvie", "alminiciovie", "descinivie",
+                                                        "horainiciosab", "horafinsab", "alminiciosab", "descinisab",
+                                                        "horainiciodom", "horafindom", "alminiciodom", "descinidom"
                                                     ]
                                                     for (i = 0; i < ids.length; i++) {
 
