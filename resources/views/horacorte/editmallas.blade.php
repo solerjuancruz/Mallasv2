@@ -108,7 +108,7 @@
                                                                 onchange="calcular('horainicio','horafin','alminicio','almfin','htrab')"
                                                                 onclick="calcular('horainicio','horafin','alminicio','almfin','htrab')"
                                                                 value="{{$mallas -> lunesinicio}}"></td>
-                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
                                                                 type="time" name="lunesfinal" id="horafin"
                                                                 onchange="calcular('horainicio','horafin','alminicio','almfin','htrab')"
@@ -612,6 +612,12 @@
                                                     </script>
                                                 </tbody>
                                             </table>
+                                            <div class="form-floating  border col-md-12  mt-3 p-2">
+                                                <label class="text-info" for="observaciones"><b>Ingresa tu
+                                                        Observación</b></label>
+                                                <textarea class="form-control" placeholder="Observaciones..."
+                                                    id="observaciones"></textarea>
+                                            </div>
                                         </div>
                                         <div class="d-flex justify-content-end m-4">
                                             <a class="btn btn-sm btn-secundary mr-2"
