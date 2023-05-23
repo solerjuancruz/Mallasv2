@@ -442,45 +442,57 @@
                                                         });
                                                     }
 
-
+                                                    /*funcion seleccion de dia descanso*/
                                                     function DiaDescanso() {
                                                         const fechaInput = document.getElementById('diadescanso');
-
-
                                                         let lun1Input = document.getElementById('horainicio');
                                                         let lun2Input = document.getElementById('horafin');
                                                         let lun3Input = document.getElementById('alminicio');
                                                         let lun4Input = document.getElementById('descinilun');
+                                                        let lun5Imput = document.getElementById('descfinlun');
+                                                        let lun6Imput = document.getElementById('almfin');
 
                                                         let mar1Input = document.getElementById('horainiciomar');
                                                         let mar2Input = document.getElementById('horafinmar');
                                                         let mar3Input = document.getElementById('alminiciomar');
                                                         let mar4Input = document.getElementById('desinimar');
+                                                        let mar5Imput = document.getElementById('descfinmar');
+                                                        let mar6Imput = document.getElementById('almfinmar');
 
                                                         let mie1Input = document.getElementById('horainiciomie');
                                                         let mie2Input = document.getElementById('horafinmie');
                                                         let mie3Input = document.getElementById('alminiciomie');
                                                         let mie4Input = document.getElementById('descinimie');
+                                                        let mie5Imput = document.getElementById('descfinmie');
+                                                        let mie6Imput = document.getElementById('almfinmie');
 
                                                         let jue1Input = document.getElementById('horainiciojue');
                                                         let jue2Input = document.getElementById('horafinjue');
                                                         let jue3Input = document.getElementById('alminiciojue');
                                                         let jue4Input = document.getElementById('descinijue');
+                                                        let jue5Imput = document.getElementById('descfinjue');
+                                                        let jue6Imput = document.getElementById('almfinjue');
 
                                                         let vie1Input = document.getElementById('horainiciovie');
                                                         let vie2Input = document.getElementById('horafinvie');
                                                         let vie3Input = document.getElementById('alminiciovie');
                                                         let vie4Input = document.getElementById('descinivie');
+                                                        let vie5Imput = document.getElementById('descfinvie');
+                                                        let vie6Imput = document.getElementById('almfinvie');
 
                                                         let sab1Input = document.getElementById('horainiciosab');
                                                         let sab2Input = document.getElementById('horafinsab');
                                                         let sab3Input = document.getElementById('alminiciosab');
                                                         let sab4Input = document.getElementById('descinisab');
+                                                        let sab5Imput = document.getElementById('descfinsab');
+                                                        let sab6Imput = document.getElementById('almfinsab');
 
                                                         let dom1Input = document.getElementById('horainiciodom');
                                                         let dom2Input = document.getElementById('horafindom');
                                                         let dom3Input = document.getElementById('alminiciodom');
                                                         let dom4Input = document.getElementById('descinidom');
+                                                        let dom5Imput = document.getElementById('desfindom');
+                                                        let dom6Imput = document.getElementById('almfindom');
                                                         //
                                                         const fechaSeleccionada = fechaInput.value;
                                                         const fecha = new Date(fechaSeleccionada);
@@ -493,46 +505,78 @@
                                                                 dom2Input.disabled = true;
                                                                 dom3Input.disabled = true;
                                                                 dom4Input.disabled = true;
+                                                                dom1Input.value = "";
+                                                                dom2Input.value = "";
+                                                                dom3Input.value = "";
+                                                                dom4Input.value = "";
                                                                 break;
                                                             case 0: // Lunes
                                                                 lun1Input.disabled = true;
                                                                 lun2Input.disabled = true;
                                                                 lun3Input.disabled = true;
                                                                 lun4Input.disabled = true;
+                                                                lun1Input.value = "";
+                                                                lun2Input.value = "";
+                                                                lun3Input.value = "";
+                                                                lun4Input.value = "";
+                                                                lun5Imput.value = "";
+                                                                lun6Imput.value = "";
+
                                                                 break;
                                                             case 1: // Martes
                                                                 mar1Input.disabled = true;
                                                                 mar2Input.disabled = true;
                                                                 mar3Input.disabled = true;
                                                                 mar4Input.disabled = true;
+                                                                mar1Input.value = "";
+                                                                mar2Input.value = "";
+                                                                mar3Input.value = "";
+                                                                mar4Input.value = "";
                                                                 break;
                                                             case 2: // Miercoles
                                                                 mie1Input.disabled = true;
                                                                 mie2Input.disabled = true;
                                                                 mie3Input.disabled = true;
                                                                 mie4Input.disabled = true;
+                                                                mie1Input.value = "";
+                                                                mie2Input.value = "";
+                                                                mie3Input.value = "";
+                                                                mie4Input.value = "";
                                                                 break;
                                                             case 3: // Jueves
                                                                 jue1Input.disabled = true;
                                                                 jue2Input.disabled = true;
                                                                 jue3Input.disabled = true;
                                                                 jue4Input.disabled = true;
+                                                                jue1Input.value = "";
+                                                                jue2Input.value = "";
+                                                                jue3Input.value = "";
+                                                                jue4Input.value = "";
                                                                 break;
                                                             case 4: // viernes
                                                                 vie1Input.disabled = true;
                                                                 vie2Input.disabled = true;
                                                                 vie3Input.disabled = true;
                                                                 vie4Input.disabled = true;
+                                                                vie1Input.value = "";
+                                                                vie2Input.value = "";
+                                                                vie3Input.value = "";
+                                                                vie4Input.value = "";
                                                                 break;
                                                             case 5: // sabado
+
                                                                 sab1Input.disabled = true;
                                                                 sab2Input.disabled = true;
                                                                 sab3Input.disabled = true;
                                                                 sab4Input.disabled = true;
+                                                                sab1Input.value = "";
+                                                                sab2Input.value = "";
+                                                                sab3Input.value = "";
+                                                                sab4Input.value = "";
                                                                 break;
                                                         }
                                                     }
-
+                                                    /*funcion de reseteo inputs */
                                                     function Reset() {
                                                         var ids = ["horainicio", "horafin", "alminicio", "descinilun",
                                                             "horainiciomar", "horafinmar", "alminiciomar",
@@ -552,7 +596,7 @@
 
                                                             var input = document.getElementById(ids[i]);
                                                             input.disabled = false;
-                                                            // input.value = "";
+
                                                         }
                                                     }
                                                     </script>
