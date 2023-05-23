@@ -219,7 +219,7 @@ class MallasController extends Controller
 
   
         $mallas = Malla::find($id);
-        // $mallas ->users_id= $request->get('users_id');
+        $mallas ->users_id= $request->get('users_id');
         $mallas ->semana= $request->get('semana');
         $mallas ->campaña=$request->get('campaña');
         $mallas ->foco=$request->get('foco');

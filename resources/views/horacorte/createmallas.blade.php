@@ -53,7 +53,7 @@
                                             <div class="form-group col-sm-3 mt-4">
                                                 <label class="text-info " for="campaña"><b>Campaña</b></label>
                                                 <input type="text" value="MOVISTAR" class="form-control mt-3"
-                                                    id="campaña" name="campaña" disabled>
+                                                    id="campaña" name="campaña">
                                             </div>
                                             <div class="form-group col-sm-3">
                                                 <label class="text-info" for="foco"><b>Foco</b></label></label>
@@ -144,8 +144,8 @@
                                                                  font-weight:bold; text-align:end; color:teal;  font-size:11px;"
                                                                 onchange="calcular('horainicio','horafin','alminicio','almfin','htrab')"
                                                                 onclick="calcular('horainicio','horafin','alminicio','almfin','htrab')"
-                                                                type="time" name="lunesfinal" id="horafin"
-                                                                value=""></td>
+                                                                type="time" name="lunesfinal" id="horafin" value="">
+                                                        </td>
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal; font-size:11px;"
@@ -155,8 +155,8 @@
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal;  font-size:11px;"
-                                                                type="time" name="lunes_alm_final" id="almfin"
-                                                                value="" disabled></td>
+                                                                type="time" name="lunes_alm_final" id="almfin" value=""
+                                                                disabled></td>
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal;  font-size:11px;"
@@ -191,12 +191,12 @@
                                                                  font-weight:bold; text-align:end; color:teal; font-size:11px;"
                                                                 onchange="calcular('horainiciomar','horafinmar','alminiciomar','almfinmar','htrabmar')"
                                                                 onclick="calcular('horainiciomar','horafinmar','alminiciomar','almfinmar','htrabmar')"
-                                                                type="time" name="martesfinal" id="horafinmar"
-                                                                value="" ></td>
+                                                                type="time" name="martesfinal" id="horafinmar" value="">
+                                                        </td>
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal;font-size:11px;"
-                                                                  onclick="totalalm('alminiciomar','almfinmar')"
+                                                                onclick="totalalm('alminiciomar','almfinmar')"
                                                                 type="time" name="martes_alm_inicio" id="alminiciomar"
                                                                 value="">
                                                         </td>
@@ -210,8 +210,8 @@
                                                                  font-weight:bold; text-align:end; color:teal; font-size:11px;"
                                                                 type="time" name="martesdescanso1" id="desinimar"
                                                                 onclick="totaldes('desinimar','descfinmar')"
-                                                                onchange="totaldes('desinimar','descfinmar')"
-                                                                value=""></td>
+                                                                onchange="totaldes('desinimar','descfinmar')" value="">
+                                                        </td>
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal; font-size:11px;"
@@ -257,8 +257,8 @@
                                                                  font-weight:bold; text-align:end; color:teal; font-size:11px;"
                                                                 type="time" name="miercolesdescanso1" id="descinimie"
                                                                 onclick="totaldes('descinimie','descfinmie')"
-                                                                onchange="totaldes('descinimie','descfinmie')"
-                                                                value=""></td>
+                                                                onchange="totaldes('descinimie','descfinmie')" value="">
+                                                        </td>
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal; font-size:11px;"
@@ -278,15 +278,15 @@
                                                                 onchange="calcular('horainiciojue','horafinjue','alminiciojue','almfinjue','htrabjue')"
                                                                 onclick="calcular('horainiciojue','horafinjue','alminiciojue','almfinjue','htrabjue')"
                                                                 type="time" name="juevesinicio" id="horainiciojue"
-                                                                value="" >
+                                                                value="">
                                                         </td>
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal; font-size:11px;"
                                                                 onchange="calcular('horainiciojue','horafinjue','alminiciojue','almfinjue','htrabjue')"
                                                                 onclick="calcular('horainiciojue','horafinjue','alminiciojue','almfinjue','htrabjue')"
-                                                                type="time" name="juevesfinal" id="horafinjue"
-                                                                value="" ></td>
+                                                                type="time" name="juevesfinal" id="horafinjue" value="">
+                                                        </td>
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal; font-size:11px;"
@@ -304,8 +304,8 @@
                                                                  font-weight:bold; text-align:end; color:teal; font-size:11px;"
                                                                 type="time" name="juevesdescanso1" id="descinijue"
                                                                 onchange="totaldes('descinijue','descfinjue')"
-                                                                onclick="totaldes('descinijue','descfinjue')"
-                                                                value=""></td>
+                                                                onclick="totaldes('descinijue','descfinjue')" value="">
+                                                        </td>
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal;font-size:11px;"
@@ -350,8 +350,8 @@
                                                                  font-weight:bold; text-align:end; color:teal;font-size:11px;"
                                                                 type="time" name="viernesdescanso1" id="descinivie"
                                                                 onchange="totaldes('descinivie','descfinvie')"
-                                                                onclick="totaldes('descinivie','descfinvie')"
-                                                                value=""></td>
+                                                                onclick="totaldes('descinivie','descfinvie')" value="">
+                                                        </td>
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal;font-size:11px;"
@@ -377,8 +377,8 @@
                                                                  font-weight:bold; text-align:end; color:teal;font-size:11px;"
                                                                 onchange="calcular('horainiciosab','horafinsab','alminiciosab','almfinsab','htrabsab')"
                                                                 onclick="calcular('horainiciosab','horafinsab','alminiciosab','almfinsab','htrabsab')"
-                                                                type="time" name="sabadofinal" id="horafinsab"
-                                                                value="" ></td>
+                                                                type="time" name="sabadofinal" id="horafinsab" value="">
+                                                        </td>
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal;font-size:11px;"
@@ -396,8 +396,8 @@
                                                                  font-weight:bold; text-align:end; color:teal;font-size:11px;"
                                                                 type="time" name="sabadodescanso1" id="descinisab"
                                                                 onchange="totaldes('descinisab','descfinsab')"
-                                                                onclick="totaldes('descinisab','descfinsab')"
-                                                                value="" required></td>
+                                                                onclick="totaldes('descinisab','descfinsab')" value=""
+                                                                required></td>
                                                         <td><input
                                                                 style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; text-align:end; color:teal;font-size:11px;"
@@ -514,45 +514,57 @@
                                                     });
                                                 }
 
-
+                                                /*funcion seleccion de dia descanso*/
                                                 function DiaDescanso() {
-                                                    const fechaInput = document.getElementById('diadescanso');
+                                                        const fechaInput = document.getElementById('diadescanso');
+                                                        let lun1Input = document.getElementById('horainicio');
+                                                        let lun2Input = document.getElementById('horafin');
+                                                        let lun3Input = document.getElementById('alminicio');
+                                                        let lun4Input = document.getElementById('descinilun');
+                                                        let lun5Imput = document.getElementById('descfinlun');
+                                                        let lun6Imput = document.getElementById('almfin');
 
+                                                        let mar1Input = document.getElementById('horainiciomar');
+                                                        let mar2Input = document.getElementById('horafinmar');
+                                                        let mar3Input = document.getElementById('alminiciomar');
+                                                        let mar4Input = document.getElementById('desinimar');
+                                                        let mar5Imput = document.getElementById('descfinmar');
+                                                        let mar6Imput = document.getElementById('almfinmar');
 
-                                                    let lun1Input = document.getElementById('horainicio');
-                                                    let lun2Input = document.getElementById('horafin');
-                                                    let lun3Input = document.getElementById('alminicio');
-                                                    let lun4Input = document.getElementById('descinilun');
+                                                        let mie1Input = document.getElementById('horainiciomie');
+                                                        let mie2Input = document.getElementById('horafinmie');
+                                                        let mie3Input = document.getElementById('alminiciomie');
+                                                        let mie4Input = document.getElementById('descinimie');
+                                                        let mie5Imput = document.getElementById('descfinmie');
+                                                        let mie6Imput = document.getElementById('almfinmie');
 
-                                                    let mar1Input = document.getElementById('horainiciomar');
-                                                    let mar2Input = document.getElementById('horafinmar');
-                                                    let mar3Input = document.getElementById('alminiciomar');
-                                                    let mar4Input = document.getElementById('desinimar');
+                                                        let jue1Input = document.getElementById('horainiciojue');
+                                                        let jue2Input = document.getElementById('horafinjue');
+                                                        let jue3Input = document.getElementById('alminiciojue');
+                                                        let jue4Input = document.getElementById('descinijue');
+                                                        let jue5Imput = document.getElementById('descfinjue');
+                                                        let jue6Imput = document.getElementById('almfinjue');
 
-                                                    let mie1Input = document.getElementById('horainiciomie');
-                                                    let mie2Input = document.getElementById('horafinmie');
-                                                    let mie3Input = document.getElementById('alminiciomie');
-                                                    let mie4Input = document.getElementById('descinimie');
+                                                        let vie1Input = document.getElementById('horainiciovie');
+                                                        let vie2Input = document.getElementById('horafinvie');
+                                                        let vie3Input = document.getElementById('alminiciovie');
+                                                        let vie4Input = document.getElementById('descinivie');
+                                                        let vie5Imput = document.getElementById('descfinvie');
+                                                        let vie6Imput = document.getElementById('almfinvie');
 
-                                                    let jue1Input = document.getElementById('horainiciojue');
-                                                    let jue2Input = document.getElementById('horafinjue');
-                                                    let jue3Input = document.getElementById('alminiciojue');
-                                                    let jue4Input = document.getElementById('descinijue');
+                                                        let sab1Input = document.getElementById('horainiciosab');
+                                                        let sab2Input = document.getElementById('horafinsab');
+                                                        let sab3Input = document.getElementById('alminiciosab');
+                                                        let sab4Input = document.getElementById('descinisab');
+                                                        let sab5Imput = document.getElementById('descfinsab');
+                                                        let sab6Imput = document.getElementById('almfinsab');
 
-                                                    let vie1Input = document.getElementById('horainiciovie');
-                                                    let vie2Input = document.getElementById('horafinvie');
-                                                    let vie3Input = document.getElementById('alminiciovie');
-                                                    let vie4Input = document.getElementById('descinivie');
-
-                                                    let sab1Input = document.getElementById('horainiciosab');
-                                                    let sab2Input = document.getElementById('horafinsab');
-                                                    let sab3Input = document.getElementById('alminiciosab');
-                                                    let sab4Input = document.getElementById('descinisab');
-
-                                                    let dom1Input = document.getElementById('horainiciodom');
-                                                    let dom2Input = document.getElementById('horafindom');
-                                                    let dom3Input = document.getElementById('alminiciodom');
-                                                    let dom4Input = document.getElementById('descinidom');
+                                                        let dom1Input = document.getElementById('horainiciodom');
+                                                        let dom2Input = document.getElementById('horafindom');
+                                                        let dom3Input = document.getElementById('alminiciodom');
+                                                        let dom4Input = document.getElementById('descinidom');
+                                                        let dom5Imput = document.getElementById('desfindom');
+                                                        let dom6Imput = document.getElementById('almfindom');
                                                     //
                                                     const fechaSeleccionada = fechaInput.value;
                                                     const fecha = new Date(fechaSeleccionada);
@@ -560,59 +572,109 @@
 
                                                     switch (diaSemana) {
 
+
                                                         case 6: // Domingo
                                                             dom1Input.disabled = true;
                                                             dom2Input.disabled = true;
                                                             dom3Input.disabled = true;
                                                             dom4Input.disabled = true;
+                                                            dom1Input.value = "";
+                                                            dom2Input.value = "";
+                                                            dom3Input.value = "";
+                                                            dom4Input.value = "";
                                                             break;
                                                         case 0: // Lunes
                                                             lun1Input.disabled = true;
                                                             lun2Input.disabled = true;
                                                             lun3Input.disabled = true;
                                                             lun4Input.disabled = true;
+                                                            lun1Input.value = "";
+                                                            lun2Input.value = "";
+                                                            lun3Input.value = "";
+                                                            lun4Input.value = "";
+                                                            lun5Imput.value = "";
+                                                            lun6Imput.value = "";
+
                                                             break;
                                                         case 1: // Martes
                                                             mar1Input.disabled = true;
                                                             mar2Input.disabled = true;
                                                             mar3Input.disabled = true;
                                                             mar4Input.disabled = true;
+                                                            mar1Input.value = "";
+                                                            mar2Input.value = "";
+                                                            mar3Input.value = "";
+                                                            mar4Input.value = "";
+                                                            mar5Imput.value = "";
+                                                            mar6Imput.value = "";
                                                             break;
                                                         case 2: // Miercoles
                                                             mie1Input.disabled = true;
                                                             mie2Input.disabled = true;
                                                             mie3Input.disabled = true;
                                                             mie4Input.disabled = true;
+                                                            mier1Input.value = "";
+                                                            mier2Input.value = "";
+                                                            mier3Input.value = "";
+                                                            mier4Input.value = "";
+                                                            mier5Imput.value = "";
+                                                            mier6Imput.value = "";
                                                             break;
                                                         case 3: // Jueves
                                                             jue1Input.disabled = true;
                                                             jue2Input.disabled = true;
                                                             jue3Input.disabled = true;
                                                             jue4Input.disabled = true;
+                                                            jue1Input.value = "";
+                                                            jue2Input.value = "";
+                                                            jue3Input.value = "";
+                                                            jue4Input.value = "";
+                                                            jue5Imput.value = "";
+                                                            jue6Imput.value = "";
                                                             break;
                                                         case 4: // viernes
                                                             vie1Input.disabled = true;
                                                             vie2Input.disabled = true;
                                                             vie3Input.disabled = true;
                                                             vie4Input.disabled = true;
+                                                            vie1Input.value = "";
+                                                            vie2Input.value = "";
+                                                            vie3Input.value = "";
+                                                            vie4Input.value = "";
+                                                            vie5Imput.value = "";
+                                                            vie6Imput.value = "";
                                                             break;
                                                         case 5: // sabado
+
                                                             sab1Input.disabled = true;
                                                             sab2Input.disabled = true;
                                                             sab3Input.disabled = true;
                                                             sab4Input.disabled = true;
+                                                            sab1Input.value = "";
+                                                            sab2Input.value = "";
+                                                            sab3Input.value = "";
+                                                            sab4Input.value = "";
+                                                            sab5Imput.value = "";
+                                                            sab6Imput.value = "";
                                                             break;
                                                     }
                                                 }
-
+                                                /*funcion de reseteo inputs */
                                                 function Reset() {
                                                     var ids = ["horainicio", "horafin", "alminicio", "descinilun",
-                                                        "horainiciomar", "horafinmar", "alminiciomar", "desinimar",
-                                                        "horainiciomie", "horafinmie", "alminiciomie", "descinimie",
-                                                        "horainiciojue", "horafinjue", "alminiciojue", "descinijue",
-                                                        "horainiciovie", "horafinvie", "alminiciovie", "descinivie",
-                                                        "horainiciosab", "horafinsab", "alminiciosab", "descinisab",
-                                                        "horainiciodom", "horafindom", "alminiciodom", "descinidom"
+                                                        "descfinlun", "almfin",
+                                                        "horainiciomar", "horafinmar", "alminiciomar",
+                                                        "desinimar", "descfinmar", "almfinmar",
+                                                        "horainiciomie", "horafinmie", "alminiciomie",
+                                                        "descinimie", "descfinmie", "almfinmie",
+                                                        "horainiciojue", "horafinjue", "alminiciojue",
+                                                        "descinijue", "descfinjue", "almfinjue",
+                                                        "horainiciovie", "horafinvie", "alminiciovie",
+                                                        "descinivie", "descfinvie", "almfinvie",
+                                                        "horainiciosab", "horafinsab", "alminiciosab",
+                                                        "descinisab", "descfinsab", "almfinsab",
+                                                        "horainiciodom", "horafindom", "alminiciodom",
+                                                        "descinidom", "descfindom", "almfindom",
                                                     ]
                                                     for (i = 0; i < ids.length; i++) {
 

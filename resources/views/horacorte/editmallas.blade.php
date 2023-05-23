@@ -24,8 +24,7 @@
                                                 <label class="text-info" for="users_id"><b>Nombre
                                                         Asesor</b></label>
                                                 <select name="users_id" id="users_id" class="form-control"
-                                                    aria-label="Default select example" value="{{$mallas->user}}"
-                                                    required>
+                                                    aria-label="Default select example" value="{{$mallas->users_id}}">
                                                 </select>
                                             </div>
                                             <div class="form-group col-sm-3 p-4 ">
@@ -47,7 +46,7 @@
                                             <div class="form-group col-sm-3">
                                                 <label class="text-info" for="campaña"><b>Campaña</b></label>
                                                 <input type="text" class="form-control mt-3" id="campaña" name="campaña"
-                                                    value="{{$mallas ->campaña}}" required>
+                                                    value="{{$mallas ->campaña}}">
                                             </div>
                                             <div class="form-group col-sm-3">
                                                 <label class="text-info" for="foco"><b>Foco</b></label></label>
@@ -109,7 +108,7 @@
                                                                 onchange="calcular('horainicio','horafin','alminicio','almfin','htrab')"
                                                                 onclick="calcular('horainicio','horafin','alminicio','almfin','htrab')"
                                                                 value="{{$mallas -> lunesinicio}}"></td>
-                                                        <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
                                                                 type="time" name="lunesfinal" id="horafin"
                                                                 onchange="calcular('horainicio','horafin','alminicio','almfin','htrab')"
@@ -532,16 +531,20 @@
                                                                 mar2Input.value = "";
                                                                 mar3Input.value = "";
                                                                 mar4Input.value = "";
+                                                                mar5Imput.value = "";
+                                                                mar6Imput.value = "";
                                                                 break;
                                                             case 2: // Miercoles
                                                                 mie1Input.disabled = true;
                                                                 mie2Input.disabled = true;
                                                                 mie3Input.disabled = true;
                                                                 mie4Input.disabled = true;
-                                                                mie1Input.value = "";
-                                                                mie2Input.value = "";
-                                                                mie3Input.value = "";
-                                                                mie4Input.value = "";
+                                                                mier1Input.value = "";
+                                                                mier2Input.value = "";
+                                                                mier3Input.value = "";
+                                                                mier4Input.value = "";
+                                                                mier5Imput.value = "";
+                                                                mier6Imput.value = "";
                                                                 break;
                                                             case 3: // Jueves
                                                                 jue1Input.disabled = true;
@@ -552,6 +555,8 @@
                                                                 jue2Input.value = "";
                                                                 jue3Input.value = "";
                                                                 jue4Input.value = "";
+                                                                jue5Imput.value = "";
+                                                                jue6Imput.value = "";
                                                                 break;
                                                             case 4: // viernes
                                                                 vie1Input.disabled = true;
@@ -562,6 +567,8 @@
                                                                 vie2Input.value = "";
                                                                 vie3Input.value = "";
                                                                 vie4Input.value = "";
+                                                                vie5Imput.value = "";
+                                                                vie6Imput.value = "";
                                                                 break;
                                                             case 5: // sabado
 
@@ -573,24 +580,27 @@
                                                                 sab2Input.value = "";
                                                                 sab3Input.value = "";
                                                                 sab4Input.value = "";
+                                                                sab5Imput.value = "";
+                                                                sab6Imput.value = "";
                                                                 break;
                                                         }
                                                     }
                                                     /*funcion de reseteo inputs */
                                                     function Reset() {
                                                         var ids = ["horainicio", "horafin", "alminicio", "descinilun",
+                                                            "descfinlun", "almfin",
                                                             "horainiciomar", "horafinmar", "alminiciomar",
-                                                            "desinimar",
+                                                            "desinimar", "descfinmar", "almfinmar",
                                                             "horainiciomie", "horafinmie", "alminiciomie",
-                                                            "descinimie",
+                                                            "descinimie", "descfinmie", "almfinmie",
                                                             "horainiciojue", "horafinjue", "alminiciojue",
-                                                            "descinijue",
+                                                            "descinijue","descfinjue","almfinjue",
                                                             "horainiciovie", "horafinvie", "alminiciovie",
-                                                            "descinivie",
+                                                            "descinivie","descfinvie","almfinvie",
                                                             "horainiciosab", "horafinsab", "alminiciosab",
-                                                            "descinisab",
+                                                            "descinisab", "descfinsab","almfinsab",
                                                             "horainiciodom", "horafindom", "alminiciodom",
-                                                            "descinidom"
+                                                            "descinidom", "descfindom","almfindom",
                                                         ]
                                                         for (i = 0; i < ids.length; i++) {
 
