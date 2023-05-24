@@ -84,7 +84,49 @@
                                                 <br>
                                                 <select class="form-control" name="encargado">
                                                     <option selected>Selecciona</option>
-                                                    <option value=""></option>
+                                                    <option value="">Juan David Cetina Ochoa</option>
+                                                    <option value="">Maria Alejandra Adan Sarmiento</option>
+                                                    <option value="">Rafael Augusto Archila Soracipa</option>
+                                                    <option value="">Luis Eduardo Bohorquez Buitrago</option>
+                                                    <option value="">Camilo Esteban Romero Leiva</option>
+                                                    <option value="">Xiomara Liceth Yule Rivera</option>
+                                                    <option value="">Carlos Daniel Rincon Uneme</option>
+                                                    <option value="">Jhon Sebastian Alape Leyton</option>
+                                                    <option value="">Juan David Vasquez Salazar</option>
+                                                    <option value="">Andres Eduardo Salcedo Guillen</option>
+                                                    <option value="">Daniel Andres Luengas Caballero</option>
+                                                    <option value="">Daniel Ricardo Palacios Bustos</option>
+                                                    <option value="">David Edilberto Gonzalez Hernandez</option>
+                                                    <option value="">Erik David Restrepo Garzon</option>
+                                                    <option value="">Gabriel David Cabarcas Ribon</option>
+                                                    <option value="">Jenifer Nicol Suaza Giraldo</option>
+                                                    <option value="">Jennifer Alejandra Monroy Ortiz</option>
+                                                    <option value="">Jenny Patricia Barbosa Alvarado</option>
+                                                    <option value="">Jenny Rocio Murillo Meneses</option>
+                                                    <option value="">Jesus Antonio Archila Soracipa</option>
+                                                    <option value="">Karen Julissa Auzaque Combita</option>
+                                                    <option value="">Nicolas Salazar Delgadillo</option>
+                                                    <option value="">Ingrid Johanna Amaya Rincon</option>
+                                                    <option value="">Maria Jacqueline Arias De Pindray</option>
+                                                    <option value="">Carlos Alberto Trujillo Vargas</option>
+                                                    <option value="">Johanna Paola Castrillon Londoño</option>
+                                                    <option value="">Andres Eduardo Vargas Valenzuela</option>
+                                                    <option value="">Harold Andres Cardenas Gutierrez</option>
+                                                    <option value="">Jose Luis Aponte Blanco</option>
+                                                    <option value="">Linna Lizeth Martinez Sanchez</option>
+                                                    <option value="">Miguel Leonardo Tocora Campos</option>
+                                                    <option value="">Jesus Antonio Viana Marín</option>
+                                                    <option value="">Carlos Orlando Pastrana Acevedo</option>
+                                                    <option value="">Johan Esteban Riaño Muñoz</option>
+                                                    <option value="">Leidy Milena Quiroga Castañeda</option>
+                                                    <option value="">Magda Lorena Ramirez Ospina</option>
+                                                    <option value="">Gerencia General</option>
+                                                    <option value="">Anderson Fernando Soler Caro</option>
+                                                    <option value="">Juan Jose Cano Salazar</option>
+                                                    <option value="">Mabel Barragan Salazar</option>
+                                                    <option value="">Arias De Pindray Maria Jacqueline</option>
+                                                    <option value="">Laura Vanesa Currea</option>
+                                                    <option value="">William Leonardo Torres Peña</option>
 
                                                 </select>
                                             </div>
@@ -132,42 +174,36 @@
                                                                 class="form-control text-info text-center font-weight-bold col w-100"
                                                                 style="font-size:medium;" type="text" name="" id="htrab"
                                                                 disabled></td>
-                                                        <td><input
-                                                                style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
-                                                                 font-weight:bold; text-align:end; color:teal; font-size:11px;"
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
+                                                                 font-weight:bold; font-size:11px; color:teal;"
                                                                 type="time" name="lunesinicio" id="horainicio"
                                                                 onchange="calcular('horainicio','horafin','alminicio','almfin','htrab')"
                                                                 onclick="calcular('horainicio','horafin','alminicio','almfin','htrab')"
                                                                 value=""></td>
-                                                        <td><input
-                                                                style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
-                                                                 font-weight:bold; text-align:end; color:teal;  font-size:11px;"
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
+                                                                 font-weight:bold; font-size:11px; color:teal;"
                                                                 onchange="calcular('horainicio','horafin','alminicio','almfin','htrab')"
                                                                 onclick="calcular('horainicio','horafin','alminicio','almfin','htrab')"
                                                                 type="time" name="lunesfinal" id="horafin" value="">
                                                         </td>
-                                                        <td><input
-                                                                style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
-                                                                 font-weight:bold; text-align:end; color:teal; font-size:11px;"
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
+                                                                 font-weight:bold; font-size:11px; color:teal;"
                                                                 onclick="totalalm('alminicio','almfin')" type="time"
                                                                 name="lunes_alm_inicio" id="alminicio" value="">
                                                         </td>
-                                                        <td><input
-                                                                style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
-                                                                 font-weight:bold; text-align:end; color:teal;  font-size:11px;"
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
+                                                                 font-weight:bold; font-size:11px; color:teal;"
                                                                 type="time" name="lunes_alm_final" id="almfin" value=""
                                                                 disabled></td>
-                                                        <td><input
-                                                                style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
-                                                                 font-weight:bold; text-align:end; color:teal;  font-size:11px;"
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
+                                                                 font-weight:bold; font-size:11px; color:teal;"
                                                                 onclick="totaldes('descinilun','descfinlun')"
                                                                 onchange="totaldes('descinilun','descfinlun')"
                                                                 type="time" name="lunesdescanso1" id="descinilun"
                                                                 value="">
                                                         </td>
-                                                        <td><input
-                                                                style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
-                                                                 font-weight:bold; text-align:end; color:teal;  font-size:11px;"
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
+                                                                 font-weight:bold; font-size:11px; color:teal;"
                                                                 type="time" name="lunesdescanso2" id="descfinlun"
                                                                 value="" disabled></td>
                                                     </tr>
@@ -178,43 +214,37 @@
                                                                 class="form-control text-info text-center font-weight-bold col w-100"
                                                                 style="font-size:medium;" type="text" name=""
                                                                 id="htrabmar" disabled></td>
-                                                        <td><input
-                                                                style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
-                                                                 font-weight:bold; text-align:end; color:teal; font-size:11px;"
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
+                                                                 font-weight:bold; font-size:11px; color:teal;"
                                                                 onchange="calcular('horainiciomar','horafinmar','alminiciomar','almfinmar','htrabmar')"
                                                                 onclick="calcular('horainiciomar','horafinmar','alminiciomar','almfinmar','htrabmar')"
                                                                 type="time" name="martesinicio" id="horainiciomar"
                                                                 value="">
                                                         </td>
-                                                        <td><input
-                                                                style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
-                                                                 font-weight:bold; text-align:end; color:teal; font-size:11px;"
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
+                                                                 font-weight:bold; font-size:11px; color:teal;"
                                                                 onchange="calcular('horainiciomar','horafinmar','alminiciomar','almfinmar','htrabmar')"
                                                                 onclick="calcular('horainiciomar','horafinmar','alminiciomar','almfinmar','htrabmar')"
                                                                 type="time" name="martesfinal" id="horafinmar" value="">
                                                         </td>
-                                                        <td><input
-                                                                style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
-                                                                 font-weight:bold; text-align:end; color:teal;font-size:11px;"
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
+                                                                 font-weight:bold; font-size:11px; color:teal;"
                                                                 onclick="totalalm('alminiciomar','almfinmar')"
                                                                 type="time" name="martes_alm_inicio" id="alminiciomar"
                                                                 value="">
                                                         </td>
-                                                        <td><input
-                                                                style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
-                                                                 font-weight:bold; text-align:end; color:teal; font-size:11px;"
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
+                                                                 font-weight:bold; font-size:11px; color:teal;"
                                                                 type="time" name="martes_alm_final" id="almfinmar"
                                                                 value="" disabled></td>
-                                                        <td><input
-                                                                style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
-                                                                 font-weight:bold; text-align:end; color:teal; font-size:11px;"
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
+                                                                 font-weight:bold; font-size:11px; color:teal;"
                                                                 type="time" name="martesdescanso1" id="desinimar"
                                                                 onclick="totaldes('desinimar','descfinmar')"
                                                                 onchange="totaldes('desinimar','descfinmar')" value="">
                                                         </td>
-                                                        <td><input
-                                                                style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
-                                                                 font-weight:bold; text-align:end; color:teal; font-size:11px;"
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
+                                                                 font-weight:bold; font-size:11px; color:teal;"
                                                                 type="time" name="martesdescanso2" id="descfinmar"
                                                                 value="" disabled></td>
                                                     </tr>
@@ -225,43 +255,37 @@
                                                                 class="form-control text-info text-center font-weight-bold col w-100"
                                                                 style="font-size:medium;" type="text" name=""
                                                                 id="htrabmie" disabled></td>
-                                                        <td><input
-                                                                style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
-                                                                 font-weight:bold; text-align:end; color:teal;font-size:11px;"
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
+                                                                 font-weight:bold; font-size:11px; color:teal;"
                                                                 onchange="calcular('horainiciomie','horafinmie','alminiciomie','almfinmie','htrabmie')"
                                                                 onclick="calcular('horainiciomie','horafinmie','alminiciomie','almfinmie','htrabmie')"
                                                                 type="time" name="miercolesinicio" id="horainiciomie"
                                                                 value="">
                                                         </td>
-                                                        <td><input
-                                                                style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
-                                                                 font-weight:bold; text-align:end; color:teal; font-size:11px;"
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
+                                                                 font-weight:bold; font-size:11px; color:teal;"
                                                                 onchange="calcular('horainiciomie','horafinmie','alminiciomie','almfinmie','htrabmie')"
                                                                 onclick="calcular('horainiciomie','horafinmie','alminiciomie','almfinmie','htrabmie')"
                                                                 type="time" name="miercolesfinal" id="horafinmie"
                                                                 value=""></td>
-                                                        <td><input
-                                                                style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
-                                                                 font-weight:bold; text-align:end; color:teal; font-size:11px;"
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
+                                                                 font-weight:bold; font-size:11px; color:teal;"
                                                                 onclick="totalalm('alminiciomie','almfinmie')"
                                                                 type="time" name="miercoles_alm_inicio"
                                                                 id="alminiciomie" value="">
                                                         </td>
-                                                        <td><input
-                                                                style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
-                                                                 font-weight:bold; text-align:end; color:teal; font-size:11px;"
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
+                                                                 font-weight:bold; font-size:11px; color:teal;"
                                                                 type="time" name="miercoles_alm_final" id="almfinmie"
                                                                 value="" disabled></td>
-                                                        <td><input
-                                                                style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
-                                                                 font-weight:bold; text-align:end; color:teal; font-size:11px;"
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
+                                                                 font-weight:bold; font-size:11px; color:teal;"
                                                                 type="time" name="miercolesdescanso1" id="descinimie"
                                                                 onclick="totaldes('descinimie','descfinmie')"
                                                                 onchange="totaldes('descinimie','descfinmie')" value="">
                                                         </td>
-                                                        <td><input
-                                                                style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
-                                                                 font-weight:bold; text-align:end; color:teal; font-size:11px;"
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
+                                                                 font-weight:bold; font-size:11px; color:teal;"
                                                                 type="time" name="miercolesdescanso2" id="descfinmie"
                                                                 value="" disabled></td>
                                                     </tr>
@@ -272,43 +296,37 @@
                                                                 class="form-control text-info text-center font-weight-bold col w-100"
                                                                 style="font-size:medium;" type="text" name=""
                                                                 id="htrabjue" disabled></td>
-                                                        <td><input
-                                                                style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
-                                                                 font-weight:bold; text-align:end; color:teal; font-size:11px;"
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
+                                                                 font-weight:bold; font-size:11px; color:teal;"
                                                                 onchange="calcular('horainiciojue','horafinjue','alminiciojue','almfinjue','htrabjue')"
                                                                 onclick="calcular('horainiciojue','horafinjue','alminiciojue','almfinjue','htrabjue')"
                                                                 type="time" name="juevesinicio" id="horainiciojue"
                                                                 value="">
                                                         </td>
-                                                        <td><input
-                                                                style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
-                                                                 font-weight:bold; text-align:end; color:teal; font-size:11px;"
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
+                                                                 font-weight:bold; font-size:11px; color:teal;"
                                                                 onchange="calcular('horainiciojue','horafinjue','alminiciojue','almfinjue','htrabjue')"
                                                                 onclick="calcular('horainiciojue','horafinjue','alminiciojue','almfinjue','htrabjue')"
                                                                 type="time" name="juevesfinal" id="horafinjue" value="">
                                                         </td>
-                                                        <td><input
-                                                                style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
-                                                                 font-weight:bold; text-align:end; color:teal; font-size:11px;"
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
+                                                                 font-weight:bold; font-size:11px; color:teal;"
                                                                 onclick="totalalm('alminiciojue','almfinjue')"
                                                                 type="time" name="jueves_alm_inicio" id="alminiciojue"
                                                                 value="" required>
                                                         </td>
-                                                        <td><input
-                                                                style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
-                                                                 font-weight:bold; text-align:end; color:teal; font-size:11px;"
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
+                                                                 font-weight:bold; font-size:11px; color:teal;"
                                                                 type="time" name="jueves_alm_final" id="almfinjue"
                                                                 value="" disabled></td>
-                                                        <td><input
-                                                                style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
-                                                                 font-weight:bold; text-align:end; color:teal; font-size:11px;"
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
+                                                                 font-weight:bold; font-size:11px; color:teal;"
                                                                 type="time" name="juevesdescanso1" id="descinijue"
                                                                 onchange="totaldes('descinijue','descfinjue')"
                                                                 onclick="totaldes('descinijue','descfinjue')" value="">
                                                         </td>
-                                                        <td><input
-                                                                style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
-                                                                 font-weight:bold; text-align:end; color:teal;font-size:11px;"
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
+                                                                 font-weight:bold; font-size:11px; color:teal;"
                                                                 type="time" name="juevesdescanso2" id="descfinjue"
                                                                 value="" disabled></td>
                                                     </tr>
@@ -319,42 +337,36 @@
                                                                 class="form-control text-info text-center font-weight-bold col w-100"
                                                                 style="font-size:medium;" type="text" name=""
                                                                 id="htrabvie" disabled></td>
-                                                        <td><input
-                                                                style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
-                                                                 font-weight:bold; text-align:end; color:teal;font-size:11px;"
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
+                                                                 font-weight:bold; font-size:11px; color:teal;"
                                                                 onchange="calcular('horainiciovie','horafinvie','alminiciovie','almfinvie','htrabvie')"
                                                                 onclick="calcular('horainiciovie','horafinvie','alminiciovie','almfinvie','htrabvie')"
                                                                 type="time" name="viernesinicio" id="horainiciovie"
                                                                 value=""></td>
-                                                        <td><input
-                                                                style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
-                                                                 font-weight:bold; text-align:end; color:teal;font-size:11px;"
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
+                                                                 font-weight:bold; font-size:11px; color:teal;"
                                                                 onchange="calcular('horainiciovie','horafinvie','alminiciovie','almfinvie','htrabvie')"
                                                                 onclick="calcular('horainiciovie','horafinvie','alminiciovie','almfinvie','htrabvie')"
                                                                 type="time" name="viernesfinal" id="horafinvie"
                                                                 value=""></td>
-                                                        <td><input
-                                                                style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
-                                                                 font-weight:bold; text-align:end; color:teal;font-size:11px;"
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
+                                                                 font-weight:bold; font-size:11px; color:teal;"
                                                                 onclick="totalalm('alminiciovie','almfinvie')"
                                                                 type="time" name="viernes_alm_inicio" id="alminiciovie"
                                                                 value="">
                                                         </td>
-                                                        <td><input
-                                                                style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
-                                                                 font-weight:bold; text-align:end; color:teal;font-size:11px;"
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
+                                                                 font-weight:bold; font-size:11px; color:teal;"
                                                                 type="time" name="viernes_alm_final" id="almfinvie"
                                                                 value="" disabled></td>
-                                                        <td><input
-                                                                style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
-                                                                 font-weight:bold; text-align:end; color:teal;font-size:11px;"
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
+                                                                 font-weight:bold; font-size:11px; color:teal;"
                                                                 type="time" name="viernesdescanso1" id="descinivie"
                                                                 onchange="totaldes('descinivie','descfinvie')"
                                                                 onclick="totaldes('descinivie','descfinvie')" value="">
                                                         </td>
-                                                        <td><input
-                                                                style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
-                                                                 font-weight:bold; text-align:end; color:teal;font-size:11px;"
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
+                                                                 font-weight:bold; font-size:11px; color:teal;"
                                                                 type="time" name="viernesdescanso2" id="descfinvie"
                                                                 value="" disabled></td>
                                                     </tr>
@@ -365,42 +377,36 @@
                                                                 class="form-control text-info text-center font-weight-bold col w-100"
                                                                 style="font-size:medium;" type="text" name=""
                                                                 id="htrabsab" disabled></td>
-                                                        <td><input
-                                                                style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
-                                                                 font-weight:bold; text-align:end; color:teal;font-size:11px;"
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
+                                                                 font-weight:bold; font-size:11px; color:teal;"
                                                                 onchange="calcular('horainiciosab','horafinsab','alminiciosab','almfinsab','htrabsab')"
                                                                 onclick="calcular('horainiciosab','horafinsab','alminiciosab','almfinsab','htrabsab')"
                                                                 type="time" name="sabadoinicio" id="horainiciosab"
                                                                 value=""></td>
-                                                        <td><input
-                                                                style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
-                                                                 font-weight:bold; text-align:end; color:teal;font-size:11px;"
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
+                                                                 font-weight:bold; font-size:11px; color:teal;"
                                                                 onchange="calcular('horainiciosab','horafinsab','alminiciosab','almfinsab','htrabsab')"
                                                                 onclick="calcular('horainiciosab','horafinsab','alminiciosab','almfinsab','htrabsab')"
                                                                 type="time" name="sabadofinal" id="horafinsab" value="">
                                                         </td>
-                                                        <td><input
-                                                                style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
-                                                                 font-weight:bold; text-align:end; color:teal;font-size:11px;"
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
+                                                                 font-weight:bold; font-size:11px; color:teal;"
                                                                 onclick="totalalm('alminiciosab','almfinsab')"
                                                                 type="time" name="sabado_alm_inicio" id="alminiciosab"
                                                                 value="">
                                                         </td>
-                                                        <td><input
-                                                                style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
-                                                                 font-weight:bold; text-align:end; color:teal;font-size:11px;"
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
+                                                                 font-weight:bold; font-size:11px; color:teal;"
                                                                 type="time" name="sabado_alm_final" id="almfinsab"
                                                                 value="" disabled></td>
-                                                        <td><input
-                                                                style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
-                                                                 font-weight:bold; text-align:end; color:teal;font-size:11px;"
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
+                                                                 font-weight:bold; font-size:11px; color:teal;"
                                                                 type="time" name="sabadodescanso1" id="descinisab"
                                                                 onchange="totaldes('descinisab','descfinsab')"
                                                                 onclick="totaldes('descinisab','descfinsab')" value=""
                                                                 required></td>
-                                                        <td><input
-                                                                style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
-                                                                 font-weight:bold; text-align:end; color:teal;font-size:11px;"
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
+                                                                 font-weight:bold; font-size:11px; color:teal;"
                                                                 type="time" name="sabadodescanso2" id="descfinsab"
                                                                 value="" disabled></td>
                                                     </tr>
@@ -411,40 +417,34 @@
                                                                 class="form-control text-info text-center font-weight-bold col w-100"
                                                                 style="font-size:medium;" type="text" name=""
                                                                 id="htrabdom" disabled></td>
-                                                        <td><input
-                                                                style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
-                                                                 font-weight:bold; text-align:end; color:teal;font-size:11px;"
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
+                                                                 font-weight:bold; font-size:11px; color:teal;"
                                                                 onchange="calcular('horainiciodom','horafindom','alminiciodom','almfindom','htrabdom')"
                                                                 onclick="calcular('horainiciodom','horafindom','alminiciodom','almfindom','htrabdom')"
                                                                 type="time" name="domingoinicio" id="horainiciodom">
                                                         </td>
-                                                        <td><input
-                                                                style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
-                                                                 font-weight:bold; text-align:end; color:teal;font-size:11px;"
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
+                                                                 font-weight:bold; font-size:11px; color:teal;"
                                                                 onchange="calcular('horainiciodom','horafindom','alminiciodom','almfindom','htrabdom')"
                                                                 onclick="calcular('horainiciodom','horafindom','alminiciodom','almfindom','htrabdom')"
                                                                 type="time" name="domingofinal" id="horafindom"></td>
-                                                        <td><input
-                                                                style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
-                                                                 font-weight:bold; text-align:end; color:teal;font-size:11px;"
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
+                                                                 font-weight:bold; font-size:11px; color:teal;"
                                                                 onclick="totalalm('alminiciodom','almfindom')"
                                                                 type="time" name="domingo_alm_inicio" id="alminiciodom">
                                                         </td>
-                                                        <td><input
-                                                                style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
-                                                                 font-weight:bold; text-align:end; color:teal;font-size:11px;"
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
+                                                                 font-weight:bold; font-size:11px; color:teal;"
                                                                 type="time" name="domingo_alm_final" id="almfindom"
                                                                 disabled></td>
-                                                        <td><input
-                                                                style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
-                                                                 font-weight:bold; text-align:end; color:teal;font-size:11px;"
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
+                                                                 font-weight:bold; font-size:11px; color:teal;"
                                                                 onchange="totaldes('descinidom','descfindom')"
                                                                 onclick="totaldes('descinidom','descfindom')"
                                                                 type="time" name="domingodescanso1" id="descinidom">
                                                         </td>
-                                                        <td><input
-                                                                style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
-                                                                 font-weight:bold; text-align:end; color:teal;font-size:11px;"
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
+                                                                 font-weight:bold; font-size:11px; color:teal;"
                                                                 type="time" name="domingodescanso2" id="descfindom"
                                                                 disabled>
                                                         </td>
@@ -516,62 +516,61 @@
 
                                                 /*funcion seleccion de dia descanso*/
                                                 function DiaDescanso() {
-                                                        const fechaInput = document.getElementById('diadescanso');
-                                                        let lun1Input = document.getElementById('horainicio');
-                                                        let lun2Input = document.getElementById('horafin');
-                                                        let lun3Input = document.getElementById('alminicio');
-                                                        let lun4Input = document.getElementById('descinilun');
-                                                        let lun5Imput = document.getElementById('descfinlun');
-                                                        let lun6Imput = document.getElementById('almfin');
+                                                    const fechaInput = document.getElementById('diadescanso');
+                                                    let lun1Input = document.getElementById('horainicio');
+                                                    let lun2Input = document.getElementById('horafin');
+                                                    let lun3Input = document.getElementById('alminicio');
+                                                    let lun4Input = document.getElementById('descinilun');
+                                                    let lun5Imput = document.getElementById('descfinlun');
+                                                    let lun6Imput = document.getElementById('almfin');
 
-                                                        let mar1Input = document.getElementById('horainiciomar');
-                                                        let mar2Input = document.getElementById('horafinmar');
-                                                        let mar3Input = document.getElementById('alminiciomar');
-                                                        let mar4Input = document.getElementById('desinimar');
-                                                        let mar5Imput = document.getElementById('descfinmar');
-                                                        let mar6Imput = document.getElementById('almfinmar');
+                                                    let mar1Input = document.getElementById('horainiciomar');
+                                                    let mar2Input = document.getElementById('horafinmar');
+                                                    let mar3Input = document.getElementById('alminiciomar');
+                                                    let mar4Input = document.getElementById('desinimar');
+                                                    let mar5Imput = document.getElementById('descfinmar');
+                                                    let mar6Imput = document.getElementById('almfinmar');
 
-                                                        let mie1Input = document.getElementById('horainiciomie');
-                                                        let mie2Input = document.getElementById('horafinmie');
-                                                        let mie3Input = document.getElementById('alminiciomie');
-                                                        let mie4Input = document.getElementById('descinimie');
-                                                        let mie5Imput = document.getElementById('descfinmie');
-                                                        let mie6Imput = document.getElementById('almfinmie');
+                                                    let mie1Input = document.getElementById('horainiciomie');
+                                                    let mie2Input = document.getElementById('horafinmie');
+                                                    let mie3Input = document.getElementById('alminiciomie');
+                                                    let mie4Input = document.getElementById('descinimie');
+                                                    let mie5Imput = document.getElementById('descfinmie');
+                                                    let mie6Imput = document.getElementById('almfinmie');
 
-                                                        let jue1Input = document.getElementById('horainiciojue');
-                                                        let jue2Input = document.getElementById('horafinjue');
-                                                        let jue3Input = document.getElementById('alminiciojue');
-                                                        let jue4Input = document.getElementById('descinijue');
-                                                        let jue5Imput = document.getElementById('descfinjue');
-                                                        let jue6Imput = document.getElementById('almfinjue');
+                                                    let jue1Input = document.getElementById('horainiciojue');
+                                                    let jue2Input = document.getElementById('horafinjue');
+                                                    let jue3Input = document.getElementById('alminiciojue');
+                                                    let jue4Input = document.getElementById('descinijue');
+                                                    let jue5Imput = document.getElementById('descfinjue');
+                                                    let jue6Imput = document.getElementById('almfinjue');
 
-                                                        let vie1Input = document.getElementById('horainiciovie');
-                                                        let vie2Input = document.getElementById('horafinvie');
-                                                        let vie3Input = document.getElementById('alminiciovie');
-                                                        let vie4Input = document.getElementById('descinivie');
-                                                        let vie5Imput = document.getElementById('descfinvie');
-                                                        let vie6Imput = document.getElementById('almfinvie');
+                                                    let vie1Input = document.getElementById('horainiciovie');
+                                                    let vie2Input = document.getElementById('horafinvie');
+                                                    let vie3Input = document.getElementById('alminiciovie');
+                                                    let vie4Input = document.getElementById('descinivie');
+                                                    let vie5Imput = document.getElementById('descfinvie');
+                                                    let vie6Imput = document.getElementById('almfinvie');
 
-                                                        let sab1Input = document.getElementById('horainiciosab');
-                                                        let sab2Input = document.getElementById('horafinsab');
-                                                        let sab3Input = document.getElementById('alminiciosab');
-                                                        let sab4Input = document.getElementById('descinisab');
-                                                        let sab5Imput = document.getElementById('descfinsab');
-                                                        let sab6Imput = document.getElementById('almfinsab');
+                                                    let sab1Input = document.getElementById('horainiciosab');
+                                                    let sab2Input = document.getElementById('horafinsab');
+                                                    let sab3Input = document.getElementById('alminiciosab');
+                                                    let sab4Input = document.getElementById('descinisab');
+                                                    let sab5Imput = document.getElementById('descfinsab');
+                                                    let sab6Imput = document.getElementById('almfinsab');
 
-                                                        let dom1Input = document.getElementById('horainiciodom');
-                                                        let dom2Input = document.getElementById('horafindom');
-                                                        let dom3Input = document.getElementById('alminiciodom');
-                                                        let dom4Input = document.getElementById('descinidom');
-                                                        let dom5Imput = document.getElementById('desfindom');
-                                                        let dom6Imput = document.getElementById('almfindom');
+                                                    let dom1Input = document.getElementById('horainiciodom');
+                                                    let dom2Input = document.getElementById('horafindom');
+                                                    let dom3Input = document.getElementById('alminiciodom');
+                                                    let dom4Input = document.getElementById('descinidom');
+                                                    let dom5Imput = document.getElementById('desfindom');
+                                                    let dom6Imput = document.getElementById('almfindom');
                                                     //
                                                     const fechaSeleccionada = fechaInput.value;
                                                     const fecha = new Date(fechaSeleccionada);
                                                     let diaSemana = fecha.getDay();
 
                                                     switch (diaSemana) {
-
 
                                                         case 6: // Domingo
                                                             dom1Input.disabled = true;
@@ -613,12 +612,12 @@
                                                             mie2Input.disabled = true;
                                                             mie3Input.disabled = true;
                                                             mie4Input.disabled = true;
-                                                            mier1Input.value = "";
-                                                            mier2Input.value = "";
-                                                            mier3Input.value = "";
-                                                            mier4Input.value = "";
-                                                            mier5Imput.value = "";
-                                                            mier6Imput.value = "";
+                                                            mie1Input.value = "";
+                                                            mie2Input.value = "";
+                                                            mie3Input.value = "";
+                                                            mie4Input.value = "";
+                                                            mie5Imput.value = "";
+                                                            mie6Imput.value = "";
                                                             break;
                                                         case 3: // Jueves
                                                             jue1Input.disabled = true;
@@ -661,23 +660,16 @@
                                                 }
                                                 /*funcion de reseteo inputs */
                                                 function Reset() {
-                                                    var ids = ["horainicio", "horafin", "alminicio", "descinilun",
-                                                        "descfinlun", "almfin",
+                                                    var ids = ["horainicio", "horafin", "descinilun", "alminicio",
                                                         "horainiciomar", "horafinmar", "alminiciomar",
-                                                        "desinimar", "descfinmar", "almfinmar",
-                                                        "horainiciomie", "horafinmie", "alminiciomie",
-                                                        "descinimie", "descfinmie", "almfinmie",
-                                                        "horainiciojue", "horafinjue", "alminiciojue",
-                                                        "descinijue", "descfinjue", "almfinjue",
-                                                        "horainiciovie", "horafinvie", "alminiciovie",
-                                                        "descinivie", "descfinvie", "almfinvie",
-                                                        "horainiciosab", "horafinsab", "alminiciosab",
-                                                        "descinisab", "descfinsab", "almfinsab",
-                                                        "horainiciodom", "horafindom", "alminiciodom",
-                                                        "descinidom", "descfindom", "almfindom",
+                                                        "desinimar", "horainiciomie", "horafinmie", "alminiciomie",
+                                                        "descinimie", "horainiciojue", "horafinjue", "alminiciojue",
+                                                        "descinijue", "horainiciovie", "horafinvie", "alminiciovie",
+                                                        "descinivie", "horainiciosab", "horafinsab", "alminiciosab",
+                                                        "descinisab", "horainiciodom", "horafindom", "alminiciodom",
+                                                        "descinidom",
                                                     ]
                                                     for (i = 0; i < ids.length; i++) {
-
                                                         var input = document.getElementById(ids[i]);
                                                         input.disabled = false;
                                                     }

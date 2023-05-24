@@ -88,10 +88,10 @@
                                                             H-fin-alm</th>
                                                         <th class="col-1" style="font-size:1rem; font-weight: bold; "
                                                             scope="col">
-                                                            Desc ini</th>
+                                                            Break ini</th>
                                                         <th class="col-1" style="font-size:1rem; font-weight: bold; "
                                                             scope="col">
-                                                            Desc fin</th>
+                                                            Break fin</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody class="text-center">
@@ -102,7 +102,7 @@
                                                                 class="form-control text-info text-center font-weight-bold"
                                                                 style="font-size:medium;" type="text" name="" id="htrab"
                                                                 disabled></td>
-                                                        <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
                                                                 type="time" name="lunesinicio" id="horainicio"
                                                                 onchange="calcular('horainicio','horafin','alminicio','almfin','htrab')"
@@ -115,23 +115,23 @@
                                                                 onclick="calcular('horainicio','horafin','alminicio','almfin','htrab')"
                                                                 value="{{$mallas -> lunesfinal}}"></td>
 
-                                                        <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
                                                                 onclick="totalalm('alminicio','almfin')" type="time"
                                                                 name="lunes_alm_inicio" id="alminicio"
                                                                 value="{{$mallas -> lun_alm_inicio}}">
                                                         </td>
-                                                        <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
                                                                 type="time" name="lunes_alm_final" id="almfin"
                                                                 value="{{$mallas -> lun_alm_final}}" disabled></td>
-                                                        <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
                                                                 onclick="totaldes('descinilun','descfinlun')"
                                                                 onchange="totaldes('descinilun','descfinlun')"
                                                                 type="time" name="lunesdescanso1" id="descinilun"
                                                                 value="{{$mallas -> lunesdescanso1}}"></td>
-                                                        <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
                                                                 type="time" name="lunesdescanso2" id="descfinlun"
                                                                 value="{{$mallas -> lunesdescanso2}}" disabled></td>
@@ -143,37 +143,37 @@
                                                                 class="form-control text-info text-center font-weight-bold"
                                                                 style="font-size:medium;" type="text" name=""
                                                                 id="htrabmar" disabled></td>
-                                                        <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
                                                                 onchange="calcular('horainiciomar','horafinmar','alminiciomar','almfinmar','htrabmar')"
                                                                 onclick="calcular('horainiciomar','horafinmar','alminiciomar','almfinmar','htrabmar')"
                                                                 type="time" name="martesinicio" id="horainiciomar"
                                                                 value="{{$mallas -> martesinicio}}">
                                                         </td>
-                                                        <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
                                                                 onchange="calcular('horainiciojue','horafinjue','alminiciojue','almfinjue','htrabjue')"
                                                                 onclick="calcular('horainiciojue','horafinjue','alminiciojue','almfinjue','htrabjue')"
                                                                 type="time" name="martesfinal" id="horafinmar"
                                                                 value="{{$mallas -> martesfinal}}"></td>
 
-                                                        <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
                                                                 onclick="totalalm('alminiciomar','almfinmar')"
                                                                 type="time" name="martes_alm_inicio" id="alminiciomar"
                                                                 value="{{$mallas -> mar_alm_inicio}}">
                                                         </td>
-                                                        <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
                                                                 type="time" name="martes_alm_final" id="almfinmar"
                                                                 value="{{$mallas -> mar_alm_final}}" disabled></td>
-                                                        <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
                                                                 type="time" name="martesdescanso1" id="desinimar"
                                                                 onclick="totaldes('desinimar','descfinmar')"
                                                                 onchange="totaldes('desinimar','descfinmar')"
                                                                 value="{{$mallas -> martesdescanso1}}"></td>
-                                                        <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
                                                                 type="time" name="martesdescanso2" id="descfinmar"
                                                                 value="{{$mallas -> martesdescanso2}}" disabled></td>
@@ -185,36 +185,36 @@
                                                                 class="form-control text-info text-center font-weight-bold"
                                                                 style="font-size: medium;" type="text" name=""
                                                                 id="htrabmie" disabled></td>
-                                                        <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
                                                                 onchange="calcular('horainiciomie','horafinmie','alminiciomie','almfinmie','htrabmie')"
                                                                 onclick="calcular('horainiciomie','horafinmie','alminiciomie','almfinmie','htrabmie')"
                                                                 type="time" name="miercolesinicio" id="horainiciomie"
                                                                 value="{{$mallas -> miercolesinicio}}">
                                                         </td>
-                                                        <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
                                                                 onchange="calcular('horainiciomie','horafinmie','alminiciomie','almfinmie','htrabmie')"
                                                                 onclick="calcular('horainiciomie','horafinmie','alminiciomie','almfinmie','htrabmie')"
                                                                 type="time" name="miercolesfinal" id="horafinmie"
                                                                 value="{{$mallas -> miercolesfinal}}"></td>
-                                                        <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
                                                                 onclick="totalalm('alminiciomie','almfinmie')"
                                                                 type="time" name="miercoles_alm_inicio"
                                                                 id="alminiciomie" value="{{$mallas -> mie_alm_inicio}}">
                                                         </td>
-                                                        <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
                                                                 type="time" name="miercoles_alm_final" id="almfinmie"
                                                                 value="{{$mallas -> mie_alm_final}}" disabled></td>
-                                                        <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
                                                                 onclick="totaldes('descinimie','descfinmie')"
                                                                 onchange="totaldes('descinimie','descfinmie')"
                                                                 type="time" name="miercolesdescanso1" id="descinimie"
                                                                 value="{{$mallas -> miercolesdescanso1}}"></td>
-                                                        <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
                                                                 type="time" name="miercolesdescanso2" id="descfinmie"
                                                                 value="{{$mallas -> miercolesdescanso2}}" disabled></td>
@@ -226,35 +226,35 @@
                                                                 class="form-control text-info text-center font-weight-bold"
                                                                 style="font-size: medium;" type="text" name=""
                                                                 id="htrabjue" disabled></td>
-                                                        <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
                                                                 onchange="calcular('horainiciojue','horafinjue','alminiciojue','almfinjue','htrabjue')"
                                                                 onclick="calcular('horainiciojue','horafinjue','alminiciojue','almfinjue','htrabjue')"
                                                                 type="time" name="juevesinicio" id="horainiciojue"
                                                                 value="{{$mallas -> juevesinicio}}">
                                                         </td>
-                                                        <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
                                                                 type="time" name="juevesfinal" id="horafinjue"
                                                                 onchange="calcular('horainiciojue','horafinjue','alminiciojue','almfinjue','htrabjue')"
                                                                 onclick="calcular('horainiciojue','horafinjue','alminiciojue','almfinjue','htrabjue')"
                                                                 value="{{$mallas -> juevesfinal}}"></td>
-                                                        <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
                                                                 onclick="totalalm('alminiciojue','almfinjue')"
                                                                 type="time" name="jueves_alm_inicio" id="alminiciojue"
                                                                 value="{{$mallas -> jue_alm_inicio}}"></td>
-                                                        <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
                                                                 type="time" name="jueves_alm_final" id="almfinjue"
                                                                 value="{{$mallas -> jue_alm_final}}" disabled></td>
-                                                        <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
                                                                 onchange="totaldes('descinijue','descfinjue')"
                                                                 onclick="totaldes('descinijue','descfinjue')"
                                                                 type="time" name="juevesdescanso1" id="descinijue"
                                                                 value="{{$mallas -> juevesdescanso1}}"></td>
-                                                        <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
                                                                 type="time" name="juevesdescanso2" id="descfinjue"
                                                                 value="{{$mallas -> juevesdescanso2}}" disabled></td>
@@ -266,35 +266,35 @@
                                                                 class="form-control text-info text-center font-weight-bold"
                                                                 style="font-size: medium;" type="text" name=""
                                                                 id="htrabvie" disabled></td>
-                                                        <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
                                                                 onchange="calcular('horainiciovie','horafinvie','alminiciovie','almfinvie','htrabvie')"
                                                                 onclick="calcular('horainiciovie','horafinvie','alminiciovie','almfinvie','htrabvie')"
                                                                 type="time" name="viernesinicio" id="horainiciovie"
                                                                 value="{{$mallas -> viernesinicio}}"></td>
-                                                        <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
                                                                 onchange="calcular('horainiciovie','horafinvie','alminiciovie','almfinvie','htrabvie')"
                                                                 onclick="calcular('horainiciovie','horafinvie','alminiciovie','almfinvie','htrabvie')"
                                                                 type="time" name="viernesfinal" id="horafinvie"
                                                                 value="{{$mallas -> viernesfinal}}"></td>
-                                                        <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
                                                                 onclick="totalalm('alminiciovie','almfinvie')"
                                                                 type="time" name="viernes_alm_inicio" id="alminiciovie"
                                                                 value="{{$mallas -> vie_alm_inicio}}">
                                                         </td>
-                                                        <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
                                                                 type="time" name="viernes_alm_final" id="almfinvie"
                                                                 value="{{$mallas -> vie_alm_final}}" disabled></td>
-                                                        <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
                                                                 onchange="totaldes('descinivie','descfinvie')"
                                                                 onclick="totaldes('descinivie','descfinvie')"
                                                                 type="time" name="viernesdescanso1" id="descinivie"
                                                                 value="{{$mallas -> viernesdescanso1}}"></td>
-                                                        <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
                                                                 type="time" name="viernesdescanso2" id="descfinvie"
                                                                 value="{{$mallas -> viernesdescanso2}}" disabled></td>
@@ -306,34 +306,34 @@
                                                                 class="form-control text-info text-center font-weight-bold"
                                                                 style="font-size: medium;" type="text" name=""
                                                                 id="htrabsab" disabled></td>
-                                                        <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
                                                                 type="time" name="sabadoinicio" id="horainiciosab"
                                                                 onchange="calcular('horainiciosab','horafinsab','alminiciosab','almfinsab','htrabsab')"
                                                                 onclick="calcular('horainiciosab','horafinsab','alminiciosab','almfinsab','htrabsab')"
                                                                 value="{{$mallas -> sabadoinicio}}"></td>
-                                                        <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
                                                                 onchange="calcular('horainiciosab','horafinsab','alminiciosab','almfinsab','htrabsab')"
                                                                 onclick="calcular('horainiciosab','horafinsab','alminiciosab','almfinsab','htrabsab')"
                                                                 type="time" name="sabadofinal" id="horafinsab"
                                                                 value="{{$mallas -> sabadofinal}}" r></td>
-                                                        <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
                                                                 onclick="totalalm('alminiciosab','almfinsab')"
                                                                 type="time" name="sabado_alm_inicio" id="alminiciosab"
                                                                 value="{{$mallas -> sab_alm_inicio}}"></td>
-                                                        <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
-                                                                font-weight:bold; font-size:11px; color:teal;"
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
+                                                                 font-weight:bold; font-size:11px; color:teal;"
                                                                 type="time" name="sabado_alm_final" id="almfinsab"
                                                                 value="{{$mallas -> sab_alm_final}}" disabled></td>
-                                                        <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
                                                                 onchange="totaldes('descinisab','descfinsab')"
                                                                 onclick="totaldes('descinisab','descfinsab')"
                                                                 type="time" name="sabadodescanso1" id="descinisab"
                                                                 value="{{$mallas -> sabadodescanso1}}"></td>
-                                                        <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
                                                                 type="time" name="sabadodescanso2" id="descfinsab"
                                                                 value="{{$mallas -> sabadodescanso2}}" disabled></td>
@@ -345,33 +345,33 @@
                                                                 class="form-control text-info text-center font-weight-bold"
                                                                 style="font-size: medium;" type="text" name=""
                                                                 id="htrabdom" disabled></td>
-                                                        <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
                                                                 onchange="calcular('horainiciodom','horafindom','alminiciodom','almfindom','htrabdom')"
                                                                 onclick="calcular('horainiciodom','horafindom','alminiciodom','almfindom','htrabdom')"
                                                                 type="time" name="domingoinicio" id="horainiciodom"
                                                                 value="{{$mallas -> domingoinicio}}"></td>
-                                                        <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
                                                                 onchange="calcular('horainiciodom','horafindom','alminiciodom','almfindom','htrabdom')"
                                                                 onclick="calcular('horainiciodom','horafindom','alminiciodom','almfindom','htrabdom')"
                                                                 type="time" name="domingofinal" id="horafindom"
                                                                 value="{{$mallas -> domingofinal}}"></td>
-                                                        <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
                                                                 onclick="totalalm('alminiciodom','almfindom')"
                                                                 type="time" name="domingo_alm_inicio" id="alminiciodom"
                                                                 value="{{$mallas -> dom_alm_inicio}}"></td>
-                                                        <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
                                                                 type="time" name="domingo_alm_final" id="almfindom"
                                                                 value="{{$mallas -> dom_alm_final}}" disabled></td>
-                                                        <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
                                                                 onchange="totaldes('desiniciodom','desfindom')"
                                                                 type="time" name="domingodescanso1" id="desiniciodom"
                                                                 value="{{$mallas -> domingodescanso1}}"></td>
-                                                        <td><input style="border-radius:30px; border:1px solid #2980B9; box-shadow:0px 0px 5px #4DD0E1;
+                                                        <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
                                                                 type="time" name="domingodescanso2" id="desfindom"
                                                                 value="{{$mallas -> domingodescanso2}}" disabled></td>
@@ -539,12 +539,12 @@
                                                                 mie2Input.disabled = true;
                                                                 mie3Input.disabled = true;
                                                                 mie4Input.disabled = true;
-                                                                mier1Input.value = "";
-                                                                mier2Input.value = "";
-                                                                mier3Input.value = "";
-                                                                mier4Input.value = "";
-                                                                mier5Imput.value = "";
-                                                                mier6Imput.value = "";
+                                                                mie1Input.value = "";
+                                                                mie2Input.value = "";
+                                                                mie3Input.value = "";
+                                                                mie4Input.value = "";
+                                                                mie5Imput.value = "";
+                                                                mie6Imput.value = "";
                                                                 break;
                                                             case 3: // Jueves
                                                                 jue1Input.disabled = true;
@@ -587,20 +587,14 @@
                                                     }
                                                     /*funcion de reseteo inputs */
                                                     function Reset() {
-                                                        var ids = ["horainicio", "horafin", "alminicio", "descinilun",
-                                                            "descfinlun", "almfin",
+                                                        var ids = ["horainicio", "horafin", "descinilun", "alminicio",
                                                             "horainiciomar", "horafinmar", "alminiciomar",
-                                                            "desinimar", "descfinmar", "almfinmar",
-                                                            "horainiciomie", "horafinmie", "alminiciomie",
-                                                            "descinimie", "descfinmie", "almfinmie",
-                                                            "horainiciojue", "horafinjue", "alminiciojue",
-                                                            "descinijue","descfinjue","almfinjue",
-                                                            "horainiciovie", "horafinvie", "alminiciovie",
-                                                            "descinivie","descfinvie","almfinvie",
-                                                            "horainiciosab", "horafinsab", "alminiciosab",
-                                                            "descinisab", "descfinsab","almfinsab",
-                                                            "horainiciodom", "horafindom", "alminiciodom",
-                                                            "descinidom", "descfindom","almfindom",
+                                                            "desinimar","horainiciomie", "horafinmie", "alminiciomie",
+                                                            "descinimie","horainiciojue", "horafinjue", "alminiciojue",
+                                                            "descinijue","horainiciovie", "horafinvie", "alminiciovie",
+                                                            "descinivie", "horainiciosab", "horafinsab", "alminiciosab",
+                                                            "descinisab","horainiciodom", "horafindom", "alminiciodom",
+                                                            "descinidom",
                                                         ]
                                                         for (i = 0; i < ids.length; i++) {
 

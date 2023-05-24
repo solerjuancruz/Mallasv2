@@ -22,9 +22,11 @@
         "sass": "^1.32.11",
         "sass-loader": "^11.0.1",
         "vue": "^2.6.12",
+        "vue-loader": "^15.9.8",
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
-        "bootstrap-select": "^1.13.18"
+        "bootstrap-select": "^1.13.18",
+        "sweetalert2": "^11.4.8"
     }
 }

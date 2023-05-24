@@ -53,6 +53,7 @@
                                                     style="display: inline-block;"
                                                     onsubmit="return confirm('Deseas editar esta(s) Malla(s) ?')">
                                                     @csrf
+                                                   
                                                     <button href=" #" class="btn btn-success">
                                                         <i class="material-icons">edit</i></button>
                                                 </form>
@@ -81,4 +82,5 @@
         </div>
     </div>
 </div>
+
 @endsection

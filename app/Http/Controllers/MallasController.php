@@ -16,7 +16,9 @@ class MallasController extends Controller
     public function index()
     {
         $datos = Malla::all();
+        
         return view('horacorte.mallas',compact('datos'));
+        
     }
 
     /**
@@ -172,6 +174,9 @@ class MallasController extends Controller
 
       $mallas = Malla::find($id);
         return view('horacorte.editmallas',compact('mallas'));
+        
+
+        
     }
 
     /**

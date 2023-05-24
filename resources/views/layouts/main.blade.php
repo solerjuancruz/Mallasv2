@@ -33,6 +33,7 @@
         <script src="{{ asset('js/plugins/perfect-scrollbar.jquery.min.js') }}"></script>        
         <script src="{{ asset('js/material-dashboard.js') }}"></script>
         <script src="{{ asset('js/plugins/bootstrap-notify.js') }}"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
         @stack('js')
     </body>
 </html>
