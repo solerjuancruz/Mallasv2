@@ -24,7 +24,7 @@
                                 <div class="m-4 p-4">
                                     <form action="{{route('mallas.store')}}" method="POST" class="" id="">
                                         @csrf
-                                        <div class="form-row d-flex justify-content-around mt-3">
+                                        <div class="form-row d-flex justify-content-around  mt-3">
                                             <div class="form-group col-sm-3 pt-0 mt-0 ">
                                                 <label class="text-info" for="users_id"> <b>Nombre
                                                         Asesor</b></label>
@@ -34,21 +34,27 @@
                                                     @endforeach
                                                 </select>
                                             </div>
-                                            <div class="form-group col-sm-3 p-4 ">
+                                            <div class="form-group col-sm-3 p-4  ">
                                                 <label class="text-info" for="semana"><b>Semana-Asignada</b></label>
                                                 <input type="week" class="form-control" name="semana" id="semana"
                                                     required>
                                             </div>
-                                            <div class="form-group col-sm-3 ">
-                                                <label class="text-info" for="semana"><b>Dia-descanso</b></label>
-                                                <input type="date" class="form-control mt-3" oninput="DiaDescanso()"
-                                                    onclick="Reset()" onchange="semanaSiguiente()" name="diadescanso"
-                                                    id="diadescanso" required>
+                                            <div class="form-group col-sm-3 pt-0 mt-0 ">
+                                               
+                                                    <label for="horario" class="text-info"><b>Formatos de
+                                                        horario</b></label>
+                                                <select class="form-control" onchange="autocompletarinput()"
+                                                    onclick="autocompletarinput()" name="horario" id="horario">
+                                                    <option value="" selected>Selecciona</option>
+                                                    <option value="opcion1">L-V 8 am-5 pm S 8am-4 pm</option>
+                                                    <option value="opcion2">L-V 7 am-6 pm </option>
+                                                    <option value="reset">limpiar</option>
+                                                </select>
 
 
                                             </div>
                                         </div>
-                                        <div class="form-row d-flex justify-content-around mt-1">
+                                        <div class="form-row d-flex justify-content-around  mt-2">
 
                                             <div class="form-group col-sm-2 mt-4">
                                                 <label class="text-info " for="campaña"><b>Campaña</b></label>
@@ -130,20 +136,16 @@
 
                                                 </select>
                                             </div>
-                                            <div class="form-group col-sm-2  ">
-                                                <label for="horario" class="text-info"><b>Formatos de
-                                                        horario</b></label>
-                                                <select class="form-control" onchange="autocompletarinput()" name="horario" id="horario">
-                                                    <option value="" selected>Selecciona</option>
-                                                    <option value="">L-V 7 am-6 pm </option>
-                                                    <option value="">L-V 8 am-5 pm S 8
-                                                        am-4 pm</option>
-                                                </select>
+                                            <div class="form-group col-sm-2 mt-4 ">
+                                            <label class="text-info " for="semana"><b>Dia-descanso</b></label>
+                                                <input type="date" class="form-control mt-3" oninput="DiaDescanso()"
+                                                    onclick="Reset()" onchange="semanaSiguiente()" name="diadescanso"
+                                                    id="diadescanso" required >
                                             </div>
                                         </div>
 
                                         <div class=" mt-4 pt-4 ">
-                                            <table class=" table-sm table-hover ">
+                                            <table class=" table-responsive table-hover ">
                                                 <thead style="background:#00CED1;"
                                                     class="fw-bold text-light text-center">
                                                     <tr class="col-sm-auto m-0 p-0 d-grid justify-content-between">
@@ -250,9 +252,9 @@
                                                                 value="" disabled></td>
                                                         <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
-                                                                type="time" name="martesdescanso1" id="desinimar"
-                                                                onclick="totaldes('desinimar','descfinmar')"
-                                                                onchange="totaldes('desinimar','descfinmar')" value="">
+                                                                type="time" name="martesdescanso1" id="descinimar"
+                                                                onclick="totaldes('descinimar','descfinmar')"
+                                                                onchange="totaldes('descinimar','descfinmar')" value="">
                                                         </td>
                                                         <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
@@ -323,8 +325,9 @@
                                                         <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
                                                                 onclick="totalalm('alminiciojue','almfinjue')"
+                                                                onchange="totalalm('alminiciojue','almfinjue')"
                                                                 type="time" name="jueves_alm_inicio" id="alminiciojue"
-                                                                value="" required>
+                                                                value="">
                                                         </td>
                                                         <td><input class="btn-sm p-sm-1 m-0" style="border-radius:5px; border:1px solid #2980B9; box-shadow:0.5px 0.5px 4px #4DD0E1;
                                                                  font-weight:bold; font-size:11px; color:teal;"
@@ -538,7 +541,7 @@
                                                     let mar1Input = document.getElementById('horainiciomar');
                                                     let mar2Input = document.getElementById('horafinmar');
                                                     let mar3Input = document.getElementById('alminiciomar');
-                                                    let mar4Input = document.getElementById('desinimar');
+                                                    let mar4Input = document.getElementById('descinimar');
                                                     let mar5Imput = document.getElementById('descfinmar');
                                                     let mar6Imput = document.getElementById('almfinmar');
 
@@ -592,6 +595,8 @@
                                                             dom2Input.value = "";
                                                             dom3Input.value = "";
                                                             dom4Input.value = "";
+                                                            dom5Input.value = "";
+                                                            dom6Input.value = "";
                                                             break;
                                                         case 0: // Lunes
                                                             lun1Input.disabled = true;
@@ -673,7 +678,7 @@
                                                 function Reset() {
                                                     let ids = ["horainicio", "horafin", "descinilun", "alminicio",
                                                         "horainiciomar", "horafinmar", "alminiciomar",
-                                                        "desinimar", "horainiciomie", "horafinmie", "alminiciomie",
+                                                        "descinimar", "horainiciomie", "horafinmie", "alminiciomie",
                                                         "descinimie", "horainiciojue", "horafinjue", "alminiciojue",
                                                         "descinijue", "horainiciovie", "horafinvie", "alminiciovie",
                                                         "descinivie", "horainiciosab", "horafinsab", "alminiciosab",
@@ -711,37 +716,93 @@
                                                 }
 
                                                 function autocompletarinput() {
-                                                    var selectElement = document.getElementById("horario");
-                                                    // Obtener el valor seleccionado
-                                                    var selectedValue = selectElement.value;
-                                                    // Realizar las acciones deseadas según el valor seleccionado
+                                                    const select = document.getElementById("horario");
+                                                    const selectedValue = select.value;
+                                                    const valor1 = "08:00:00"; //horainicio
+                                                    const valor2 = "17:00:00"; //horafin
+                                                    const valor3 = "13:00:00"; //alm
+                                                    const valor4 = "14:00:00"; //almfin
+                                                    const valor5 = "10:00:00"; //break
+                                                    const valor6 = "11:00:00"; //breakfin
+                                                    const valor7 = "16:00:00"; // sabado
+                                                    //valores 7am-6 pm
+                                                    const valor8 = "07:00:00"; //horainicio
+                                                    const valor9 = "18:00:00"; //horafin
+                                                    let inputinicio = document.querySelectorAll(
+                                                        'input[id^="horaini"]');
+                                                    let inputfin = document.querySelectorAll(
+                                                        'input[id^="horafin"]');
+                                                    let inputsabado = document.getElementById('horafinsab');
+                                                    let inputalm = document.querySelectorAll('input[id^="almini"]');
+                                                    let inputalmfin = document.querySelectorAll(
+                                                        'input[id^="almfin"]');
+                                                    let inputbreak = document.querySelectorAll(
+                                                        'input[id^="descini"]');
+                                                    let inputbreakfin = document.querySelectorAll(
+                                                        'input[id^="descfin"]');
+                                                          // const inputs = [inputinicio,inputfin,inputalm,inputabreak]
 
                                                     if (selectedValue === "opcion1") {
-                                                        // Acciones para la opción 1
-                                                        var inputinicio = document.querySelectorAll('input[id^="horainicio"]');
-                                                        //var inputfin = document.querySelectorAll('input[id^="horafin"]');
-                                                        //var inputalminicio = document.querySelectorAll('input[id^="alminicio"]');
-
-                                                        // Valor que se asignará a los inputs
-                                                        var valorhorainicio = "08:00:00";
-                                                       //var valorhorafin = "08:00:00";
-                                                        // Itera sobre los elementos de entrada y asigna el valor
-                                                        inputinicio.forEach(function(input) {
-                                                            input.value = valor;});
-                                                           // inputinicio.forEach(function(input) {
-                                                           // input.value = valor;});
-                                                        
-
-                                                    //} else if (selectedValue === "opcion2") {
-                                                        // Acciones para la opción 2
-                                                   // } else if (selectedValue === "opcion3") {
-                                                        // Acciones para la opción 3
+                                                    
+                                                        for (let i = 0; i < inputinicio.length; i++) {
+                                                            inputinicio[i].value = valor1;
+                                                        }
+                                                        for (let i = 0; i < inputfin.length; i++) {
+                                                            inputfin[i].value = valor2;
+                                                        }
+                                                        for (let i = 0; i < inputalm.length; i++) {
+                                                            inputalm[i].value = valor3;
+                                                        }
+                                                        for (let i = 0; i < inputalmfin.length; i++) {
+                                                            inputalmfin[i].value = valor4;
+                                                        }
+                                                        for (let i = 0; i < inputbreak.length; i++) {
+                                                            inputbreak[i].value = valor5;
+                                                        }
+                                                        for (let i = 0; i < inputbreakfin.length; i++) {
+                                                            inputbreakfin[i].value = valor6;
+                                                        }
+                                                        inputsabado.value = valor7;
+                                                    } else if (selectedValue === "opcion2") {
+                                                        for (let i = 0; i < inputinicio.length; i++) {
+                                                            inputinicio[i].value = valor8;
+                                                        }
+                                                        for (let i = 0; i < inputfin.length; i++) {
+                                                            inputfin[i].value = valor9;
+                                                        }
+                                                        for (let i = 0; i < inputalm.length; i++) {
+                                                            inputalm[i].value = valor3;
+                                                        }
+                                                        for (let i = 0; i < inputalmfin.length; i++) {
+                                                            inputalmfin[i].value = valor4;
+                                                        }
+                                                        for (let i = 0; i < inputbreak.length; i++) {
+                                                            inputbreak[i].value = valor5;
+                                                        }
+                                                        for (let i = 0; i < inputbreakfin.length; i++) {
+                                                            inputbreakfin[i].value = valor6;
+                                                        }
+                                                    } else if (selectedValue === "reset") {
+                                                        for (let i = 0; i < inputinicio.length; i++) {
+                                                            inputinicio[i].value = "";
+                                                        }
+                                                        for (let i = 0; i < inputfin.length; i++) {
+                                                            inputfin[i].value = "";
+                                                        }
+                                                        for (let i = 0; i < inputalm.length; i++) {
+                                                            inputalm[i].value = "";
+                                                        }
+                                                        for (let i = 0; i < inputalmfin.length; i++) {
+                                                            inputalmfin[i].value = "";
+                                                        }
+                                                        for (let i = 0; i < inputbreak.length; i++) {
+                                                            inputbreak[i].value = "";
+                                                        }
+                                                        for (let i = 0; i < inputbreakfin.length; i++) {
+                                                            inputbreakfin[i].value = "";
+                                                        }
                                                     }
-
-
-
                                                 }
-                                                
                                                 </script>
                                             </table>
                                             <div class="form-floating  border col-md-12  mt-3 p-2">
