@@ -42,15 +42,15 @@
                                             <div class="form-group col-sm-3 ">
                                                 <label class="text-info" for="semana"><b>Dia-descanso</b></label>
                                                 <input type="date" class="form-control mt-3" oninput="DiaDescanso()"
-                                                    onclick="Reset()"
-                                                    min="<?php echo date("Y-m-d",strtotime(date("Y-m-d")."+4 days"));?>"
-                                                    max="<?php echo date("Y-m-d",strtotime(date("Y-m-d")."+11 days"));?>"
-                                                    name="diadescanso" id="diadescanso" required>
+                                                    onclick="Reset()" onchange="semanaSiguiente()" name="diadescanso"
+                                                    id="diadescanso" required>
+
+
                                             </div>
                                         </div>
                                         <div class="form-row d-flex justify-content-around mt-1">
 
-                                            <div class="form-group col-sm-3 mt-4">
+                                            <div class="form-group col-sm-2 mt-4">
                                                 <label class="text-info " for="campaña"><b>Campaña</b></label>
                                                 <input type="text" value="MOVISTAR" class="form-control mt-3"
                                                     id="campaña" name="campaña">
@@ -130,7 +130,18 @@
 
                                                 </select>
                                             </div>
+                                            <div class="form-group col-sm-2  ">
+                                                <label for="horario" class="text-info"><b>Formatos de
+                                                        horario</b></label>
+                                                <select class="form-control" onchange="autocompletarinput()" name="horario" id="horario">
+                                                    <option value="" selected>Selecciona</option>
+                                                    <option value="">L-V 7 am-6 pm </option>
+                                                    <option value="">L-V 8 am-5 pm S 8
+                                                        am-4 pm</option>
+                                                </select>
+                                            </div>
                                         </div>
+
                                         <div class=" mt-4 pt-4 ">
                                             <table class=" table-sm table-hover ">
                                                 <thead style="background:#00CED1;"
@@ -660,7 +671,7 @@
                                                 }
                                                 /*funcion de reseteo inputs */
                                                 function Reset() {
-                                                    var ids = ["horainicio", "horafin", "descinilun", "alminicio",
+                                                    let ids = ["horainicio", "horafin", "descinilun", "alminicio",
                                                         "horainiciomar", "horafinmar", "alminiciomar",
                                                         "desinimar", "horainiciomie", "horafinmie", "alminiciomie",
                                                         "descinimie", "horainiciojue", "horafinjue", "alminiciojue",
@@ -670,10 +681,67 @@
                                                         "descinidom",
                                                     ]
                                                     for (i = 0; i < ids.length; i++) {
-                                                        var input = document.getElementById(ids[i]);
+                                                        let input = document.getElementById(ids[i]);
                                                         input.disabled = false;
                                                     }
                                                 }
+
+                                                function semanaSiguiente() {
+
+                                                    var fechaActual = new Date();
+                                                    var fechaLimite = new Date(fechaActual);
+                                                    fechaLimite.setDate(fechaLimite.getDate() + 10);
+                                                    // Calcular la fecha de finalización de la semana actual
+                                                    var fechaFinSemanaActual = new Date(fechaActual);
+                                                    fechaFinSemanaActual.setDate(fechaFinSemanaActual.getDate() + (6 -
+                                                        fechaActual.getDay()));
+                                                    // Si la fecha actual es mayor o igual a la fecha de finalización de la semana actual,
+                                                    // actualizar la fecha límite a la siguiente semana
+                                                    if (fechaActual >= fechaFinSemanaActual) {
+                                                        fechaLimite.setDate(fechaLimite.getDate() + 7);
+                                                    }
+                                                    // Convertir las fechas en formato de cadena yyyy-mm-dd
+                                                    var fechaActualStr = fechaActual.toISOString().split('T')[0];
+                                                    var fechaLimiteStr = fechaLimite.toISOString().split('T')[0];
+                                                    var inputFecha = document.getElementById('diadescanso');
+                                                    // Establecer los atributos 'min' y 'max' del input de tipo date
+                                                    inputFecha.setAttribute('min', fechaActualStr);
+                                                    inputFecha.setAttribute('max', fechaLimiteStr);
+
+                                                }
+
+                                                function autocompletarinput() {
+                                                    var selectElement = document.getElementById("horario");
+                                                    // Obtener el valor seleccionado
+                                                    var selectedValue = selectElement.value;
+                                                    // Realizar las acciones deseadas según el valor seleccionado
+
+                                                    if (selectedValue === "opcion1") {
+                                                        // Acciones para la opción 1
+                                                        var inputinicio = document.querySelectorAll('input[id^="horainicio"]');
+                                                        //var inputfin = document.querySelectorAll('input[id^="horafin"]');
+                                                        //var inputalminicio = document.querySelectorAll('input[id^="alminicio"]');
+
+                                                        // Valor que se asignará a los inputs
+                                                        var valorhorainicio = "08:00:00";
+                                                       //var valorhorafin = "08:00:00";
+                                                        // Itera sobre los elementos de entrada y asigna el valor
+                                                        inputinicio.forEach(function(input) {
+                                                            input.value = valor;});
+                                                           // inputinicio.forEach(function(input) {
+                                                           // input.value = valor;});
+                                                        
+
+                                                    //} else if (selectedValue === "opcion2") {
+                                                        // Acciones para la opción 2
+                                                   // } else if (selectedValue === "opcion3") {
+                                                        // Acciones para la opción 3
+                                                    }
+
+
+
+                                                }
+                                                
                                                 </script>
                                             </table>
                                             <div class="form-floating  border col-md-12  mt-3 p-2">
