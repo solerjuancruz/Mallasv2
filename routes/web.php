@@ -84,7 +84,7 @@ Route::get('/', function () {
    
     // Rutas Mallas
     Route::resource('mallas', App\Http\Controllers\MallasController::class);
-  
+    Route::get('excel', 'App\Http\Controllers\MallasController@export')->name('malla.excel');
 
   
 });

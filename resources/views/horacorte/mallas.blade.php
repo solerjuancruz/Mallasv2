@@ -72,7 +72,7 @@
 
                                 </table>
                             </div>
-                            <form action="#">
+                            <form action="{{route('malla.excel')}}">
                                 <button type="submit" class="btn btn-sm btn-success float-left m-lg-4 "><i class="material-icons">file_download</i>Descargar</button>
                             </form>
                         </div>
