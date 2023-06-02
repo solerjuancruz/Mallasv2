@@ -2,15 +2,15 @@
 
 namespace App\Exports;
 
+use Carbon\Carbon;
 use App\Models\Malla;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
-use Maatwebsite\Excel\Concerns\WithEvents;
 use Maatwebsite\Excel\Concerns\WithStyles;
 use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 use PhpOffice\PhpSpreadsheet\Style\Fill;
-use Maatwebsite\Excel\Events\AfterSheet;
+
 
 class MallaExport implements FromCollection, ShouldAutoSize, WithStyles, WithHeadings
 {
@@ -26,21 +26,22 @@ class MallaExport implements FromCollection, ShouldAutoSize, WithStyles, WithHea
         
             foreach ($days as $day) {
                 $data = [
-                    'NOMBRE' => $user->name,
+                    'DÍA' => Carbon::parse($malla->{$day . 'fecha'})->format('d/m/Y'),
                     'CEDULA' => $user->cedula,
-                    'DÍA' => $day,
+                    'NOMBRE' => $user->name,    
                     'SEMANA' => $malla->semana,
                     'CAMPAÑA' => $malla->campaña,
-                    'FOCO' => $malla->foco,
+                    'SEGMENTO' => $malla->foco,
                     'ENCARGADO' => $malla->encargado,
                     'TOTAL HORAS' => $malla->horastotal,
                     'DIA DESCANSO' => $malla->diadescanso,
-                    'INICIO' => $malla->{$day . 'inicio'} ?? $malla->{$day . 'inicio'} ?? 'N/A',
-                    'FINAL' => $malla->{$day . 'final'} ?? $malla->{$day . 'final'} ?? 'N/A',
-                    'DESCANSO' => $malla->{$day . 'descanso1'} ?? $malla->{$day . 'descanso1'} ?? 'N/A',
-                    'DESCANSO FIN' => $malla->{$day . 'descanso2'} ?? $malla->{$day . 'descanso2'} ?? 'N/A',
-                    'ALMUERZO INICIO' => $malla->{$day . '_alm_inicio'} ?? $malla->{$day . '_alm_inicio'} ?? 'N/A',
-                    'ALMUERZO FINAL' => $malla->{$day . '_alm_final'} ?? $malla->{$day . '_alm_final'} ?? 'N/A',
+                    'INICIO' => $malla->{$day . 'inicio'} ? Carbon::parse($malla->{$day . 'inicio'})->format("H:i:s") : "0:00",
+                    'FINAL' => $malla->{$day . 'final'} ? Carbon::parse($malla->{$day . 'final'})->format("H:i:s") : "0:00",
+                    'DESCANSO' => $malla->{$day . 'descanso1'} ? Carbon::parse($malla->{$day . 'descanso1'})->format("H:i:s") : "0:00",
+                    'DESCANSO FIN' => $malla->{$day . 'descanso2'} ? Carbon::parse($malla->{$day . 'descanso2'})->format("H:i:s") : "0:00",
+                    'ALMUERZO INICIO' => $malla->{$day . '_alm_inicio'} ? Carbon::parse($malla->{$day . '_alm_inicio'})->format("H:i:s") : "0:00",
+                    'ALMUERZO FINAL' => $malla->{$day . '_alm_final'} ? Carbon::parse($malla->{$day . '_alm_final'})->format("H:i:s") : "0:00",
+                    'OBSERVACIONES' => $malla->observaciones,
                     'CREADA' => $malla->created_at,
                     'ACTUALIZADA' => $malla->created_at,
                 ];
@@ -82,12 +83,12 @@ class MallaExport implements FromCollection, ShouldAutoSize, WithStyles, WithHea
     public function headings(): array
     {
         return[
-            'NOMBRE',
-            'CEDULA',
             'DIA',
+            'CEDULA',
+            'NOMBRE',
             'SEMANA',
             'CAMPAÑA',
-            'FOCO',
+            'SEGMENTO',
             'ENCARGADO',
             'TOTAL HORAS',
             'DIA DESCANSO',
@@ -97,6 +98,7 @@ class MallaExport implements FromCollection, ShouldAutoSize, WithStyles, WithHea
             'DESCANSO FIN',
             'ALMUERZO INICIO',
             'ALMUERZO FINAL',
+            'OBSERVACIONES',
             'CREADA',
             'ACTUALIZADA'
         ];

@@ -1,41 +1,60 @@
 h1{
- color:#00aec5;
- text-shadow: 3px 3px 1px rgb(48, 192, 211);
- transition: all 500ms;
-}
-
-h1:hover{
-    text-shadow: 1px 2px 2px rgb(109, 215, 230);
-}
-
-.reloj{
-    margin-top: 25px;
-    font-size: 25px;
-}
-
-#tituloCards{
-    margin: 7px;
-    font-size: 20px;
-    color: rgb(34, 141, 160);
-    text-shadow: 1px 1px 1px rgb(12, 51, 56);
-    transition: all 400ms;
-}
-
-#tituloCards:hover{
-    transform: scale(1.2,1.2) !important;
-}
-
-
-.reloj-text{
-    padding: 5px;
-    margin: 5px;
-    font-size: 20px;
-}
-
-#mas{
-    position: absolute;
-    z-index: 3;
-    text-align: center;
-}
-
-
+    color:#00aec5;
+    text-shadow: 3px 3px 1px rgb(48, 192, 211);
+    transition: all 500ms;
+   }
+   
+   h1:hover{
+       text-shadow: 1px 2px 2px rgb(109, 215, 230);
+   }
+   
+   .reloj{
+       margin-top: 25px;
+       font-size: 25px;
+   }
+   
+   #tituloCards{
+       margin: 7px;
+       font-size: 20px;
+       color: rgb(34, 141, 160);
+       text-shadow: 1px 1px 1px rgb(12, 51, 56);
+       transition: all 400ms;
+   }
+   
+   #tituloCards:hover{
+       transform: scale(1.2,1.2) !important;
+   }
+   
+   
+   .reloj-text{
+       padding: 5px;
+       margin: 5px;
+       font-size: 20px;
+   }
+   
+   #mas{
+       position: absolute;
+       z-index: 3;
+       text-align: center;
+   }
+   #thead-horarios{
+       background:#00CED1;
+       font-size:18px;
+       font-weight: bold;
+   }
+   table#tabla-horarios tbody tr th {
+       font-size: 18px;
+       font-weight: bold;
+   }
+   #tabla-body-horarios input[type="time"]{
+       border-radius:5px; 
+       border:1px solid #2980B9; 
+       box-shadow:0.5px 0.5px 4px #4DD0E1;
+       font-weight:bold; 
+       font-size:11px; 
+       color:teal;
+   }
+   #tabla-body-horarios input[type="text"]{
+       font-size:large;
+   }
+   

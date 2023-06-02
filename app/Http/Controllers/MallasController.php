@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Malla;
 use App\Models\User;
 use Maatwebsite\Excel\Facades\Excel;
@@ -20,7 +21,7 @@ class MallasController extends Controller
     public function index()
     {
         $datos = Malla::all();
-        return view('horacorte.mallas',compact('datos'));
+        return view('horacorte.mallas', compact('datos'));
     }
 
     /**
@@ -42,138 +43,161 @@ class MallasController extends Controller
      */
     public function store(Request $request)
     {
-
-       
-        $days = ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado','domingo'];
-       $total= 0;
-       
-       $mallas = new Malla();
-        foreach ($days as $day) {
-            ${"inicio$day"} = Carbon::parse($request->input($day . 'inicio'));
-            ${"fin$day"} = Carbon::parse($request->input($day . 'final'));
-
-            if (${"inicio$day"} > ${"fin$day"}) {
-               
-                return back()->with('danger', 'La hora de inicio no puede ser mayor a la hora de salida'); 
-            }
-            if (is_null($request->get($day . '_alm_inicio'))) {
-                ${"almuerzo2$day"} = null;
-            } 
-            if (is_null($request->get($day . 'descanso1'))) {
-                ${"descanso2$day"} = null;
-            } else {
-                ${"almuerzo1$day"} = Carbon::parse($request->input("{$day}_alm_inicio"));
-                ${"descanso$day"}= Carbon::parse($request->input($day . 'descanso1'));
-                ${"almuerzo2$day"} = ${"almuerzo1$day"}->copy()->addHour();
-                ${"descanso2$day"} = ${"descanso$day"}->copy()->addMinutes(20);
-                
-                ${"horas$day"} = ${"fin$day"}->diffInHours(${"inicio$day"});
-                ${"almuerzo$day"} = ${"almuerzo2$day"}->diffInHours(${"almuerzo1$day"});
-                ${"total$day"} = ${"horas$day"} - ${"almuerzo$day"};
-
-
-
-                $total += ${"total$day"};
-
-                 $mallas->{$day . '_alm_final'} = ${"almuerzo2$day"};
-                 $mallas->{$day . 'descanso2'} = ${"descanso2$day"};
-            }
-        }
-        try{
-                 $mallas ->users_id= $request->get('users_id');
-                 $mallas ->semana= $request->get('semana');
-                 $mallas ->campaña=$request->get('campaña');
-                 $mallas ->foco=$request->get('foco');
-                 $mallas ->encargado=$request->get('encargado');
-                 $mallas ->lunesinicio= $request->get('lunesinicio');
-                 $mallas ->lunesfinal= $request->get('lunesfinal');
-                 $mallas ->lunesdescanso1= $request->get('lunesdescanso1');
-                 $mallas ->lunes_alm_inicio= $request->get('lunes_alm_inicio');
-                 //$mallas ->lun_alm_final= $request->get('lunes_alm_final');
-                 //$mallas ->lunesdescanso2= $request->get('lunesdescanso2');
-
-         // MARTES //         
-
-                 $mallas ->martesinicio= $request->get('martesinicio');
-                 $mallas ->martesfinal= $request->get('martesfinal');
-                 $mallas ->martesdescanso1= $request->get('martesdescanso1');
-                 $mallas ->martes_alm_inicio= $request->get('martes_alm_inicio');
-                 //$mallas ->mar_alm_final= $request->get('martes_alm_final');
-                 //$mallas ->martesdescanso2= $request->get('martesdescanso2');
-
-
-        // MIERCOLES //
-
-                 $mallas ->miercolesinicio= $request->get('miercolesinicio');
-                 $mallas ->miercolesfinal= $request->get('miercolesfinal');
-                 $mallas ->miercolesdescanso1= $request->get('miercolesdescanso1');
-                 $mallas ->miercoles_alm_inicio= $request->get('miercoles_alm_inicio');
-                // $mallas ->mie_alm_final= $request->get('miercoles_alm_final');
-                 // $mallas ->miercolesdescanso2= $request->get('miercolesdescanso2');
+        $days = ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo'];
         
-        // JUEVES //
 
-                 $mallas ->juevesinicio= $request->get('juevesinicio');
-                 $mallas ->juevesfinal= $request->get('juevesfinal');
-                 $mallas ->juevesdescanso1= $request->get('juevesdescanso1');
-                 $mallas ->jueves_alm_inicio= $request->get('jueves_alm_inicio');
-                 //$mallas ->jue_alm_final= $request->get('jueves_alm_final');
-                 //$mallas ->juevesdescanso2= $request->get('juevesdescanso2');        
+        try {
+            // Obtener los IDs de los usuarios seleccionados
+            $userIds = $request->input('users_id');
 
-        // VIERNES //
+            $semana = $request->input('semana');
+            list($year, $week) = explode('-W', $semana);
+            $carbonsemana = Carbon::createFromDate($year)->startOfWeek($week);
+            $primerdiasemana = $carbonsemana->startOfWeek()->format('d-m-Y');
+            $ultimodiasemana = $carbonsemana->endOfWeek()->format('d-m-Y');
+            $semanatotal = 'desde ' . $primerdiasemana . ' hasta ' . $ultimodiasemana;
 
-                 $mallas ->viernesinicio= $request->get('viernesinicio');
-                 $mallas ->viernesfinal= $request->get('viernesfinal');
-                 $mallas ->viernesdescanso1= $request->get('viernesdescanso1');
-                 $mallas ->viernes_alm_inicio= $request->get('viernes_alm_inicio');
-                 //$mallas ->vie_alm_final= $request->get('viernes_alm_final');
-                 //$mallas ->viernesdescanso2= $request->get('viernesdescanso2');
+            $fechasemana = [];
 
-        // SABADO // 
+            $fechaActual = Carbon::createFromFormat('d-m-Y', $primerdiasemana);
 
-                  $mallas ->sabadoinicio= $request->get('sabadoinicio');
-                  $mallas ->sabadofinal= $request->get('sabadofinal');
-                  $mallas ->sabadodescanso1= $request->get('sabadodescanso1');
-                  $mallas ->sabado_alm_inicio= $request->get('sabado_alm_inicio');
-                  //$mallas ->sab_alm_final= $request->get('sabado_alm_final');
-                  //$mallas ->sabadodescanso2= $request->get('sabadodescanso2');
+            while ($fechaActual <= Carbon::createFromFormat('d-m-Y', $ultimodiasemana)) {
+                $fechasemana[] = $fechaActual->format('d-m-Y');
+                $fechaActual->addDay();
+            }
 
-        // DOMINGO //
+            foreach ($userIds as $userId) {
+                $total = 0;
+                $mallas = new Malla();
+                $mallas->users_id = $userId;
+                $mallas->semana = $semanatotal;
+                $mallas->campaña = $request->get('campaña');
+                $mallas->foco = $request->get('foco');
+                $mallas->encargado = $request->get('encargado');
+
+                foreach ($days as $day) {
+                    ${"inicio$day"} = Carbon::parse($request->input($day . 'inicio'));
+                    ${"fin$day"} = Carbon::parse($request->input($day . 'final'));
+
+                    if (${"inicio$day"} > ${"fin$day"}) {
+                        return back()->with('danger', 'La hora de inicio no puede ser mayor a la hora de salida');
+                    }
+
+                    if (is_null($request->get($day . '_alm_inicio'))) {
+                        ${"almuerzo2$day"} = null;
+                    }
+
+                    if (is_null($request->get($day . 'descanso1'))) {
+                        ${"descanso2$day"} = null;
+                    } else {
+                        ${"almuerzo1$day"} = Carbon::parse($request->input("{$day}_alm_inicio"));
+                        ${"descanso$day"} = Carbon::parse($request->input($day . 'descanso1'));
+                        ${"almuerzo2$day"} = ${"almuerzo1$day"}->copy()->addHour();
+                        ${"descanso2$day"} = ${"descanso$day"}->copy()->addMinutes(20);
+
+                     
+                        ${"horas$day"} = ${"fin$day"}->diffInHours(${"inicio$day"});
+                        ${"almuerzo$day"} = ${"almuerzo2$day"}->diffInHours(${"almuerzo1$day"});
+                        ${"total$day"} = ${"horas$day"} - ${"almuerzo$day"};
+
+                        $total += ${"total$day"};
+
+                        $mallas->{$day . '_alm_final'} = ${"almuerzo2$day"};
+                        $mallas->{$day . 'descanso2'} = ${"descanso2$day"};
+                    }
+                }
+
+                $mallas->lunesfecha = $fechasemana[0];
+                $mallas->lunesinicio = $request->get('lunesinicio');
+                $mallas->lunesfinal = $request->get('lunesfinal');
+                $mallas->lunesdescanso1 = $request->get('lunesdescanso1');
+                $mallas->lunes_alm_inicio = $request->get('lunes_alm_inicio');
+
+                // MARTES //         
+
+                $mallas->martesfecha = $fechasemana[1];
+                $mallas->martesinicio = $request->get('martesinicio');
+                $mallas->martesfinal = $request->get('martesfinal');
+                $mallas->martesdescanso1 = $request->get('martesdescanso1');
+                $mallas->martes_alm_inicio = $request->get('martes_alm_inicio');
+                //$mallas ->mar_alm_final= $request->get('martes_alm_final');
+                //$mallas ->martesdescanso2= $request->get('martesdescanso2');
 
 
-                 $mallas ->domingoinicio= $request->get('domingoinicio');
-                 $mallas ->domingofinal= $request->get('domingofinal');
-                 $mallas ->domingodescanso1= $request->get('domingodescanso1');
-                 $mallas ->domingo_alm_inicio= $request->get('domingo_alm_inicio');
-    
+                // MIERCOLES //
 
-       
-     
-     
-     $mallas ->diadescanso= $request->get('diadescanso');
-     $mallas ->observaciones = $request->get('observaciones');
+                $mallas->miercolesfecha = $fechasemana[2];
+                $mallas->miercolesinicio = $request->get('miercolesinicio');
+                $mallas->miercolesfinal = $request->get('miercolesfinal');
+                $mallas->miercolesdescanso1 = $request->get('miercolesdescanso1');
+                $mallas->miercoles_alm_inicio = $request->get('miercoles_alm_inicio');
+                // $mallas ->mie_alm_final= $request->get('miercoles_alm_final');
+                // $mallas ->miercolesdescanso2= $request->get('miercolesdescanso2');
 
-     $mallas ->horastotal = $total;
-    
+                // JUEVES //
+
+                $mallas->juevesfecha = $fechasemana[3];
+                $mallas->juevesinicio = $request->get('juevesinicio');
+                $mallas->juevesfinal = $request->get('juevesfinal');
+                $mallas->juevesdescanso1 = $request->get('juevesdescanso1');
+                $mallas->jueves_alm_inicio = $request->get('jueves_alm_inicio');
+                //$mallas ->jue_alm_final= $request->get('jueves_alm_final');
+                //$mallas ->juevesdescanso2= $request->get('juevesdescanso2');        
+
+                // VIERNES //
+
+                $mallas->viernesfecha = $fechasemana[4];
+                $mallas->viernesinicio = $request->get('viernesinicio');
+                $mallas->viernesfinal = $request->get('viernesfinal');
+                $mallas->viernesdescanso1 = $request->get('viernesdescanso1');
+                $mallas->viernes_alm_inicio = $request->get('viernes_alm_inicio');
+                //$mallas ->vie_alm_final= $request->get('viernes_alm_final');
+                //$mallas ->viernesdescanso2= $request->get('viernesdescanso2');
+
+                // SABADO // 
+
+                $mallas->sabadofecha = $fechasemana[5];
+                $mallas->sabadoinicio = $request->get('sabadoinicio');
+                $mallas->sabadofinal = $request->get('sabadofinal');
+                $mallas->sabadodescanso1 = $request->get('sabadodescanso1');
+                $mallas->sabado_alm_inicio = $request->get('sabado_alm_inicio');
+                //$mallas ->sab_alm_final= $request->get('sabado_alm_final');
+                //$mallas ->sabadodescanso2= $request->get('sabadodescanso2');
+
+                // DOMINGO //
+
+                $mallas->domingofecha = $fechasemana[6];
+                $mallas->domingoinicio = $request->get('domingoinicio');
+                $mallas->domingofinal = $request->get('domingofinal');
+                $mallas->domingodescanso1 = $request->get('domingodescanso1');
+                $mallas->domingo_alm_inicio = $request->get('domingo_alm_inicio');
 
 
 
-    
-        $mallas ->save();   
+
+
+                $mallas->diadescanso = $request->get('diadescanso');
+                $mallas->observaciones = $request->get('observaciones');
+
+                $mallas->horastotal = $total;
+
+                $mallas->save();
+            }
         } catch (QueryException $e) {
             if ($e->getCode() === '23000') {
                 // Se ha producido una violación de integridad
                 return redirect()->action([MallasController::class, 'index'])->with('warning', 'El usuario ya tiene una malla asignada');
-            }        
-        }    
+            }
+        }
+
         if ($total < 48) {
-        return redirect()->action([MallasController::class, 'index'])->with('warning', 'Agregaste menos de 48 horas semanales al usuario');
-        }elseif ($total > 48) {
-        return redirect()->action([MallasController::class, 'index'])->with('danger', 'Agregaste más de 48 horas semanales al usuario');
+            return redirect()->action([MallasController::class, 'index'])->with('warning', 'Agregaste menos de 48 horas semanales al usuario');
+        } elseif ($total > 48) {
+            return redirect()->action([MallasController::class, 'index'])->with('danger', 'Agregaste más de 48 horas semanales al usuario');
         } else {
-        return redirect()->action([MallasController::class, 'index'])->with('success', 'Agregaste exactamente 48 horas semanales al usuario');
+            return redirect()->action([MallasController::class, 'index'])->with('success', 'Agregaste exactamente 48 horas semanales al usuario');
+        }
     }
-    }       
     /**
      * Display the specified resource.
      *
@@ -191,11 +215,11 @@ class MallasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit( $id)
+    public function edit($id)
     {
 
-      $mallas = Malla::find($id);
-        return view('horacorte.editmallas',compact('mallas'));
+        $mallas = Malla::find($id);
+        return view('horacorte.editmallas', compact('mallas'));
     }
 
     /**
@@ -206,136 +230,171 @@ class MallasController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {    
-       
+    {
+
         $days = ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo'];
-       $total= 0;
-       
-       $mallas = Malla::find($id);
-       foreach ($days as $day) {
-        ${"inicio$day"} = Carbon::parse($request->input($day . 'inicio'));
-        ${"fin$day"} = Carbon::parse($request->input($day . 'final'));
+        $total = 0;
 
-        if (${"inicio$day"} > ${"fin$day"}) {
-           
-            return back()->with('danger', 'La hora de inicio no puede ser mayor a la hora de salida'); 
+        $mallas = Malla::find($id);
+        foreach ($days as $day) {
+            ${"inicio$day"} = Carbon::parse($request->input($day . 'inicio'));
+            ${"fin$day"} = Carbon::parse($request->input($day . 'final'));
+
+            if (${"inicio$day"} > ${"fin$day"}) {
+
+                return back()->with('danger', 'La hora de inicio no puede ser mayor a la hora de salida');
+            }
+            if (is_null($request->get($day . '_alm_inicio'))) {
+                ${"almuerzo2$day"} = null;
+            }
+            if (is_null($request->get($day . 'descanso1'))) {
+                ${"descanso2$day"} = null;
+            } else {
+                ${"almuerzo1$day"} = Carbon::parse($request->input("{$day}_alm_inicio"));
+                ${"descanso$day"} = Carbon::parse($request->input($day . 'descanso1'));
+                ${"almuerzo2$day"} = ${"almuerzo1$day"}->copy()->addHour();
+                ${"descanso2$day"} = ${"descanso$day"}->copy()->addMinutes(20);
+
+                ${"horas$day"} = ${"fin$day"}->diffInHours(${"inicio$day"});
+                ${"almuerzo$day"} = ${"almuerzo2$day"}->diffInHours(${"almuerzo1$day"});
+                ${"total$day"} = ${"horas$day"} - ${"almuerzo$day"};
+
+
+
+                $total += ${"total$day"};
+
+                $mallas->{$day . '_alm_final'} = ${"almuerzo2$day"};
+                $mallas->{$day . 'descanso2'} = ${"descanso2$day"};
+            }
         }
-        if (is_null($request->get($day . '_alm_inicio'))) {
-            ${"almuerzo2$day"} = null;
-        } 
-        if (is_null($request->get($day . 'descanso1'))) {
-            ${"descanso2$day"} = null;
-        } else {
-            ${"almuerzo1$day"} = Carbon::parse($request->input("{$day}_alm_inicio"));
-            ${"descanso$day"}= Carbon::parse($request->input($day . 'descanso1'));
-            ${"almuerzo2$day"} = ${"almuerzo1$day"}->copy()->addHour();
-            ${"descanso2$day"} = ${"descanso$day"}->copy()->addMinutes(20);
-            
-            ${"horas$day"} = ${"fin$day"}->diffInHours(${"inicio$day"});
-            ${"almuerzo$day"} = ${"almuerzo2$day"}->diffInHours(${"almuerzo1$day"});
-            ${"total$day"} = ${"horas$day"} - ${"almuerzo$day"};
+        try {
+
+            $semana = $request->input('semana');
+            list($year, $week) = explode('-W', $semana);
+            $carbonsemana = Carbon::createFromDate($year)->startOfWeek($week);
+            $primerdiasemana = $carbonsemana->startOfWeek()->format('d-m-Y');
+            $ultimodiasemana = $carbonsemana->endOfWeek()->format('d-m-Y');
+            $semanatotal = 'desde ' . $primerdiasemana . ' hasta ' . $ultimodiasemana;
 
 
 
-            $total += ${"total$day"};
+            $fechasemana = [];
 
-             $mallas->{$day . '_alm_final'} = ${"almuerzo2$day"};
-             $mallas->{$day . 'descanso2'} = ${"descanso2$day"};
-        }
+            $fechaActual = Carbon::createFromFormat('d-m-Y', $primerdiasemana);
 
-
-             
-             $mallas ->semana= $request->get('semana');
-             $mallas ->campaña=$request->get('campaña');
-             $mallas ->foco=$request->get('foco');
-             $mallas ->encargado=$request->get('encargado');
-             $mallas ->lunesinicio= $request->get('lunesinicio');
-             $mallas ->lunesfinal= $request->get('lunesfinal');
-             $mallas ->lunesdescanso1= $request->get('lunesdescanso1');
-             $mallas ->lunes_alm_inicio= $request->get('lunes_alm_inicio');
-             //$mallas ->lun_alm_final= $request->get('lunes_alm_final');
-             //$mallas ->lunesdescanso2= $request->get('lunesdescanso2');
-
-     // MARTES //         
-
-             $mallas ->martesinicio= $request->get('martesinicio');
-             $mallas ->martesfinal= $request->get('martesfinal');
-             $mallas ->martesdescanso1= $request->get('martesdescanso1');
-             $mallas ->martes_alm_inicio= $request->get('martes_alm_inicio');
-             //$mallas ->mar_alm_final= $request->get('martes_alm_final');
-             //$mallas ->martesdescanso2= $request->get('martesdescanso2');
+            while ($fechaActual <= Carbon::createFromFormat('d-m-Y', $ultimodiasemana)) {
+                $fechasemana[] = $fechaActual->format('d-m-Y');
+                $fechaActual->addDay();
+            }
 
 
-    // MIERCOLES //
 
-             $mallas ->miercolesinicio= $request->get('miercolesinicio');
-             $mallas ->miercolesfinal= $request->get('miercolesfinal');
-             $mallas ->miercolesdescanso1= $request->get('miercolesdescanso1');
-             $mallas ->miercoles_alm_inicio= $request->get('miercoles_alm_inicio');
+
+
+
+
+            $mallas->semana = $semanatotal;
+            $mallas->campaña = $request->get('campaña');
+            $mallas->foco = $request->get('foco');
+            $mallas->encargado = $request->get('encargado');
+            $mallas->lunesfecha = $fechasemana[0];
+            $mallas->lunesinicio = $request->get('lunesinicio');
+            $mallas->lunesfinal = $request->get('lunesfinal');
+            $mallas->lunesdescanso1 = $request->get('lunesdescanso1');
+            $mallas->lunes_alm_inicio = $request->get('lunes_alm_inicio');
+            //$mallas ->lun_alm_final= $request->get('lunes_alm_final');
+            //$mallas ->lunesdescanso2= $request->get('lunesdescanso2');
+
+            // MARTES //         
+
+            $mallas->martesfecha = $fechasemana[1];
+            $mallas->martesinicio = $request->get('martesinicio');
+            $mallas->martesfinal = $request->get('martesfinal');
+            $mallas->martesdescanso1 = $request->get('martesdescanso1');
+            $mallas->martes_alm_inicio = $request->get('martes_alm_inicio');
+            //$mallas ->mar_alm_final= $request->get('martes_alm_final');
+            //$mallas ->martesdescanso2= $request->get('martesdescanso2');
+
+
+            // MIERCOLES //
+
+            $mallas->miercolesfecha = $fechasemana[2];
+            $mallas->miercolesinicio = $request->get('miercolesinicio');
+            $mallas->miercolesfinal = $request->get('miercolesfinal');
+            $mallas->miercolesdescanso1 = $request->get('miercolesdescanso1');
+            $mallas->miercoles_alm_inicio = $request->get('miercoles_alm_inicio');
             // $mallas ->mie_alm_final= $request->get('miercoles_alm_final');
-             // $mallas ->miercolesdescanso2= $request->get('miercolesdescanso2');
-    
-    // JUEVES //
+            // $mallas ->miercolesdescanso2= $request->get('miercolesdescanso2');
 
-             $mallas ->juevesinicio= $request->get('juevesinicio');
-             $mallas ->juevesfinal= $request->get('juevesfinal');
-             $mallas ->juevesdescanso1= $request->get('juevesdescanso1');
-             $mallas ->jueves_alm_inicio= $request->get('jueves_alm_inicio');
-             //$mallas ->jue_alm_final= $request->get('jueves_alm_final');
-             //$mallas ->juevesdescanso2= $request->get('juevesdescanso2');        
+            // JUEVES //
 
-    // VIERNES //
+            $mallas->juevesfecha = $fechasemana[3];
+            $mallas->juevesinicio = $request->get('juevesinicio');
+            $mallas->juevesfinal = $request->get('juevesfinal');
+            $mallas->juevesdescanso1 = $request->get('juevesdescanso1');
+            $mallas->jueves_alm_inicio = $request->get('jueves_alm_inicio');
+            //$mallas ->jue_alm_final= $request->get('jueves_alm_final');
+            //$mallas ->juevesdescanso2= $request->get('juevesdescanso2');        
 
-             $mallas ->viernesinicio= $request->get('viernesinicio');
-             $mallas ->viernesfinal= $request->get('viernesfinal');
-             $mallas ->viernesdescanso1= $request->get('viernesdescanso1');
-             $mallas ->viernes_alm_inicio= $request->get('viernes_alm_inicio');
-             //$mallas ->vie_alm_final= $request->get('viernes_alm_final');
-             //$mallas ->viernesdescanso2= $request->get('viernesdescanso2');
+            // VIERNES //
 
-    // SABADO // 
+            $mallas->viernesfecha = $fechasemana[4];
+            $mallas->viernesinicio = $request->get('viernesinicio');
+            $mallas->viernesfinal = $request->get('viernesfinal');
+            $mallas->viernesdescanso1 = $request->get('viernesdescanso1');
+            $mallas->viernes_alm_inicio = $request->get('viernes_alm_inicio');
+            //$mallas ->vie_alm_final= $request->get('viernes_alm_final');
+            //$mallas ->viernesdescanso2= $request->get('viernesdescanso2');
 
-              $mallas ->sabadoinicio= $request->get('sabadoinicio');
-              $mallas ->sabadofinal= $request->get('sabadofinal');
-              $mallas ->sabadodescanso1= $request->get('sabadodescanso1');
-              $mallas ->sabado_alm_inicio= $request->get('sabado_alm_inicio');
-              //$mallas ->sab_alm_final= $request->get('sabado_alm_final');
-              //$mallas ->sabadodescanso2= $request->get('sabadodescanso2');
+            // SABADO // 
 
-    // DOMINGO //
+            $mallas->sabadofecha = $fechasemana[5];
+            $mallas->sabadoinicio = $request->get('sabadoinicio');
+            $mallas->sabadofinal = $request->get('sabadofinal');
+            $mallas->sabadodescanso1 = $request->get('sabadodescanso1');
+            $mallas->sabado_alm_inicio = $request->get('sabado_alm_inicio');
+            //$mallas ->sab_alm_final= $request->get('sabado_alm_final');
+            //$mallas ->sabadodescanso2= $request->get('sabadodescanso2');
+
+            // DOMINGO //
+
+            $mallas->domingofecha = $fechasemana[6];
+            $mallas->domingoinicio = $request->get('domingoinicio');
+            $mallas->domingofinal = $request->get('domingofinal');
+            $mallas->domingodescanso1 = $request->get('domingodescanso1');
+            $mallas->domingo_alm_inicio = $request->get('domingo_alm_inicio');
 
 
-             $mallas ->domingoinicio= $request->get('domingoinicio');
-             $mallas ->domingofinal= $request->get('domingofinal');
-             $mallas ->domingodescanso1= $request->get('domingodescanso1');
-             $mallas ->domingo_alm_inicio= $request->get('domingo_alm_inicio');
 
 
-   
+
+            $mallas->diadescanso = $request->get('diadescanso');
+            $mallas->observaciones = $request->get('observaciones');
+
+            $mallas->horastotal = $total;
+
+
+
+
+
+            $mallas->save();
+        } catch (QueryException $e) {
+            if ($e->getCode() === '23000') {
+                // Se ha producido una violación de integridad
+                return redirect()->action([MallasController::class, 'index'])->with('warning', 'El usuario ya tiene una malla asignada');
+            }
         }
- 
-        $mallas ->diadescanso= $request->get('diadescanso');
-        $mallas ->observaciones = $request->get('observaciones');
-
-        $mallas ->horastotal = $total;
-        $mallas ->save();
-
-        if($total < 48 ){
+        if ($total < 48) {
             return redirect()->action([MallasController::class, 'index'])->with('warning', 'Agregaste menos de 48 horas semanales al usuario');
-
+        } elseif ($total > 48) {
+            return redirect()->action([MallasController::class, 'index'])->with('danger', 'Agregaste más de 48 horas semanales al usuario');
+        } else {
+            return redirect()->action([MallasController::class, 'index'])->with('success', 'Agregaste exactamente 48 horas semanales al usuario');
         }
-        if ($total > 48){
-            return redirect()->action([MallasController::class, 'index'])->with('danger', 'Agregaste más 48 horas semanales al usuario');
-
-        }
-        else{
-            return redirect()->action([MallasController::class, 'index'])->with('success', 'Agregaste 48 horas semanales al usuario');
-        }
-    
     }
 
 
-       /**
+    /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
@@ -344,11 +403,13 @@ class MallasController extends Controller
     public function destroy($id)
     {
         Malla::destroy($id);
-        return back()->with('success','Malla eliminada correctamente');
+        
+        return back()->with('success', 'Malla eliminada correctamente');
     }
 
-    public function export(){
-        
+    public function export()
+    {
+
         return Excel::download(new MallaExport, 'malla.xlsx');
     }
 }
