@@ -1,4 +1,3 @@
-
 /*funcion calcular hora de trabajo total  */
 function calcular(id1, id2, id3, id4, id5) {
     let a = parseFloat(document.getElementById(id1).value) || 0;
@@ -7,24 +6,9 @@ function calcular(id1, id2, id3, id4, id5) {
     let d = parseFloat(document.getElementById(id4).value) || 0;
     let total = (document.getElementById(id5).value =
         b - a - (d - c) + " " + "horas");
-    return total;
 }
-//funcion totaltrab
 
-/* function totaltrab() {
-    const textinp = document.getElementById("total-horas");
-    const trabids = parseFloat(document.querySelectorAll(`input[id^="htrab"]`).value);
-  
-    var listatotales = Array.from(trabids);
-    var contador = 0;
-    for (let i = 0; i < listatotales.length; i++) {
-        var listatotal = listatotales[i];
-        contador += listatotal;
-    }
-    textinp.value = contador + " " + "horas";
-    
-} */
-function prueba() {
+function totalhorastrb() {
     const textinp = document.getElementById("total-horas");
     let inp1 = parseFloat(document.getElementById("htrab").value);
     let inp2 = parseFloat(document.getElementById("htrabmar").value);
@@ -38,9 +22,6 @@ function prueba() {
 
     textinp.value = suma + " " + "horas";
 }
-
-
-
 
 /*  funcion automatización hora almuerzo*/
 function totalalm($id1, $id2) {
@@ -66,21 +47,27 @@ function totalalm($id1, $id2) {
         hora2Input.value = `${hora2}:${minuto2}`;
     });
 }
+//automatización tiempo almuerzo dias sabados
+function almsab() {
+    let hora1Input = document.getElementById("alminiciosab");
+    let hora2Input = document.getElementById("almfinsab");
 
-const week = (document.getElementById('semana').addEventListener('click',()=>{
-    // Obtener la fecha actual
-var fechaActual = new Date();
+    hora1Input.addEventListener("change", () => {
+        let hora1Value = hora1Input.value;
+        let fechaActual = new Date();
+        let [hora, minuto] = hora1Value.split(":");
 
-// Obtener la fecha de la semana siguiente
-var fechaSiguiente = new Date(fechaActual.getTime() + 7 * 24 * 60 * 60 * 1000);
-
-// Formatear la fecha siguiente en el formato requerido para el input de tipo week (YYYY-W##)
-var formattedFechaSiguiente = fechaSiguiente.toISOString().substring(0, 7);
-
-// Establecer el atributo max del input de tipo week
-week.setAttribute("max", formattedFechaSiguiente);
-}));
-
+        fechaActual.setHours(hora);
+        fechaActual.setMinutes(minuto);
+        // Sumar 20 minutos a la fecha actual
+        fechaActual.setMinutes(fechaActual.getMinutes() + 30);
+        // Obtener la hora y los minutos de la fecha actualizada
+        const hora2 = fechaActual.getHours().toString().padStart(2, "0");
+        const minuto2 = fechaActual.getMinutes().toString().padStart(2, "0");
+        // Actualizar el valor del input de hora 2
+        hora2Input.value = `${hora2}:${minuto2}`;
+    });
+}
 
 /*  funcion automatización break*/
 function totaldes($id1, $id2) {
@@ -104,9 +91,9 @@ function totaldes($id1, $id2) {
     });
 }
 /*funciion break sabados*/
-function breaksab($id1, $id2) {
-    let hora1Input = document.getElementById($id1);
-    let hora2Input = document.getElementById($id2);
+function breaksab() {
+    let hora1Input = document.getElementById("descinisab");
+    let hora2Input = document.getElementById("descfinsab");
 
     hora1Input.addEventListener("change", () => {
         let hora1Value = hora1Input.value;
@@ -226,6 +213,7 @@ function DiaDescanso() {
 /*funcion de reseteo inputs */
 
 function Reset() {
+    let restablecer = document.getElementById("diadescanso");
     let horaInputs = document.querySelectorAll(`input[id^="hora"]`);
     let alminiInputs = document.querySelectorAll(`input[id^="almini"]`);
     let descInputs = document.querySelectorAll(`input[id^="descini"]`);
@@ -233,6 +221,7 @@ function Reset() {
     let inputs = [...horaInputs, ...alminiInputs, ...descInputs];
     inputs.forEach((input) => {
         input.disabled = false;
+        restablecer.value = "";
     });
 }
 
@@ -284,7 +273,6 @@ function autocompletarinput() {
             almuerzoFin: "14:00:00",
             descanso: "10:00:00",
             descansoFin: "10:20:00",
-            sabado: "",
             sabadoIni: "08:00:00",
             sabadoFin: "16:00:00",
             descansoSab: "10:15:00",
@@ -297,7 +285,8 @@ function autocompletarinput() {
             almuerzoFin: "14:00:00",
             descanso: "10:00:00",
             descansoFin: "10:20:00",
-            sabado: "11:00:00",
+            alminisab: "",
+            almfinsab: "",
             sabadoIni: "08:00:00",
             sabadoFin: "11:00:00",
             descansoSab: "10:15:00",
@@ -310,7 +299,6 @@ function autocompletarinput() {
             almuerzoFin: "14:00:00",
             descanso: "10:00:00",
             descansoFin: "10:20:00",
-            sabado: "",
             sabadoIni: "08:00:00",
             sabadoFin: "16:00:00",
             descansoSab: "10:15:00",
@@ -323,7 +311,8 @@ function autocompletarinput() {
             almuerzoFin: "14:00:00",
             descanso: "10:00:00",
             descansoFin: "10:20:00",
-            sabado: "",
+            alminisab: "",
+            almfinsab: "",
             sabadoIni: "08:00:00",
             sabadoFin: "13:00:00",
             descansoSab: "10:15:00",
@@ -336,7 +325,6 @@ function autocompletarinput() {
             almuerzoFin: "14:00:00",
             descanso: "10:00:00",
             descansoFin: "10:20:00",
-            sabado: "",
             sabadoIni: "08:00:00",
             sabadoFin: "16:00:00",
             descansoSab: "10:15:00",
@@ -349,7 +337,6 @@ function autocompletarinput() {
             almuerzoFin: "",
             descanso: "",
             descansoFin: "",
-            sabado: "",
             sabadoIni: "",
             sabadoFin: "",
             descansoSab: "",
@@ -362,9 +349,7 @@ function autocompletarinput() {
     inputfin.forEach((input) => (input.value = opciones[selectedValue].fin));
     inputsabado.value = opciones[selectedValue].sabadoFin;
     inputsabadoini.value = opciones[selectedValue].sabadoIni;
-    alminisab.value = opciones[selectedValue].almuerzo;
-    almfinsab.value = opciones[selectedValue].almuerzoFin;
-    brkfinsab.value = opciones[selectedValue].descansoSab;
+
     inputalm.forEach(
         (input) => (input.value = opciones[selectedValue].almuerzo)
     );
@@ -377,10 +362,17 @@ function autocompletarinput() {
     inputbreakfin.forEach(
         (input) => (input.value = opciones[selectedValue].descansoFin)
     );
+    //inputs almuerzo sabados
+    if (inputsabado.value <= "13:00:00") {
+        alminisab.value = opciones[selectedValue].alminisab;
+        almfinsab.value = opciones[selectedValue].almfinsab;
+    }
+    // input descanso sabado
+    brkfinsab.value = opciones[selectedValue].descansoSab;
 }
 
 /*sweetalert aviso eliminar */
-$(".formulario-edit").submit(function (e) {
+/* $(".formulario-edit").submit(function (e) {
     e.preventDefault();
     Swal.fire({
         title: "Are you sure?",
@@ -396,7 +388,7 @@ $(".formulario-edit").submit(function (e) {
     });
     this.submit();
 });
-
+ */
 /* document.addEventListener('DOMContentLoaded', function() {
     // Aquí va el código para crear la tabla
 // Obtener el contenedor de la tabla

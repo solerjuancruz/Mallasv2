@@ -53,8 +53,10 @@ h1{
        font-weight:bold; 
        font-size:11px; 
        color:teal;
+       cursor: pointer;
    }
    #tabla-body-horarios input[type="text"]{
        font-size:large;
+      
    }
    

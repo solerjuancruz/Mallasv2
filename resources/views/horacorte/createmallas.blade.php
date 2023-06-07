@@ -238,11 +238,10 @@
                                                         <td><input class="btn-sm p-sm-1 m-0" onchange="calcular('horainiciosab','horafinsab','alminiciosab','almfinsab','htrabsab')" 
                                                             onclick="calcular('horainiciosab','horafinsab','alminiciosab','almfinsab','htrabsab')" type="time" name="sabadofinal" id="horafinsab" value="">
                                                         </td>
-                                                        <td><input class="btn-sm p-sm-1 m-0" onclick="totalalm('alminiciosab','almfinsab')" type="time" name="sabado_alm_inicio" id="alminiciosab" value="">
+                                                        <td><input class="btn-sm p-sm-1 m-0" onclick="almsab()" type="time" name="sabado_alm_inicio" id="alminiciosab" value="">
                                                         </td>
                                                         <td><input class="btn-sm p-sm-1 m-0" type="time" name="sabado_alm_final" id="almfinsab" value="" disabled></td>
-                                                        <td><input class="btn-sm p-sm-1 m-0" type="time" name="sabadodescanso1" id="descinisab" onchange="breaksab('descinisab','descfinsab')" 
-                                                            onclick="breaksab('descinisab','descfinsab')" value="" required></td>
+                                                        <td><input class="btn-sm p-sm-1 m-0" type="time" name="sabadodescanso1" id="descinisab"  onclick="breaksab()" value="" required></td>
                                                         <td><input class="btn-sm p-sm-1 m-0" type="time" name="sabadodescanso2" id="descfinsab" value="" disabled></td>
                                                     </tr>
                                                     <tr>
@@ -265,7 +264,7 @@
                                                     </tr>
                                                     <tr>
                                                         <th class="text-info text-center">Total Horas</th>
-                                                        <td><input class="form-control text-info text-center" type="text" name="" id="total-horas" onchange="prueba()" onclick="prueba()"></td>
+                                                        <td><input class="form-control text-info text-center" type="text" name="" id="total-horas" onchange="totalhorastrb()" disabled></td>
                                                     </tr>
                                                   
                                                 </tbody>
